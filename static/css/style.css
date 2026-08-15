@@ -3,20 +3,41 @@
     padding: 0;
     box-sizing: border-box;
 }
-/*? home section */
+body{
+    overflow-x: scroll;
+    min-height: 100vh;
+}
+/* ? Fonts */
+
+@font-face {
+    font-family: 'Viga';
+    src: url('../fonts/Viga-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*? Navbar section */
 .navigation-container {
     width: 100%;
     height: fit-content;
     scroll-snap-align: start;
-    background:linear-gradient(45deg,#040C2E,#051D5D) ;
+    background:linear-gradient(45deg,#050B2D,#081E60) ;
     position: relative;
+    border-bottom: #ECB264 1px solid;
 }
 .navigation-container .navigation-background-design1{
     width: 100%;
     height: 11rem;
     background-image: url("../images/scopeindia-bkg.png");
     background-repeat: repeat-x;
-    background-size: contain;
+    background-size:auto;
 }
 .navigation-content .logo a img{
     width: 180px;
@@ -32,20 +53,98 @@
     align-items: center;
     position: absolute;
     gap: 1rem;
-    bottom: 1rem;
-    right: 2rem;
+    bottom: 1.5rem;
+    right: 4.5rem;
 }
 .navigation-links li{
     list-style: none;
     
 }
+.navigation-links li a:hover{
+    list-style: none;
+    background-color: rgba(255, 255, 255, 0.136);
+    border: 1px solid white;
+    border-radius: 5px;
+    color: #ECB264;
+    
+}
 .navigation-links li a{
     text-decoration: none;
-    color: white;
+    padding: 5px;
+    color: #D6D6D6;
+    border: 1px solid transparent;
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Poppins',sans-serif;
 
 }
 .google-rating{
-    
+    position: absolute;
+    right: 4rem;
+    top: 1rem;
 }
+.google-rating a img{
+    width: 200px;
+    height: auto;
+}
+.regis-btn{
+    background-color: #FB3E5A;
+    color: white !important;
+    border-radius: 5px;
+
+}
+/* ? floating social links */
+
+.floating-links{
+    position: absolute;
+    right: .3rem;
+    top: .3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: .2rem;
+}
+.floating-links a img{
+    width: 45px;
+}
+
+/* ? heading container base */
+
+.container-intro-heading{
+    width: 100%;
+    background:linear-gradient(45deg,#071E5E,#030E37);
+    text-align: center;border-bottom: #E0CF90 1px solid;
+}
+.container-intro-heading h1{
+    color: #EEAF10;
+    font-size: 35px;
+    font-family: 'Viga',sans-serif;
+    padding: 7px 15px;
+    font-weight: 400;
+}
+.container-intro-content{
+    background-color: #FCFCFC;
+    text-align: center;
+}
+.container-intro-content h2{
+    font-family: 'Viga',sans-serif;
+    color: #162A7C;
+    font-weight: 400;
+    font-size: 25.2px;
+    padding: 0 10px;
+    margin: 15px 0px 10px;
+
+}
+.container-intro-content h3{
+    color: #153CA8;
+   
+    padding: 0 15px 15px 15px;
+    text-align: justify;
+    font-size: 16.6px;
+    font-weight: 100;
+    font-family: 'Viga',sans-serif;
+}
+
+

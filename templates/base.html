@@ -13,43 +13,54 @@
     <nav class="navigation-container">
         <div class="navigation-background-design1">
             <div class="navigation-content">
-            <div class="logo">
-                <a href="#">
-                    <img src="{% static 'images/scopeindia-logo.webp' %}" alt="scope india logo">
-                </a>
-            </div>
-            <ul class="navigation-links">
-                <li><a href="">Home</a></li>
-                <li><a href="">Courses</a></li>
-                <li><a href="">Registration</a></li>
-                <li><a href="">Placements</a></li>
-                <li><a href="">About us</a></li>
-                <li><a href="">FAQ</a></li>
-                <li><a href="">Reviews</a></li>
-                <li><a href="">contact us</a></li>
+                <div class="logo">
+                    <a href="#">
+                        <img src="{% static 'images/scopeindia-logo.webp' %}" alt="scope india logo">
+                    </a>
+                </div>
+                <ul class="navigation-links">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Courses</a></li>
+                    <li><a href="" class="regis-btn">Registration</a></li>
+                    <li><a href="">Placements</a></li>
+                    <li><a href="">About us</a></li>
+                    <li><a href="">FAQ</a></li>
+                    <li><a href="">Reviews</a></li>
+                    <li><a href="">contact us</a></li>
 
-            </ul>
-            <div class="google-rating">
-                <a href="">
-                    <img src="{% static 'images/google-rating-scope-india.webp' %}" alt="">
-                </a>
+                </ul>
+                <div class="google-rating">
+                    <a href="">
+                        <img src="{% static 'images/google-rating-scope-india.webp' %}" alt="">
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-        
 
-
-            
 
     </nav>
+    <div class="floating-links">
+        <div class="gallery">
+            <a href=""><img src="{% static 'images/gallery-scope-india.webp' %}" alt="Scope india Gallery"></a>
+        </div>
+        <div class="insta">
+            <a href=""><img src="{% static 'images/instagram-scope-india.png' %}" alt="Scope india insta"></a>
+        </div>
+        <div class="call">
+            <a href=""><img src="{% static 'images/callnow-scope-india.webp' %}" alt="Scope india contact"></a>
+        </div>
+        <div class="wp">
+            <a href=""><img src="{% static 'images/whatsapp-scope-india.webp' %}" alt="Scope india whatsUp"></a>
+        </div>
+    </div>
+
+
     <div class="container-intro-heading">
-        {% block introheading %}{% endblock %}
+        <h1>{% block introheading %}{% endblock %}</h1>
     </div>
     <div class="container-intro-content">
-        {% block introcontent %}{% endblock %}
-    </div>
-    <div class="float-navigations">
-
+        <h2>Center for Advanced Data Science with GenAI, Data Analytics, DevOps, Software, Networking, and Cloud Education</h2>
+        <h3>One of India's best Training destinations for Advanced Data Science with GenAI, Data Analytics, Software, Networking, DevOps, and Cloud Computing courses with 18 years of Industrial experience. Over 1,000 students find their dream careers each year, and we have assisted more than 15,000 students so far.</h3>
     </div>
     <section class="pages">
         {% block content %}{% endblock %}
