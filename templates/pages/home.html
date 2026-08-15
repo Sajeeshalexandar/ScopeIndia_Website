@@ -1,5 +1,90 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block tittle %}Home{% endblock %}
 {% block introheading %}Your carrier partner!{% endblock %}
-{% block introcontent %}{% endblock %}
-{% block content %}home{% endblock %}
+
+<!-- ?Home section-->
+{% block content %}
+
+<section class="certification-section">
+
+    <h4>Get Globally Certified from SCOPE INDIA</h4>
+
+    <div class="image-grid-home">
+
+        <div class="company-logo">
+            <img src="{% static 'images/microsoft.png' %}" alt="Microsoft">
+        </div>
+
+        <div class="company-logo">
+            <img src="{% static 'images/ibm.png' %}" alt="IBM">
+        </div>
+
+        <div class="company-logo">
+            <img src="{% static 'images/google.png' %}" alt="Google">
+        </div>
+
+        <div class="company-logo">
+            <img src="{% static 'images/amazon.png' %}" alt="Amazon">
+        </div>
+
+        <div class="company-logo">
+            <img src="{% static 'images/redhat.png' %}" alt="Red Hat">
+        </div>
+
+        <div class="company-logo">
+            <img src="{% static 'images/istqb.png' %}" alt="ISTQB">
+        </div>
+
+        <div class="company-logo">
+            <img src="{% static 'images/cisco.png' %}" alt="Cisco">
+        </div>
+
+        <div class="company-logo">
+            <img src="{% static 'images/github.png' %}" alt="GitHub">
+        </div>
+
+    </div>
+
+</section>
+<section class="home-abouts">
+    <div class="container">
+        <h2 class="h2">Dreaming about a career in IT</h2>
+        <div class="main-box row">
+            <div class="main-courses col container">
+                <p>Spearheaded by the working professionals of Suffix E Solutions in flexible learning mode, we provide quality training with 100% placement support.</p>
+                <p>We provide comprehensive courses in:</p>
+                <div class="row row-cols-2">
+                    <div class="col"><span>#</span><a href="">Advanced Data Science & AI</a></div>
+                    <div class="col"><span>#</span><a href="">Advanced Data Science & AI</a></div>
+                    <div class="col"><span>#</span><a href="">Advanced Data Science & AI</a></div>
+                    <div class="col"><span>#</span><a href="">Advanced Data Science & AI</a></div>
+                    <div class="col"><span>#</span><a href="">Advanced Data Science & AI</a></div>
+                    <div class="col"><span>#</span><a href="">Advanced Data Science & AI</a></div>
+                </div>
+            </div>
+            <div class="main-features col container">
+                <div class="row row-cols-2">
+                    <box1 class="col">
+                        <h3>Classes</h3>
+                        <p>Learn Anywhere, Anytime - Online & in-Person Classes Available!</p>
+                    </box1>
+                    <box2 class="col">
+                        <h3>Classes</h3>
+                        <p>Learn Anywhere, Anytime - Online & in-Person Classes Available!</p>
+                    </box2>
+                    <box3 class="col">
+                        <h3>Classes</h3>
+                        <p>Learn Anywhere, Anytime - Online & in-Person Classes Available!</p>
+                    </box3>
+                    <box4 class="col">
+                        <h3>Classes</h3>
+                        <p>Learn Anywhere, Anytime - Online & in-Person Classes Available!</p>
+                    </box4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

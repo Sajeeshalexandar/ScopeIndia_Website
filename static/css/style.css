@@ -6,6 +6,7 @@
 body{
     overflow-x: scroll;
     min-height: 100vh;
+    scroll-behavior: smooth;
 }
 /* ? Fonts */
 
@@ -118,6 +119,7 @@ body{
     text-align: center;border-bottom: #E0CF90 1px solid;
 }
 .container-intro-heading h1{
+    
     color: #EEAF10;
     font-size: 35px;
     font-family: 'Viga',sans-serif;
@@ -125,7 +127,7 @@ body{
     font-weight: 400;
 }
 .container-intro-content{
-    background-color: #FCFCFC;
+    background: linear-gradient(45deg, #e2e2e2, #fff);
     text-align: center;
 }
 .container-intro-content h2{
@@ -133,18 +135,61 @@ body{
     color: #162A7C;
     font-weight: 400;
     font-size: 25.2px;
-    padding: 0 10px;
-    margin: 15px 0px 10px;
+    padding: 10px 0px 0px;
+    margin: 0px 0px 10px;
 
 }
 .container-intro-content h3{
-    color: #153CA8;
-   
+    color: #0b27a8;
     padding: 0 15px 15px 15px;
     text-align: justify;
     font-size: 16.6px;
     font-weight: 100;
+    margin: 0;
     font-family: 'Viga',sans-serif;
+}
+/* ?base certification company logos included in the home section */
+
+.certification-section {
+    border-top: 5px solid #04145f;
+    width: 100%;
+     background: linear-gradient(45deg, #e2e2e2, #fff);
+    padding: 15px 0 20px;
+}
+
+.certification-section h4 {
+    text-align: center;
+    padding: 8px 0;
+    font-weight: 400;
+    font-family: 'Viga', sans-serif;
+    font-size: 19px;
+    color: #04145F;
+}
+.image-grid-home {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    width: 100%;
+}
+.company-logo {
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.company-logo img {
+    max-width: 50%;
+    max-height: 35px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+/* ?Home section content starts here */
+.home-abouts{
+    background: linear-gradient(90deg, rgb(11 23 81) 0%, rgb(10 29 121) 31%);
+    color: white;
 }
 
 
