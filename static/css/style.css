@@ -259,5 +259,27 @@ body{
 }
 .home-placements div h2{
     color: #0E2B7E;
+    text-align: center;
+    padding: 10px;
+}
+.highlights{
+    padding: 20px 15px;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 30px;
+   
+}
+.highlights div{
+    text-align: center;
+    min-width: 350px;
+    box-shadow: 0px -1px 10px rgba(128, 128, 128, 0.336);
+    padding: 10px 30px;
+    border-radius: 15px;
+}
+.highlights div span{
+    color: #FECB00;
+    
 }
 
