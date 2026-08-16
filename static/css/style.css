@@ -54,7 +54,7 @@ body{
     align-items: center;
     position: absolute;
     gap: 1rem;
-    bottom: 1.5rem;
+    bottom: .5rem;
     right: 4.5rem;
 }
 .navigation-links li{
@@ -189,7 +189,75 @@ body{
 /* ?Home section content starts here */
 .home-abouts{
     background: linear-gradient(90deg, rgb(11 23 81) 0%, rgb(10 29 121) 31%);
-    color: white;
+    font-family: 'Viga',sans-serif;
+    padding: 2rem 0;
+    
+} 
+.home-abouts div h2{
+    color: #FECB00;
+    display: block;
+    font-size: 35px;
+    padding: 20px 0;
+    text-align: start;
+    
+}
+.main-courses  p{
+    font-size: 18px;
+    color: #FFFFFF;
+    margin: 0 0 26px;
+}
+.course-list-home div{
+    padding: .5rem;
+}
+.course-list-home div span{
+    margin-right: 10px;
+}
+.course-list-home div span img{
+    width: 20px;
+}
+.course-list-home div a{
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: 1s ease;
+}
+.course-list-home div a:hover{
+    border-bottom: 2px solid #FFFFFF;
+
+}
+.home-features{
+      display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    
+    
 }
 
+.main-features div div{
+    border: 2px solid;
+    border-radius: 30px 0 30px 0;
+    padding: .5rem 2rem;
+    background: rgb(11, 30, 125);
+    border-color: rgb(241, 173, 14);
+    transition: .3s ease;
+ 
+}
+.main-features div div:hover{
+    transform: scale(1.05);
+}
+.main-features div h3{
+    color: #FECB00;
+    margin: 10px 0;
+}
+.main-features div p{
+    color: #FFFFFF;
+}
+/* ? Home placement highlights */
+
+.home-placements{
+    font-family: 'Viga',sans-serif;
+
+}
+.home-placements div h2{
+    color: #0E2B7E;
+}
 
