@@ -1,13 +1,15 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     overflow-x: scroll;
     min-height: 100vh;
     scroll-behavior: smooth;
 }
+
 /* ? Fonts */
 
 @font-face {
@@ -29,18 +31,20 @@ body{
     width: 100%;
     height: fit-content;
     scroll-snap-align: start;
-    background:linear-gradient(45deg,#050B2D,#081E60) ;
+    background: linear-gradient(45deg, #050B2D, #081E60);
     position: relative;
     border-bottom: #ECB264 1px solid;
 }
-.navigation-container .navigation-background-design1{
+
+.navigation-container .navigation-background-design1 {
     width: 100%;
     height: 11rem;
     background-image: url("../images/scopeindia-bkg.png");
     background-repeat: repeat-x;
-    background-size:auto;
+    background-size: auto;
 }
-.navigation-content .logo a img{
+
+.navigation-content .logo a img {
     width: 180px;
     height: auto;
     position: absolute;
@@ -48,7 +52,8 @@ body{
     bottom: 1rem;
 
 }
-.navigation-links{
+
+.navigation-links {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,19 +62,22 @@ body{
     bottom: .5rem;
     right: 4.5rem;
 }
-.navigation-links li{
+
+.navigation-links li {
     list-style: none;
-    
+
 }
-.navigation-links li a:hover{
+
+.navigation-links li a:hover {
     list-style: none;
     background-color: rgba(255, 255, 255, 0.136);
     border: 1px solid white;
     border-radius: 5px;
     color: #ECB264;
-    
+
 }
-.navigation-links li a{
+
+.navigation-links li a {
     text-decoration: none;
     padding: 5px;
     color: #D6D6D6;
@@ -77,27 +85,31 @@ body{
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 600;
-    font-family: 'Poppins',sans-serif;
+    font-family: 'Poppins', sans-serif;
 
 }
-.google-rating{
+
+.google-rating {
     position: absolute;
     right: 4rem;
     top: 1rem;
 }
-.google-rating a img{
+
+.google-rating a img {
     width: 200px;
     height: auto;
 }
-.regis-btn{
+
+.regis-btn {
     background-color: #FB3E5A;
     color: white !important;
     border-radius: 5px;
 
 }
+
 /* ? floating social links */
 
-.floating-links{
+.floating-links {
     position: absolute;
     right: .3rem;
     top: .3rem;
@@ -107,31 +119,36 @@ body{
     flex-direction: column;
     gap: .2rem;
 }
-.floating-links a img{
+
+.floating-links a img {
     width: 45px;
 }
 
 /* ? heading container base */
 
-.container-intro-heading{
+.container-intro-heading {
     width: 100%;
-    background:linear-gradient(45deg,#071E5E,#030E37);
-    text-align: center;border-bottom: #E0CF90 1px solid;
+    background: linear-gradient(45deg, #071E5E, #030E37);
+    text-align: center;
+    border-bottom: #E0CF90 1px solid;
 }
-.container-intro-heading h1{
-    
+
+.container-intro-heading h1 {
+
     color: #EEAF10;
     font-size: 35px;
-    font-family: 'Viga',sans-serif;
+    font-family: 'Viga', sans-serif;
     padding: 7px 15px;
     font-weight: 400;
 }
-.container-intro-content{
+
+.container-intro-content {
     background: linear-gradient(45deg, #e2e2e2, #fff);
     text-align: center;
 }
-.container-intro-content h2{
-    font-family: 'Viga',sans-serif;
+
+.container-intro-content h2 {
+    font-family: 'Viga', sans-serif;
     color: #162A7C;
     font-weight: 400;
     font-size: 25.2px;
@@ -139,21 +156,23 @@ body{
     margin: 0px 0px 10px;
 
 }
-.container-intro-content h3{
+
+.container-intro-content h3 {
     color: #0b27a8;
     padding: 0 15px 15px 15px;
     text-align: justify;
     font-size: 16.6px;
     font-weight: 100;
     margin: 0;
-    font-family: 'Viga',sans-serif;
+    font-family: 'Viga', sans-serif;
 }
+
 /* ?base certification company logos included in the home section */
 
 .certification-section {
     border-top: 5px solid #04145f;
     width: 100%;
-     background: linear-gradient(45deg, #e2e2e2, #fff);
+    background: linear-gradient(45deg, #e2e2e2, #fff);
     padding: 15px 0 20px;
 }
 
@@ -165,12 +184,14 @@ body{
     font-size: 19px;
     color: #04145F;
 }
+
 .image-grid-home {
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     width: 100%;
 }
+
 .company-logo {
     height: 45px;
     display: flex;
@@ -186,100 +207,190 @@ body{
     height: auto;
     object-fit: contain;
 }
+
 /* ?Home section content starts here */
-.home-abouts{
+.home-abouts {
     background: linear-gradient(90deg, rgb(11 23 81) 0%, rgb(10 29 121) 31%);
-    font-family: 'Viga',sans-serif;
+    font-family: 'Viga', sans-serif;
     padding: 2rem 0;
-    
-} 
-.home-abouts div h2{
+
+}
+
+.home-abouts div h2 {
     color: #FECB00;
     display: block;
     font-size: 35px;
     padding: 20px 0;
     text-align: start;
-    
+
 }
-.main-courses  p{
+
+.main-courses p {
     font-size: 18px;
     color: #FFFFFF;
     margin: 0 0 26px;
 }
-.course-list-home div{
+
+.course-list-home div {
     padding: .5rem;
 }
-.course-list-home div span{
+
+.course-list-home div span {
     margin-right: 10px;
 }
-.course-list-home div span img{
+
+.course-list-home div span img {
     width: 20px;
 }
-.course-list-home div a{
+
+.course-list-home div a {
     color: #FFFFFF;
     text-decoration: none;
     transition: 1s ease;
 }
-.course-list-home div a:hover{
+
+.course-list-home div a:hover {
     border-bottom: 2px solid #FFFFFF;
 
 }
-.home-features{
-      display: grid;
+
+.home-features {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    
-    
+
+
 }
 
-.main-features div div{
+.main-features div div {
     border: 2px solid;
     border-radius: 30px 0 30px 0;
     padding: .5rem 2rem;
     background: rgb(11, 30, 125);
     border-color: rgb(241, 173, 14);
     transition: .3s ease;
- 
+
 }
-.main-features div div:hover{
+
+.main-features div div:hover {
     transform: scale(1.05);
 }
-.main-features div h3{
+
+.main-features div h3 {
     color: #FECB00;
     margin: 10px 0;
 }
-.main-features div p{
+
+.main-features div p {
     color: #FFFFFF;
 }
+
 /* ? Home placement highlights */
 
-.home-placements{
-    font-family: 'Viga',sans-serif;
+.home-placements {
+    font-family: 'Viga', sans-serif;
 
 }
-.home-placements div h2{
+
+.home-placements div h2 {
     color: #0E2B7E;
     text-align: center;
     padding: 10px;
 }
-.highlights{
+
+.highlights {
     padding: 20px 15px;
     display: flex;
     width: 100%;
     justify-content: space-evenly;
     align-items: center;
     margin-bottom: 30px;
-   
+
 }
-.highlights div{
-    text-align: center;
+
+.highlights div {
+    text-align: start;
     min-width: 350px;
     box-shadow: 0px -1px 10px rgba(128, 128, 128, 0.336);
     padding: 10px 30px;
+    transition: .3s ease;
     border-radius: 15px;
 }
-.highlights div span{
-    color: #FECB00;
-    
+
+.highlights div:hover {
+    transform: scale(1.05);
 }
 
+.highlights div span {
+    color: #FECB00;
+
+}
+
+.highlights div p {
+    color: #0B27A8;
+    font-size: 18px;
+}
+
+/* ?home ai section */
+.home-ai {
+    background-color: #0B1B57;
+    font-family: 'Viga', sans-serif;
+   
+}
+
+.home-ai div h2 {
+    text-align: center;
+    background: linear-gradient(0deg, rgb(187 151 39) 29%, rgb(249 245 146) 50%, rgb(215 167 41) 76%);
+    background-clip: text;
+
+    padding: 45px 10px 20px;
+    font-size: 45px;
+    font-weight: bold;
+    -webkit-text-fill-color: transparent;
+}
+
+.home-ai div h3 {
+    color: #0b1e7d;
+    background: linear-gradient(0deg, rgb(187 151 39) 3%, rgb(249 245 146) 56%, rgb(215 167 41) 100%);
+    display: inline-block;
+    width: auto;
+    font-size: 23px;
+    margin-bottom: 22px;
+    
+    padding: 10px 20px;
+    border-radius: 20px 2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.ai-containers{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    position: relative;
+}
+.ai-containers .left .robo{
+    position: absolute;
+    width: 25vw;
+    top: 15px;
+    left: 0;
+    animation: robo-motion 5s ease-in-out infinite;
+}
+@keyframes robo-motion {
+    0%{
+        transform: translateX(8px);
+    }
+    25%{
+        transform: translateX(-8px)
+    }
+    50%{
+        transform: translateX(8px)
+    }
+    75%{
+        transform: translateX(-8px)
+    }
+    100%{
+        transform: translateX(8px)
+    }
+
+}
+.ai-containers .left .ai{
+    width: 50vw;
+}
