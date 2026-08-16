@@ -20,14 +20,14 @@
                     </a>
                 </div>
                 <ul class="navigation-links">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Courses</a></li>
-                    <li><a href="" class="regis-btn">Registration</a></li>
-                    <li><a href="">Placements</a></li>
-                    <li><a href="">About us</a></li>
-                    <li><a href="">FAQ</a></li>
-                    <li><a href="">Reviews</a></li>
-                    <li><a href="">contact us</a></li>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'course' %}">Courses</a></li>
+                    <li><a href="{% url 'registration' %}" class="regis-btn">Registration</a></li>
+                    <li><a href="{% url 'placements' %}">Placements</a></li>
+                    <li><a href="{% url 'about' %}">About us</a></li>
+                    <li><a href="{% url 'faq' %}">FAQ</a></li>
+                    <li><a href="{% url 'reviews' %}">Reviews</a></li>
+                    <li><a href="{% url 'contact' %}">contact us</a></li>
 
                 </ul>
                 <div class="google-rating">
