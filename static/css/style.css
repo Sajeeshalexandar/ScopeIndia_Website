@@ -333,8 +333,10 @@ body {
 
 /* ?home ai section */
 .home-ai {
-    background-color: #0B1B57;
+    background:linear-gradient(180deg,#081A55,#08297B);
     font-family: 'Viga', sans-serif;
+    text-align: center;
+   
    
 }
 
@@ -348,7 +350,7 @@ body {
     font-weight: bold;
     -webkit-text-fill-color: transparent;
 }
-
+    
 .home-ai div h3 {
     color: #0b1e7d;
     background: linear-gradient(0deg, rgb(187 151 39) 3%, rgb(249 245 146) 56%, rgb(215 167 41) 100%);
@@ -360,6 +362,15 @@ body {
     padding: 10px 20px;
     border-radius: 20px 2px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.home-ai div  a{
+    text-decoration: none;
+}
+.home-ai div  p{
+    color: #FFFFFF;
+    padding: 40px 10px;
+    text-align: center;
+    font-size: 20px;
 }
 .ai-containers{
     display: grid;
@@ -393,4 +404,32 @@ body {
 }
 .ai-containers .left .ai{
     width: 50vw;
+}
+.ai-containers .right{
+    border: 2px solid #C0A24F;
+    border-radius: 30px;
+    padding: 60px 10px 0px 10px;
+    width: fit-content;
+    
+    margin-left: 30px;
+   
+}
+.ai-containers .right ul{
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(2,1fr);
+    padding-right: 40px;
+    text-align: start;
+}
+.ai-containers .right ul  li{
+
+    list-style-type: none;
+}
+.ai-containers .right ul  li span{
+    color: #FFFFFF;
+    font-family: 25px;
+}
+.ai-containers .right ul li img{
+    margin-right: 10px;
+    width: 25px;
 }
