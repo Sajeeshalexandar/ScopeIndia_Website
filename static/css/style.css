@@ -433,3 +433,138 @@ body {
     margin-right: 10px;
     width: 25px;
 }
+/* ?home fulstack section */
+
+.home-fullstack{
+    padding: 1rem 2rem;
+    font-family: 'Viga',sans-serif;
+
+}
+.home-fullstack div h2{
+    color: #0B1E7D;
+    font-weight: bold;
+    padding: 2rem;
+}
+.home-fullstack div a{
+    text-decoration: none;
+}
+.fullstack-container{
+    padding: 1.5rem 2rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2,1fr);
+}
+.fullstack-container .right ul li{
+    list-style-type: none;
+    position: relative;
+    width: 100%;
+
+}
+
+.fullstack-container .right ul li span{
+    background-color: #E3C25E;
+    border-radius: 50%;
+    padding: 5px;
+    position: absolute;
+    text-align: center;
+    color: black;
+    left: 0;
+    top: 0;
+    width: 35px;
+}
+.fullstack-container .right ul li h5{
+    display: inline-block;
+    color: black;
+    margin-left: 50px;
+}
+.fullstack-container .right h4{
+    color: black;
+    padding: 5px  0 15px 10px;
+}
+.fullstack-container .right ul li p{
+    display: block;
+    color: rgb(84, 84, 84);
+    margin-left: 50px;
+}
+.fullstack-container .right{
+    box-shadow: 0 1px 10px rgba(128, 128, 128, 0.412);
+    padding: 2rem 1rem;
+    border-radius: 10px;
+}
+.fullstack-container .left img{
+    width: 700px;
+    border-radius: 10px;
+}
+/* ?home testing */
+.home-testing{
+    padding: 4rem 1rem 1rem;
+    font-family: 'Viga',sans-serif;
+    background: linear-gradient(90deg, rgb(11 23 81) 0%, rgb(10 29 121) 31%);
+}
+.home-testing div a{
+    text-decoration: none;
+}
+.home-testing div a .testing-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+    padding: 10px 5px;
+}
+.home-testing div a h2{
+    color: #FFFFFF;
+    display: block;
+    font-size: 30px;
+    text-align: center;
+    padding: 10px 0 30px;
+}
+.home-testing div a h2 span{
+    font-size: 50px;
+    color: #EEC705;
+}
+.home-testing div a .testing-container .left img{
+    width: 700px;
+
+}
+.home-testing div a .testing-container .right h4{
+    /* color: #0B1E7D;
+    background: #FECB00;
+    font-size: 23PX;
+    border-radius: 10px 5px 10px 5px;
+    padding: 1rem; */
+        color: #0b1e7d;
+    background-color: #fecb00;
+    display: inline-block;
+    font-size: 23px;
+    margin-bottom: 22px;
+    padding: 10px;
+    border-radius: 15px 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.home-testing div a .testing-container .right ul{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-top: 2rem;
+    gap: 2.5rem;
+
+}
+.home-testing div a .testing-container .right ul li{
+    list-style-type: none;
+    text-align: start;
+}
+.home-testing div a .testing-container .right ul li img{
+    width: 20px;
+    margin-right: 10px;
+}
+.home-testing div a .testing-container .right ul li span{
+    font-size: 19px;
+    color:#FFFFFF;
+}
+.home-testing div a p{
+    font-size: 22px;
+    color: #FFFFFF;
+    text-align: center;
+} 
+.home-testing div a p span{
+    font-size: 50px;
+    color: #EEC705;
+}
