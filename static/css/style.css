@@ -572,4 +572,60 @@ body {
 
 .home-devops{
     font-family: 'Viga',sans-serif;
+    padding: 3rem 2rem;
 }
+.home-devops div h2{
+    text-align: center;
+    color: #0B1E7D;
+    margin-bottom: 2rem;
+    font-size: 35px;
+    font-weight: bold;
+}
+.home-devops div .devops{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1.5rem;
+    
+}
+.home-devops div .devops .right{
+    border-radius: 10px;
+    background-color: #dededec7;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.home-devops div .devops .right h4{
+    padding: 1rem;
+    color: #FFFFFF;
+    margin: 3rem 0 1rem;
+    
+    display: inline-block;
+    border-radius: 0 50px 50px 0;
+    background: linear-gradient(90deg, rgb(217 18 111 / 45%) 0%, rgb(217 18 111) 10%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.home-devops div .devops .right ul{
+    display: grid;
+    text-align: start;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1.5rem;
+    margin-top: .5rem;
+}
+.home-devops div .devops .right ul li{
+    list-style: none;
+  
+}
+.home-devops div .devops .right ul li span{
+    color: #0B1E7D;
+    margin-left: 1rem;
+}
+.home-devops div .devops .right ul li img{
+    width: 20px;
+    color: #DA3C70;
+}
+.home-devops div .devops .left{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.home-devops div .devops .left img{
+    width: 100%;
+}
+
+
