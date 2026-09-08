@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>{{ course.course_name }} | Admin Panel</title>
+
+       <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <script src="/static/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+
+<body class="bg-light">
+
+
+<div class="container-fluid py-4">
+
+
+    <!-- HEADER -->
+
+    <div class="d-flex justify-content-between
+                align-items-center mb-4">
+
+        <div>
+
+            <h3 class="fw-bold mb-1">
+
+                {{ course.course_name }}
+
+            </h3>
+
+            <p class="text-muted mb-0">
+
+                Course Details
+
+            </p>
+
+        </div>
+
+
+        <div class="d-flex gap-2">
+
+            <a href="{% url 'course_update' course.id %}"
+               class="btn btn-warning">
+
+                Edit Course
+
+            </a>
+
+
+            <a href="{% url 'course_list' %}"
+               class="btn btn-outline-secondary">
+
+                Back
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- COURSE INFORMATION -->
+
+    <div class="card border-0 shadow-sm mb-4">
+
+        <div class="card-header bg-white py-3">
+
+            <h5 class="fw-semibold mb-0">
+
+                Course Information
+
+            </h5>
+
+        </div>
+
+
+        <div class="card-body">
+
+            <div class="row">
+
+
+                <div class="col-md-6 mb-4">
+
+                    <small class="text-muted">
+                        Course Name
+                    </small>
+
+                    <h5 class="mt-1">
+
+                        {{ course.course_name }}
+
+                    </h5>
+
+                </div>
+
+
+
+                <div class="col-md-6 mb-4">
+
+                    <small class="text-muted">
+                        Duration
+                    </small>
+
+                    <h5 class="mt-1">
+
+                        {{ course.course_duration }}
+
+                    </h5>
+
+                </div>
+
+
+
+                <div class="col-12">
+
+                    <small class="text-muted">
+                        Description
+                    </small>
+
+                    <p class="mt-2 mb-0">
+
+                        {{ course.course_description }}
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- SYLLABUS -->
+
+    <div class="card border-0 shadow-sm">
+
+        <div class="card-header bg-white py-3">
+
+            <div class="d-flex justify-content-between
+                        align-items-center">
+
+                <h5 class="fw-semibold mb-0">
+
+                    Course Syllabus
+
+                </h5>
+
+
+                <span class="badge bg-primary">
+
+                    {{ syllabus.count }} Topics
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="card-body">
+
+            <div class="row">
+
+
+                {% for item in syllabus %}
+
+                <div class="col-md-6 col-lg-4 mb-3">
+
+                    <div class="border rounded p-3 h-100">
+
+
+                        <div class="d-flex align-items-center">
+
+
+                            <div class="bg-primary text-white
+                                        rounded-circle
+                                        d-flex
+                                        align-items-center
+                                        justify-content-center
+                                        me-3"
+                                 style="width:40px;height:40px;">
+
+                                {{ forloop.counter }}
+
+                            </div>
+
+
+                            <div>
+
+                                <h6 class="fw-semibold mb-1">
+
+                                    {{ item.syllabus_name }}
+
+                                </h6>
+
+                                <small class="text-muted">
+
+                                    Syllabus Topic
+
+                                </small>
+
+                            </div>
+
+
+                        </div>
+
+
+                        {% if item.syllabus_description %}
+
+                        <p class="text-muted small mt-3 mb-0">
+
+                            {{ item.syllabus_description }}
+
+                        </p>
+
+                        {% endif %}
+
+
+                    </div>
+
+                </div>
+
+
+                {% empty %}
+
+                <div class="col-12 text-center py-5">
+
+                    <p class="text-muted">
+
+                        No syllabus topics added yet.
+
+                    </p>
+
+                </div>
+
+                {% endfor %}
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+</body>
+
+</html>

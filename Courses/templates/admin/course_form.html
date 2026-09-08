@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>{{ title }} | Admin Panel</title>
+
+       <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <script src="/static/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+
+<body class="bg-light">
+
+
+<div class="container-fluid py-4">
+
+
+    <!-- HEADER -->
+
+    <div class="mb-4">
+
+        <h3 class="fw-bold mb-1">
+
+            {{ title }}
+
+        </h3>
+
+        <p class="text-muted mb-0">
+
+            Add or update course information
+
+        </p>
+
+    </div>
+
+
+
+    <!-- FORM -->
+
+    <div class="card border-0 shadow-sm">
+
+        <div class="card-header bg-white py-3">
+
+            <h5 class="fw-semibold mb-0">
+
+                Course Information
+
+            </h5>
+
+        </div>
+
+
+        <div class="card-body">
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+
+                <!-- COURSE NAME -->
+
+                <div class="mb-4">
+
+                    <label class="form-label fw-semibold">
+
+                        Course Name
+
+                    </label>
+
+                    {{ form.course_name }}
+
+                    {% if form.course_name.errors %}
+
+                    <div class="text-danger small mt-1">
+
+                        {{ form.course_name.errors }}
+
+                    </div>
+
+                    {% endif %}
+
+                </div>
+
+
+
+                <!-- DURATION -->
+
+                <div class="mb-4">
+
+                    <label class="form-label fw-semibold">
+
+                        Course Duration
+
+                    </label>
+
+                    {{ form.course_duration }}
+
+                    {% if form.course_duration.errors %}
+
+                    <div class="text-danger small mt-1">
+
+                        {{ form.course_duration.errors }}
+
+                    </div>
+
+                    {% endif %}
+
+                </div>
+
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="mb-4">
+
+                    <label class="form-label fw-semibold">
+
+                        Course Description
+
+                    </label>
+
+                    {{ form.course_description }}
+
+                    {% if form.course_description.errors %}
+
+                    <div class="text-danger small mt-1">
+
+                        {{ form.course_description.errors }}
+
+                    </div>
+
+                    {% endif %}
+
+                </div>
+
+
+
+                <!-- SYLLABUS -->
+
+                <div class="mb-4">
+
+                    <label class="form-label fw-semibold">
+
+                        Course Syllabus
+
+                    </label>
+
+
+                    <div class="border rounded p-3 bg-light">
+
+                        {{ form.course_syllabus }}
+
+                    </div>
+
+
+                    {% if form.course_syllabus.errors %}
+
+                    <div class="text-danger small mt-1">
+
+                        {{ form.course_syllabus.errors }}
+
+                    </div>
+
+                    {% endif %}
+
+                </div>
+
+
+
+                <!-- BUTTONS -->
+
+                <div class="d-flex gap-2">
+
+                    <button type="submit"
+                            class="btn btn-primary px-4">
+
+                        Save Course
+
+                    </button>
+
+
+                    <a href="{% url 'course_list' %}"
+                       class="btn btn-outline-secondary px-4">
+
+                        Cancel
+
+                    </a>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+</body>
+
+</html>
