@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block tittle %}Registration{% endblock %}
+{% block introheading %}Your carrier partner!{% endblock %}
+
+
+{% block content %}
+    {% if  courses %}
+    {% for course in courses %}
+    <div>
+        <a href="{% url 'courseDetails' course.id %}">
+            {{ course.course_name }}
+        </a>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>No courses Currently available</p>
+    {% endif %}
+
+
+{% endblock %}

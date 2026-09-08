@@ -18,4 +18,9 @@ urlpatterns = [
     path("syllabus/add/", views.syllabus_create, name="syllabus_create"),
     path("syllabus/<int:syllabus_id>/edit/",views.syllabus_update,name="syllabus_update"),
     path("syllabus/<int:syllabus_id>/delete/",views.syllabus_delete,name="syllabus_delete"),
+
+
+    path('courseSection/',views.Course_Section,name='course-section'),
+    path('courseDetails/<int:c_id>/',views.Course_Details,name='courseDetails'),
+
 ]

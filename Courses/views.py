@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,HttpResponse
 
 # Create your views here.
 
@@ -169,3 +169,15 @@ def syllabus_delete(request, syllabus_id):
         return redirect("syllabus_list")
 
     return render(request, "admin/syllabus_delete.html", {"syllabus": syllabus})
+
+
+def Course_Section(request):
+    courses = CourseList.objects.all()
+    print(courses)
+    return render(request,"userview/Course_section.html",{'courses':courses})
+def Course_Details(request,c_id):
+    course = get_object_or_404(CourseList,id = c_id)
+    syllabus = course.course_syllabus.all()
+
+    print(course,syllabus)
+    return render(request,'userview/Course_details.html',{'course':course,'syllabus':syllabus})
