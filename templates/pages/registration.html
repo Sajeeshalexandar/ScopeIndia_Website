@@ -3,9 +3,177 @@
 
 {% block tittle %}Registration{% endblock %}
 {% block introheading %}Your carrier partner!{% endblock %}
-<!-- ?About section -->
+
 
 {% block content %}
+
+
+<div class="registration-page">
+    <div class="page-header">
+        <h1>Student Registration</h1>
+        <p>Register for your preferred course and training program</p>
+    </div>
+    <form method="POST" class="registration-form">
+        {% csrf_token %}
+        {% if form.non_field_errors %}
+        <div class="error-box">
+            {% for error in form.non_field_errors %}
+            <p>{{ error }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <div class="form-grid">
+            <div class="form-card">
+                <label>
+                    Full Name
+                    <span class="required">*</span>
+                </label>
+                {{ form.full_name }}
+                {% for error in form.full_name.errors %}
+                <small class="error">{{ error }}</small>
+                {% endfor %}
+            </div>
+            <div class="form-card">
+                <label>
+                    Date of Birth
+                    <span class="required">*</span>
+                </label>
+                {{ form.date_of_birth }}
+                {% for error in form.date_of_birth.errors %}
+                <small class="error">{{ error }}</small>
+                {% endfor %}
+            </div>
+            <div class="form-card">
+                <label>
+                    Gender
+                    <span class="required">*</span>
+                </label>
+                <div class="radio-group">
+                    {{ form.gender }}
+                </div>
+                {% for error in form.gender.errors %}
+                <small class="error">{{ error }}</small>
+                {% endfor %}
+            </div>
+            <div class="form-card">
+                <label>Educational Qualification</label>
+                {{ form.educational_qualification }}
+                {% for error in form.educational_qualification.errors %}
+                <small class="error">{{ error }}</small>
+                {% endfor %}
+            </div>
+            <div class="form-card">
+                <label>
+                    Mobile Number
+                    <span class="required">*</span>
+                </label>
+                {{ form.mobile }}
+                {% for error in form.mobile.errors %}
+                <small class="error">{{ error }}</small>
+                {% endfor %}
+            </div>
+            <div class="form-card">
+                <label>
+                    Email
+                    <span class="required">*</span>
+                </label>
+                {{ form.email }}
+                {% for error in form.email.errors %}
+                <small class="error">{{ error }}</small>
+                {% endfor %}
+            </div>
+            <div class="form-card">
+                <label>Guardian's Name</label>
+                {{ form.guardian_name }}
+                {% for error in form.guardian_name.errors %}
+                <small class="error">{{ error }}</small>
+                {% endfor %}
+            </div>
+            <div class="form-card">
+                <label>Guardian's Occupation</label>
+                {{ form.guardian_occupation }}
+                {% for error in form.guardian_occupation.errors %}
+                <small class="error">{{ error }}</small>
+                {% endfor %}
+            </div>
+            <div class="form-card">
+                <label>Guardian Mobile</label>
+                {{ form.guardian_mobile }}
+                {% for error in form.guardian_mobile.errors %}
+                <small class="error">{{ error }}</small>
+                {% endfor %}
+            </div>
+            <div class="form-card">
+                <label>
+                    Choose Your Course
+                    <span class="required">*</span>
+                </label>
+                {{ form.course }}
+                {% for error in form.course.errors %}
+                <small class="error">{{ error }}</small>
+                {% endfor %}
+            </div>
+            <div class="form-card">
+                <label>
+                    Training Mode
+                    <span class="required">*</span>
+                </label>
+                <div class="radio-group">
+                    {{ form.training_mode }}
+                </div>
+                {% for error in form.training_mode.errors %}
+                <small class="error">{{ error }}</small>
+                {% endfor %}
+            </div>
+            <div class="form-card">
+                <label>
+                    SCOPE INDIA Location
+                    <span class="required">*</span>
+                </label>
+                <div class="radio-group location-group">
+                    {{ form.location }}
+                </div>
+                {% for error in form.location.errors %}
+                <small class="error">{{ error }}</small>
+                {% endfor %}
+            </div>
+            <div class="form-card timing-card">
+                <label>
+                    Preferred Training Timings
+                </label>
+                <div class="checkbox-group">
+                    {{ form.preferred_timings }}
+                </div>
+                {% for error in form.preferred_timings.errors %}
+                <small class="error">{{ error }}</small>
+                {% endfor %}
+            </div>
+            <div class="form-card">
+                <label>Address</label>
+                {{ form.address }}
+                {% for error in form.address.errors %}
+                <small class="error">{{ error }}</small>
+                {% endfor %}
+            </div>
+            <div class="form-card">
+                <label>Country</label>
+                {{ form.country }}
+                {% for error in form.country.errors %}
+                <small class="error">{{ error }}</small>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="button-area">
+            <button type="submit">
+                Compelete Registration
+            </button>
+        </div>
+
+    </form>
+
+</div>
+
+
 
 
 {% endblock %}

@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from .forms import StudentRegistrationForm
 
 # Create your views here.
 def registration(request):
-    return render(request,'pages/registration.html')
+    form = StudentRegistrationForm()
+    return render(request,'pages/registration.html',{'form':form})

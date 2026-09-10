@@ -1064,3 +1064,214 @@ body {
 .course-detials-container  .course-navigation-buttons .reg{
     background: linear-gradient(135deg, #e0f7ff, #87CEFA) !important;
 }
+
+/* ! Registration page */
+
+ .registration-page {
+        width: 100%;
+        padding: 1rem 2rem;
+        margin: 0 auto;
+        background-color: #280060;
+    }
+    .registration-page .page-header {
+        text-align: center;
+        margin-bottom: 35px;
+        font-family: 'Viga', sans-serif;
+
+    }
+
+
+    .registration-page .page-header h1 {
+        margin: 0 0 8px;
+        font-size: 32px;
+        color: #ECB15F;
+    }
+
+    .registration-page .page-header p {
+        margin: 0;
+        font-size: 15px;
+        opacity: 0.9;
+        color: #fff;
+    }
+    .registration-page .form-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+    }
+    .registration-page .form-card {
+        background: white;
+        border: 2px solid #d8c900;
+        border-radius: 12px;
+        padding: 20px;
+        min-height: 125px;
+    }
+    .registration-page .form-card>label {
+        display: block;
+        margin-bottom: 12px;
+        color: #3c008c;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .registration-page .required {
+        color: red;
+    }
+    .registration-page .form-control {
+        width: 100%;
+        height: 46px;
+        padding: 10px 13px;
+        border: 1px solid #d0c400;
+        border-radius: 8px;
+        background: #fafafa;
+        color: #222;
+        font-size: 15px;
+        outline: none;
+        transition: 0.2s;
+    }
+    .registration-page .form-control:focus {
+        border-color: #3c008c;
+        background: white;
+        box-shadow:0 0 0 2px rgba(60, 0, 140, 0.12);
+    }
+    .registration-page select.form-control {
+        cursor: pointer;
+    }
+    .registration-page input[type="date"] {
+        cursor: pointer;
+    }
+    .registration-page .radio-group ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+        margin: 5px 0 0;
+        padding: 0;
+        list-style: none;
+    }
+    .registration-page .radio-group li {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: #3c008c;
+        font-size: 14px;
+    }
+
+    .registration-page .radio-group label {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin: 0;
+        color: #3c008c;
+        font-size: 14px;
+        font-weight: normal;
+        cursor: pointer;
+    }
+    .registration-page .radio-group input[type="radio"] {
+        width: 18px;
+        height: 18px;
+        margin: 0;
+        accent-color: #3c008c;
+        cursor: pointer;
+    }
+    .registration-page .location-group ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .registration-page .checkbox-group ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .registration-page .checkbox-group li {
+        margin-bottom: 9px;
+    }
+    .registration-page .checkbox-group label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+        color: #3c008c;
+        font-size: 14px;
+        font-weight: normal;
+        cursor: pointer;
+    }
+    .registration-page .checkbox-group input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        margin: 0;
+        accent-color: #3c008c;
+        cursor: pointer;
+    }
+    .registration-page textarea.form-control {
+        height: 75px;
+        resize: vertical;
+    }
+    .registration-page .error {
+        display: block;
+        margin-top: 6px;
+        color: #dc2626;
+        font-size: 12px;
+    }
+    .registration-page .error-box {
+        margin-bottom: 20px;
+        padding: 12px 16px;
+        border-radius: 8px;
+        background: #ffe5e5;
+        color: #b00000;
+    }
+    .registration-page .error-box p {
+        margin: 3px 0;
+    }
+    .registration-page .button-area {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    .registration-page .button-area button {
+        min-width: 180px;
+        padding: 13px 6rem;
+        border: none;
+        border-radius: 8px;
+        background: #ffba5a;
+        color: black;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+    .registration-page .button-area button:hover {
+        background: #ffcf8c;
+        transform: translateY(-1px);
+    }
+    .registration-page .button-area button:active {
+        transform: translateY(0);
+    }
+    @media (max-width: 950px) {
+        .registration-page .form-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+    @media (max-width: 600px) {
+        .registration-page {
+            width: 100%;
+        }
+        .registration-page .page-header {
+            margin-bottom: 25px;
+        }
+        .registration-page .page-header h1 {
+            font-size: 25px;
+        }
+        .registration-page .form-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        .registration-page .form-card {
+            padding: 18px;
+        }
+        .registration-page .location-group ul {
+            grid-template-columns: 1fr;
+        }
+        .registration-page .button-area button {
+            width: 100%;
+        }
+    }
