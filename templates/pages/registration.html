@@ -13,6 +13,16 @@
         <h1>Student Registration</h1>
         <p>Register for your preferred course and training program</p>
     </div>
+    <div style="text-align: center;">
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+            {% endif %}
+
+            {% if success %}
+             <p style="color: rgb(19, 189, 0);">{{ success }}</p>
+            {% endif %}
+    </div>
+    
     <form method="POST" class="registration-form">
         {% csrf_token %}
         {% if form.non_field_errors %}
@@ -164,6 +174,7 @@
             </div>
         </div>
         <div class="button-area">
+            
             <button type="submit">
                 Compelete Registration
             </button>
