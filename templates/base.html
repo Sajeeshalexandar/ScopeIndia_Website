@@ -21,7 +21,7 @@
                 </div>
                 <ul class="navigation-links">
                     <li><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="{% url 'course_list' %}">Courses</a></li>
+                    <li><a href="{% url 'courseSection' %}">Courses</a></li>
                     <li><a href="{% url 'registration' %}" class="regis-btn">Registration</a></li>
                     <li><a href="{% url 'placements' %}">Placements</a></li>
                     <li><a href="{% url 'about' %}">About us</a></li>
@@ -57,7 +57,10 @@
 
 
     <div class="container-intro-heading">
+
         <h1>{% block introheading %}{% endblock %}</h1>
+
+        
     </div>
     <div class="container-intro-content">
         <h2>Center for Advanced Data Science with GenAI, Data Analytics, DevOps, Software, Networking, and Cloud

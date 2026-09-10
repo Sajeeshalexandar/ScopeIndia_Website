@@ -20,7 +20,7 @@ urlpatterns = [
     path("syllabus/<int:syllabus_id>/delete/",views.syllabus_delete,name="syllabus_delete"),
 
 
-    path('courseSection/',views.Course_Section,name='course-section'),
+    path('courseSection/',views.Course_Section,name='courseSection'),
     path('courseDetails/<int:c_id>/',views.Course_Details,name='courseDetails'),
 
 ]

@@ -770,7 +770,8 @@ body {
     border: solid 2px #e5c000;
     margin-bottom: 20px;
 }
-.mission-vision div .mision-box .mission .svg_div{
+
+.mission-vision div .mision-box .mission .svg_div {
     color: #fff;
     width: 50px;
     height: 50px;
@@ -781,18 +782,21 @@ body {
     background-color: #e0aa0c;
     margin-bottom: 20px;
 }
-.mission-vision div .mision-box .mission h4{
+
+.mission-vision div .mision-box .mission h4 {
     color: #fff;
     text-align: start;
     font-size: 25px;
-    margin:25px 0 25px 0; 
+    margin: 25px 0 25px 0;
 }
-.mission-vision div .mision-box .mission{
+
+.mission-vision div .mision-box .mission {
     color: #f4f4f4;
     font-size: 14px;
     margin-bottom: 20px;
 }
-.mission-vision div .mision-box .mission ul{
+
+.mission-vision div .mision-box .mission ul {
     display: block;
     list-style-type: none;
     margin-block-start: 1em;
@@ -801,10 +805,11 @@ body {
     padding: 0;
 }
 
-.mission-vision div .mision-box .mission ul li img{
+.mission-vision div .mision-box .mission ul li img {
     width: 20px;
     margin-right: 10px;
 }
+
 /* ? vision home */
 
 .mission-vision div .mision-box .vision {
@@ -814,7 +819,8 @@ body {
     border: solid 2px #e5c000;
     margin-bottom: 20px;
 }
-.mission-vision div .mision-box .vision .svg_div{
+
+.mission-vision div .mision-box .vision .svg_div {
     color: #fff;
     width: 50px;
     height: 50px;
@@ -825,18 +831,21 @@ body {
     background-color: #e0aa0c;
     margin-bottom: 20px;
 }
-.mission-vision div .mision-box .vision h4{
+
+.mission-vision div .mision-box .vision h4 {
     color: #fff;
     text-align: start;
     font-size: 25px;
-    margin:25px 0 25px 0; 
+    margin: 25px 0 25px 0;
 }
-.mission-vision div .mision-box .vision{
+
+.mission-vision div .mision-box .vision {
     color: #f4f4f4;
     font-size: 14px;
     margin-bottom: 20px;
 }
-.mission-vision div .mision-box .vision ul{
+
+.mission-vision div .mision-box .vision ul {
     display: block;
     list-style-type: none;
     margin-block-start: 1em;
@@ -845,34 +854,213 @@ body {
     padding: 0;
 }
 
-.mission-vision div .mision-box .vision ul li img{
+.mission-vision div .mision-box .vision ul li img {
     width: 20px;
     margin-right: 10px;
 }
+
 /* ? footer */
-#footer{
+#footer {
     border-top: 10px solid #e2c85e;
-        padding: 10px;
+    padding: 10px;
     text-align: center;
     color: white;
     min-height: 71px;
-    background:  linear-gradient(360deg,#0a1d7b,#0a1d7b,#2c51bf);
+    background: linear-gradient(360deg, #0a1d7b, #0a1d7b, #2c51bf);
     line-height: 21px;
 }
-#footer p{
-        display: block;
+
+#footer p {
+    display: block;
     margin: 14px;
 }
-#footer .footer_line p{
+
+#footer .footer_line p {
     font-size: 14px;
 }
-#footer p a{
-        text-decoration: none;
+
+#footer p a {
+    text-decoration: none;
     color: whitesmoke;
 
     padding: 5px 10px;
     margin: 0px 10px 10px 0px;
 }
-    
-    
 
+/* ================================================================================== */
+/* ================================================================================== */
+
+/*! Course section */
+
+.course-available-head {
+    font-size: 190%;
+    color: #04145f;
+    margin: 0;
+    text-align: center;
+    font-family: 'Viga', sans-serif;
+    font-weight: normal;
+    padding: 5px;
+    border-top: 5px solid #c7ac20;
+    background-color: #FBD769;
+
+}
+
+.Course-cover {
+    display: grid;
+    width: 100%;
+    gap: 3px;
+    background-color: #04145f;
+    padding: 10px 5px 35px 5px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.course-contain {
+    color: #14267c;
+    text-align: left;
+    padding: 20px 35px 20px 20px;
+    font-size: 130%;
+    border-radius: 10px;
+    margin: 10px 5px;
+    font-weight: 600;
+    border: 2px solid #c7ac20;
+    text-decoration: none;
+    background-color: #fff;
+}
+
+.course-contain:hover {
+    background-color: #fff2b4;
+}
+
+
+/* ?course Detials page */
+
+.course-detials-container {
+    font-family: 'Viga', sans-serif;
+}
+
+.course-detials-container h2 {
+    font-size: 190%;
+    color: #04145f;
+    margin: 0;
+    font-weight: normal;
+    padding: 5px;
+    background-color: #ffe174;
+    border-top: 5px solid #c7ac20;
+    text-align: center;
+}
+
+.course-container-all {
+    padding: 0px 24px 0px 16px;
+    background-color: #04145f;
+}
+
+.course-container-all .course-duration-container {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 1px;
+    background-color: #04145f;
+    padding: 15px 0;
+    font-family: 'Viga';
+}
+
+.course-duration-container h3 {
+    background-color: rgb(4 13 55);
+    color: white;
+    text-align: left;
+    padding: 20px;
+    font-size: 110%;
+    border-radius: 10px;
+    margin: 10px 5px;
+    font-weight: normal;
+    border: 2px solid #c7ac20;
+    text-decoration: none;
+    font-family: Poppins, Arial;
+}
+
+.course-description-container .company-logo {
+    background-color: white;
+    color: #14267c;
+    font-size: 15px;
+    text-align: left;
+    padding: 4rem 20px 2.5rem;
+    border-radius: 10px;
+    font-weight: normal;
+    text-decoration: none;
+    display: flex;
+    gap: 25px;
+   
+
+}
+.course-description-container{
+    background-color: white;
+    border: 2px solid #c7ac20;
+    border-radius: 10px;
+}
+.course-description-container .company-logo span {
+    color: #14267c;
+    text-align: left;
+    font-weight: normal;
+    font-size: 25px;
+}
+
+.course-description-container .company-logo img {
+    max-height: 40px;
+    width: auto;
+    height: auto;
+}
+
+.course-description p {
+    text-align: justify;
+    font-size: 105%;
+    text-align: justify;
+    color: #14267c;
+    padding: 1rem;
+    font-family: 'Poppins', Arial;
+}
+
+.course-syllabus-container{
+    display: grid;
+    gap: 1px;
+    background-color: #04145f;
+    padding: 10px 0;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.course-syllabus-container .course-syllabus{
+    background-color: white;
+    color: #14267c;
+    text-align: left;
+    padding: 20px;
+    font-size: 130%;
+    border-radius: 10px;
+    margin: 10px 5px;
+    font-weight: normal;
+    border: 2px solid #c7ac20;
+    text-decoration: none;
+}
+.course-detials-container  .course-navigation-buttons{
+    display: grid;
+    padding: 20px 0;
+    margin: 10px;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+.course-detials-container  .course-navigation-buttons a{
+    font-weight: 600;
+    margin: 10px 0;
+    font-size: 200%;
+    background: linear-gradient(100deg, #04145f, #acacac);
+    color: white;
+    box-shadow: white 2px 2px 10px;
+    padding: .4rem 2rem;
+    border: 2px solid gold;
+    text-shadow: blue 2px 1px 5px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+    
+}
+.course-detials-container  .course-navigation-buttons .reg{
+    background: linear-gradient(135deg, #e0f7ff, #87CEFA) !important;
+}

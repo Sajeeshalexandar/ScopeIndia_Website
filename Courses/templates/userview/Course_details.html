@@ -1,15 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>{{ course.course_name }}</h1>
-    {% for item in syllabus%}
-    <p>{{ item }}</p>
-    {% endfor %}
-    
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block tittle %}Registration{% endblock %}
+{% block introheading %}Your carrier partner!{% endblock %}
+
+
+{% block content %}
+
+<div class="course-detials-container">
+
+    <h2>Course Syllabus</h2>
+    <div class="course-container-all">
+
+        <div class="course-duration-container">
+            <h3>Course Duration : {{course.course_duration}} + 3 Month OJT</h3>
+            <h3>Mon–Fri Offline 4 hrs. / Online 2 hrs.</h3>
+            <h3>Next Batch : 10th September, 2026</h3>
+        </div>
+        <div class="course-description-container">
+            <div class="company-logo">
+                <span>Get</span>
+                <img src="{% static 'images/microsoft.png' %}" alt="">
+                <img src="{% static 'images/ibm.png' %}" alt="">
+                <img src="{% static 'images/google.png' %}" alt="">
+                <span>Global certifications from SCOPE INDIA</span>
+            </div>
+            <div class="course-description">
+                <p>
+                    {{course.course_description}}
+                </p>
+            </div>
+        </div>
+        <div class="course-syllabus-container">
+            {% for s in syllabus %}
+            <div class="course-syllabus">
+                {{ s.syllabus_name}}
+            </div>
+            {% endfor %}
+        </div>
+        <div class="course-navigation-buttons">
+            <a href="">Talk to Us</a>
+            <a href="{% url 'registration' %}" class="reg">Register Now</a>
+            <a href="{% url 'courseSection' %}">Back to Courses</a>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}
