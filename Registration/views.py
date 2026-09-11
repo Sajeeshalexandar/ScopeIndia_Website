@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .forms import StudentRegistrationForm
+from .models import StudentRegistration
 
 # Create your views here.
 def registration(request):
@@ -13,3 +14,6 @@ def registration(request):
     else:
         form = StudentRegistrationForm()
     return render(request,'pages/registration.html',{'form':form})
+def registrationlist(request):
+   registrationDetails = StudentRegistration.objects.all()
+   return render(request,'admin/registrationlist.html',{'regDetails':registrationDetails})

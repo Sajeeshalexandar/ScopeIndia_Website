@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+           <tr>
+            <th>Full name</th>
+            <th>Date of Birth</th>
+            <th>Gender</th>
+            <th>Educational Qualification</th>
+            <th>Mobile No</th>
+            <th>Email</th>
+            <th>Guardian name</th>
+            <th>Guardian Occupation</th>
+            <th>Guardian Mobile</th>
+            <th>Course</th>
+            <th>Training Mode</th>
+            <th>Location</th>
+            <th>Preferred Timimg</th>
+            <th>Address</th>
+            <th>Country</th>
+           </tr>
+        </thead>
+        <tbody>
+            {% if regDetails %}
+            {% for detial in regDetails %}
+            <tr>
+                <td>{{detial.full_name}}</td>
+                <td>{{detial.date_of_birth}}</td>
+                <td>{{detial.gender}}</td>
+                <td>{{detial.educational_qualification}}</td>
+                <td>{{detial.mobile}}</td>
+                <td>{{detial.email}}</td>
+                <td>{{detial.guardian_name}}</td>
+                <td>{{detial.guardian_occupation}}</td>
+                <td>{{detial.guardian_mobile}}</td>
+                <td>{{detial.course}}</td>
+                <td>{{detial.training_mode}}</td>
+                <td>{{detial.location}}</td>
+                <td>{{detial.preferred_timings}}</td>
+                <td>{{detial.address}}</td>
+                <td>{{detial.country}}</td>
+            </tr>
+            {% endfor %}
+
+            {% else %}
+            <tr>
+                No Registrations
+            </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,4 +1,5 @@
 from django.shortcuts import render,HttpResponse
+from Registration.models import StudentRegistration
 
 # Create your views here.
 
