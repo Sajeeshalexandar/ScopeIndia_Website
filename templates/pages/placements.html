@@ -47,4 +47,21 @@
     </div>
 </section>
 
+<section class="Placement-details">
+    <div class="container-fluid">
+        {% if placements %}
+        {% for p in placements %}
+        <div class="card" style="width: 18rem;">
+            <img src="{{ p.image.url }}" class="card-img-top" alt="{{ p.name }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ p.name }}</h5>
+                <p class="card-text">{{ p.role }}</p>
+                <p class="card-text">{{ p.company_name }}</p>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</section>
+
 {% endblock %}

@@ -8,7 +8,8 @@ class PlacementForm(forms.ModelForm):
         fields = [
             'name',
             'role',
-            'company_name'
+            'company_name',
+            'image',
         ]
 
         widgets = {
@@ -28,6 +29,11 @@ class PlacementForm(forms.ModelForm):
                 attrs={
                     'class':'form-control',
                     'placeholder':'Enter the Company Name'
+                }
+            ),
+            'image': forms.ClearableFileInput(
+                attrs = {
+                    'class' : 'form-control'
                 }
             )
         }
