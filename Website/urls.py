@@ -7,5 +7,10 @@ urlpatterns = [
     path('faq/',views.faq,name='faq'),
     path('reviews/',views.reviews,name='reviews'),
     path('contact/',views.contact,name='contact'),
-    
+
+
+
+
+    path('addfaq/',views.addfaq,name='addfaq'),
+    path('listfaq/',views.listfaq,name='listfaq')
 ]

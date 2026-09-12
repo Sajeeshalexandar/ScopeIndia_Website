@@ -6,6 +6,23 @@
 <!-- ?About section -->
 
 {% block content %}
+<div class="faq-container">
+    <div class="container-fluid">
+        <div>
+            {% if faqs %}
+            {% for f in faqs %}
+            <details>
+                <summary>{{ f.question }}</summary>
+                <p>{{ f.answer }}</p>
+            </details>
+            {% endfor %}
+            {% else %}
+            <p>No summary</p>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
 
 
 {% endblock %}

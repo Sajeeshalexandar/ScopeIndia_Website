@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+</head>
+
+<body class="m-5">
+    <div class="card border-0 shadow-sm">
+        <div class="card-header bg-white py-3">
+            <h5 class="fw-semibold mb-0">
+                Faq List
+            </h5>
+        </div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>No.</th>
+                            <th>Question</th>
+                            <th>Answer</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if faqs %}
+                        {% for f in faqs %}
+                        <tr>
+                            <td>{{ f.id }}</td>
+                            <td>{{ f.question }}</td>
+                            <td>{{ f.answer }}</td>
+                        </tr>
+                        {% endfor %}
+                        {% else %}
+                        <tr>
+                            <td>No Faqs</td>
+                        </tr>
+                        {% endif %}
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+
+</html>

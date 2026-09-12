@@ -1353,3 +1353,26 @@ body {
     color: #fff;
     font-size: medium;
 }
+
+/* !faq */
+
+.faq-container{
+    font-family: 'Viga',sans-serif;
+}
+.faq-container>div{
+    display: grid;
+    grid-template-rows: 1fr;
+    padding: 1rem;
+    
+}
+.faq-container>div>div{
+    color: #0824b2;
+
+  
+   
+}
+.faq-container>div>div>details{
+    border: 1px solid #e0aa0c;
+    margin: 15px 0;
+    padding: .5rem;
+}
