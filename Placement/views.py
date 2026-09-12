@@ -5,3 +5,4 @@ from Registration.models import StudentRegistration
 
 def placement(request):
    return render(request,'pages/placements.html')
+# def addplacement(request):

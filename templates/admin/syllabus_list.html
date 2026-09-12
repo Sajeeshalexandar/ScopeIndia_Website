@@ -1,3 +1,5 @@
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,9 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Syllabus | Admin Panel</title>
-
-    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
-    <script src="/static/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    
 
 </head>
 
@@ -232,7 +233,7 @@
     </div>
 
 
-
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 </body>
 
 </html>
