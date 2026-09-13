@@ -41,6 +41,11 @@
 
     </nav>
     <div class="floating-links">
+        <div class="menu-toggle">
+            <button type="button" id="navbarToggler" aria-label="Open navigation">
+                ☰
+            </button>
+        </div>
         <div class="gallery">
             <a href=""><img src="{% static 'images/gallery-scope-india.webp' %}" alt="Scope india Gallery"></a>
         </div>
@@ -60,7 +65,7 @@
 
         <h1>{% block introheading %}{% endblock %}</h1>
 
-        
+
     </div>
     <div class="container-intro-content">
         <h2>Center for Advanced Data Science with GenAI, Data Analytics, DevOps, Software, Networking, and Cloud
@@ -105,6 +110,14 @@
         </p>
     </footer>
     <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script>
+        const navbarToggler = document.getElementById("navbarToggler");
+        const navigationLinks = document.querySelector(".navigation-links");
+
+        navbarToggler.addEventListener("click", function () {
+            navigationLinks.classList.toggle("active");
+        });
+    </script>
 </body>
 
 </html>

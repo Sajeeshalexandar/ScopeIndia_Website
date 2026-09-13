@@ -3,29 +3,28 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
 body {
-    overflow-x: scroll;
+    overflow-x: hidden;
     min-height: 100vh;
     scroll-behavior: smooth;
 }
-
 /* ? Fonts */
-
 @font-face {
     font-family: 'Viga';
     src: url('../fonts/Viga-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'Poppins';
     src: url('../fonts/Poppins-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
-
 /*? Navbar section */
 .navigation-container {
     width: 100%;
@@ -35,7 +34,6 @@ body {
     position: relative;
     border-bottom: #ECB264 1px solid;
 }
-
 .navigation-container .navigation-background-design1 {
     width: 100%;
     height: 11rem;
@@ -43,16 +41,13 @@ body {
     background-repeat: repeat-x;
     background-size: auto;
 }
-
 .navigation-content .logo a img {
     width: 180px;
     height: auto;
     position: absolute;
     left: 21px;
     bottom: 1rem;
-
 }
-
 .navigation-links {
     display: flex;
     justify-content: center;
@@ -62,21 +57,16 @@ body {
     bottom: .5rem;
     right: 4.5rem;
 }
-
 .navigation-links li {
     list-style: none;
-
 }
-
 .navigation-links li a:hover {
     list-style: none;
     background-color: rgba(255, 255, 255, 0.136);
     border: 1px solid white;
     border-radius: 5px;
     color: #ECB264;
-
 }
-
 .navigation-links li a {
     text-decoration: none;
     padding: 5px;
@@ -86,24 +76,460 @@ body {
     font-size: 12px;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
-
 }
-
 .google-rating {
     position: absolute;
     right: 4rem;
     top: 1rem;
 }
-
 .google-rating a img {
     width: 200px;
     height: auto;
 }
-
 .regis-btn {
     background-color: #FB3E5A;
     color: white !important;
     border-radius: 5px;
+}
+/* ? floating-links */
+.floating-links {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    z-index: 10000;
+}
+.floating-links a img {
+    width: 45px;
+    height: auto;
+    display: block;
+}
+.menu-toggle {
+    display: none;
+}
+.menu-toggle button {
+    width: 45px;
+    height: 45px;
+    border: 1px solid #ECB264;
+    border-radius: 6px;
+    background: linear-gradient(45deg,#050B2D,#081E60);
+    color: white;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.menu-toggle button:hover {
+    background: #ECB264;
+    color: #050B2D;
+}
+@media (max-width: 991px) {
+
+    .navigation-container {
+        width: 100%;
+    }
+    .navigation-container .navigation-background-design1 {
+        height: 150px;
+        background-size: auto 150px;
+    }
+    .navigation-content {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    .navigation-content .logo a img {
+        width: 150px;
+
+        left: 20px;
+        bottom: 20px;
+    }
+    .google-rating {
+        right: 80px;
+        top: 15px;
+    }
+    .google-rating a img {
+        width: 160px;
+    }
+    .navigation-links {
+        gap: 0.5rem;
+        right: 70px;
+        bottom: 0px;
+
+    }
+    .navigation-links li a {
+        font-size: 10.5px;
+        padding: 4px;
+    }
+    .container-intro-heading h1 {
+        font-size: 30px;
+        padding: 10px 15px;
+    }
+
+    .container-intro-content h2 {
+        font-size: 22px;
+        padding: 12px 15px 5px;
+    }
+
+    .container-intro-content h3 {
+        font-size: 15px;
+        padding: 0 20px 15px;
+        text-align: center;
+        line-height: 1.6;
+    }
+    #footer {
+        padding: 15px;
+    }
+    #footer p {
+        margin: 10px 5px;
+    }
+    #footer p a {
+        display: inline-block;
+        margin: 3px;
+    }
+}
+@media (max-width: 767px) {
+
+    .navigation-container {
+        min-height: 120px;
+    }
+    .navigation-container .navigation-background-design1 {
+        height: 120px;
+        background-size: auto 120px;
+    }
+    .navigation-content {
+        min-height: 120px;
+        position: relative;
+    }
+    .navigation-content .logo a img {
+        width: 125px;
+        left: 45px;
+        bottom: 18px;
+    }
+    .google-rating {
+        top: 15px;
+        right: 60px;
+    }
+    .google-rating a img {
+        width: 150px;
+    }
+    .navbar-toggler {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        right: 15px;
+        bottom: 15px;
+    }
+    .navigation-links {
+        display: none;
+        position: fixed;
+        top:0px;
+        right: inherit;
+        width: 100%;
+        height: fit-content;
+        padding: 10px 15px;
+        flex-direction: column;
+        gap: 5px;
+        background: linear-gradient(180deg,#050b2d8d,#081e607d);
+        border-top: 1px solid #ECB264;
+        border-bottom: 1px solid #ECB264;
+        z-index: 9999;
+    }
+    .navigation-links.active {
+        display: flex;
+    }
+    .navigation-links.active {
+        display: flex;
+    }
+    .navigation-links li {
+        width: 100%;
+        text-align: center;
+    }
+    .navigation-links li a {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 17px;
+        border-radius: 5px;
+        color: #fff !important;
+        background-color: #00000000 !important;
+    }
+    .navigation-links li a:hover{
+        transform: scale(1.01);
+    }
+
+
+    /* Registration button */
+
+    .navigation-links .regis-btn {
+        display: block;
+    }
+
+
+    /* -----------------------------------------------------
+       FLOATING LINKS
+    ----------------------------------------------------- */
+
+    /* =====================================================
+   MOBILE FLOATING MENU
+===================================================== */
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-toggle button {
+        width: 38px;
+        height: 38px;
+
+        font-size: 21px;
+    }
+
+
+    /* Floating links */
+
+    .floating-links {
+        position: fixed;
+
+        right: 8px;
+        top: 10px;
+
+        bottom: auto;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 5px;
+
+        z-index: 10000;
+    }
+
+    .floating-links a img {
+        width: 35px;
+    }
+
+
+    /* -----------------------------------------------------
+       INTRO HEADING
+    ----------------------------------------------------- */
+
+    .container-intro-heading {
+        width: 100%;
+    }
+
+    .container-intro-heading h1 {
+        font-size: 25px;
+
+        line-height: 1.3;
+
+        padding: 12px 15px;
+    }
+
+
+    /* -----------------------------------------------------
+       INTRO CONTENT
+    ----------------------------------------------------- */
+
+    .container-intro-content {
+        width: 100%;
+        padding: 5px 0;
+    }
+
+    .container-intro-content h2 {
+        font-size: 19px;
+
+        line-height: 1.4;
+
+        padding: 10px 15px 5px;
+
+        margin-bottom: 5px;
+    }
+
+    .container-intro-content h3 {
+        font-size: 14px;
+
+        line-height: 1.7;
+
+        padding: 0 15px 15px;
+
+        text-align: center;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+    ----------------------------------------------------- */
+
+    #footer {
+        width: 100%;
+
+        padding: 15px 10px;
+
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+    #footer p {
+        margin: 10px 0;
+    }
+
+    #footer p a {
+        display: inline-block;
+
+        padding: 3px 5px;
+
+        margin: 2px;
+    }
+
+    #footer .footer_line {
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   BELOW 480px
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    /* -----------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------- */
+
+    .navigation-container .navigation-background-design1 {
+        height: 110px;
+        background-size: auto 110px;
+    }
+
+    .navigation-content {
+        min-height: 110px;
+        text-align: center;
+    }
+
+
+    /* Logo */
+
+    .navigation-content .logo a img {
+        width: 125px;
+        left: 50%;
+        bottom: 5px;
+        transform: translateX(-50%);
+    }
+
+    /* Google rating */
+
+    .google-rating {
+
+        display: none;
+    }
+
+
+
+    /* Hamburger */
+
+    .navbar-toggler {
+        width: 45px;
+        height: 36px;
+
+        right: 12px;
+        bottom: 0;
+
+        font-size: 22px;
+    }
+
+
+    /* Menu */
+
+    .navigation-links {
+        top: 0px;
+
+        padding: 8px 10px;
+    }
+
+    .navigation-links li a {
+        padding: 9px;
+
+        font-size: 12px;
+    }
+
+
+    /* -----------------------------------------------------
+       FLOATING BUTTONS
+    ----------------------------------------------------- */
+
+    .floating-links {
+        top: 10px;
+        right: 3px;
+
+        gap: 3px;
+    }
+
+    .floating-links a img {
+        width: 30px;
+    }
+
+
+    /* -----------------------------------------------------
+       INTRO
+    ----------------------------------------------------- */
+
+    .container-intro-heading h1 {
+        font-size: 21px;
+
+        line-height: 1.35;
+
+        padding: 10px;
+    }
+
+    .container-intro-content h2 {
+        font-size: 17px;
+
+        line-height: 1.45;
+
+        padding: 10px;
+    }
+
+    .container-intro-content h3 {
+        font-size: 13px;
+
+        line-height: 1.65;
+
+        padding: 0 12px 12px;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+    ----------------------------------------------------- */
+
+    #footer {
+        font-size: 12px;
+
+        padding: 12px 8px;
+    }
+
+    #footer p {
+        margin: 8px 0;
+    }
+
+    #footer p a {
+        padding: 2px 4px;
+        margin: 1px;
+    }
+
+    #footer .footer_line {
+        font-size: 11px;
+    }
 
 }
 
@@ -859,6 +1285,871 @@ body {
     margin-right: 10px;
 }
 
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+
+/* =========================
+   TABLET - 992px and below
+   ========================= */
+
+@media (max-width: 992px) {
+
+    /* ---------- Intro ---------- */
+
+    .container-intro-heading h1 {
+        font-size: 30px;
+    }
+
+    .container-intro-content h2 {
+        font-size: 23px;
+    }
+
+    .container-intro-content h3 {
+        font-size: 15.5px;
+    }
+
+
+    /* ---------- Certification ---------- */
+
+    .image-grid-home {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .company-logo img {
+        max-width: 65%;
+    }
+
+
+    /* ---------- About / Courses ---------- */
+
+    .home-abouts {
+        padding: 2rem 1rem;
+    }
+
+    .home-abouts div h2 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .main-box {
+        display: block;
+    }
+
+    .main-courses,
+    .main-features {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+
+    /* ---------- Placement ---------- */
+
+    .highlights {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .highlights div {
+        min-width: 280px;
+        flex: 1;
+    }
+
+
+    /* ---------- AI ---------- */
+
+    .home-ai div h2 {
+        font-size: 38px;
+    }
+
+    .ai-containers {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .ai-containers .left {
+        position: relative;
+    }
+
+    .ai-containers .left .ai {
+        width: 80%;
+        max-width: 700px;
+    }
+
+    .ai-containers .left .robo {
+        width: 25%;
+        left: 5%;
+    }
+
+    .ai-containers .right {
+        width: 90%;
+        margin: 0 auto;
+        padding: 40px 20px 20px;
+    }
+
+
+    /* ---------- Full Stack ---------- */
+
+    .fullstack-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .fullstack-container .left {
+        order: -1;
+    }
+
+    .fullstack-container .left img {
+        width: 100%;
+        max-width: 700px;
+        display: block;
+        margin: auto;
+    }
+
+
+    /* ---------- Testing ---------- */
+
+    .home-testing div a .testing-container {
+        grid-template-columns: 1fr;
+    }
+
+    .home-testing div a .testing-container .left img {
+        width: 100%;
+        max-width: 700px;
+        display: block;
+        margin: auto;
+    }
+
+
+    /* ---------- DevOps ---------- */
+
+    .home-devops div .devops {
+        grid-template-columns: 1fr;
+    }
+
+    .home-devops div .devops .left {
+        order: -1;
+    }
+
+
+    /* ---------- Power BI ---------- */
+
+    .home-power-bi div a .power-bi {
+        grid-template-columns: 1fr;
+    }
+
+    .home-power-bi div a .power-bi .left {
+        order: -1;
+    }
+
+
+    /* ---------- Mission / Vision ---------- */
+
+    .mission-vision div .mision-box {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE - 768px and below
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------- Global ---------- */
+
+    .container,
+    .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    /* ---------- Intro ---------- */
+
+    .container-intro-heading h1 {
+        font-size: 26px;
+        padding: 8px 10px;
+    }
+
+    .container-intro-content h2 {
+        font-size: 21px;
+        padding: 10px 10px 0;
+    }
+
+    .container-intro-content h3 {
+        font-size: 14px;
+        text-align: center;
+        line-height: 1.6;
+    }
+
+
+    /* ---------- Certification ---------- */
+
+    .certification-section {
+        padding: 15px 10px 20px;
+    }
+
+    .certification-section h4 {
+        font-size: 17px;
+        padding: 8px 10px;
+    }
+
+    .image-grid-home {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .company-logo {
+        height: 50px;
+    }
+
+    .company-logo img {
+        max-width: 65%;
+        max-height: 32px;
+    }
+
+
+    /* ---------- About ---------- */
+
+    .home-abouts {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .home-abouts div h2 {
+        font-size: 27px;
+        padding: 15px 5px;
+        text-align: center;
+    }
+
+    .main-courses p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .course-list-home {
+        --bs-gutter-x: 0.5rem;
+    }
+
+    .course-list-home div {
+        padding: 0.5rem 0.25rem;
+    }
+
+    .course-list-home div a {
+        font-size: 14px;
+    }
+
+    .course-list-home div span {
+        margin-right: 5px;
+    }
+
+    .course-list-home div span img {
+        width: 16px;
+    }
+
+
+    /* ---------- Features ---------- */
+
+    .home-features {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .main-features div div {
+        padding: 1rem 1.2rem;
+    }
+
+    .main-features div div:hover {
+        transform: none;
+    }
+
+    .main-features div h3 {
+        font-size: 20px;
+    }
+
+    .main-features div p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+
+    /* ---------- Placement ---------- */
+
+    .home-placements {
+        padding: 0 10px;
+    }
+
+    .home-placements div h2 {
+        font-size: 27px;
+    }
+
+    .highlights {
+        flex-direction: column;
+        padding: 10px 5px;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .highlights div {
+        width: 100%;
+        min-width: 0;
+        padding: 15px 20px;
+    }
+
+    .highlights div:hover {
+        transform: none;
+    }
+
+    .highlights div span {
+        font-size: 30px;
+    }
+
+    .highlights div p {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+
+    /* =====================================================
+       AI SECTION
+       ===================================================== */
+
+    .home-ai {
+        padding-bottom: 20px;
+    }
+
+    .home-ai div h2 {
+        font-size: 30px;
+        line-height: 1.3;
+        padding: 30px 10px 15px;
+    }
+
+    .home-ai div h3 {
+        font-size: 18px;
+        padding: 8px 15px;
+        margin-bottom: 15px;
+    }
+
+    .home-ai div p {
+        font-size: 16px;
+        line-height: 1.6;
+        padding: 25px 10px;
+    }
+
+    .ai-containers {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .ai-containers .left .ai {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .ai-containers .left .robo {
+        width: 28%;
+        left: 0;
+        top: 10px;
+    }
+
+    .ai-containers .right {
+        width: 100%;
+        margin: 0;
+        padding: 25px 15px;
+        border-radius: 20px;
+    }
+
+    .ai-containers .right ul {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .ai-containers .right ul li {
+        display: flex;
+        align-items: center;
+    }
+
+    .ai-containers .right ul li img {
+        width: 20px;
+        margin-right: 10px;
+        flex-shrink: 0;
+    }
+
+    .ai-containers .right ul li span {
+        font-size: 15px;
+    }
+
+
+    /* =====================================================
+       FULL STACK
+       ===================================================== */
+
+    .home-fullstack {
+        padding: 1rem 0.5rem;
+    }
+
+    .home-fullstack div h2 {
+        font-size: 27px;
+        padding: 1.5rem 0.5rem;
+        text-align: center;
+    }
+
+    .fullstack-container {
+        grid-template-columns: 1fr;
+        padding: 0.5rem;
+        gap: 20px;
+    }
+
+    .fullstack-container .left {
+        order: -1;
+    }
+
+    .fullstack-container .left img {
+        width: 100%;
+        height: auto;
+    }
+
+    .fullstack-container .right {
+        padding: 1.5rem 1rem;
+    }
+
+    .fullstack-container .right h4 {
+        font-size: 20px;
+    }
+
+    .fullstack-container .right ul {
+        padding-left: 0;
+    }
+
+    .fullstack-container .right ul li h5 {
+        font-size: 17px;
+    }
+
+    .fullstack-container .right ul li p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+
+    /* =====================================================
+       TESTING
+       ===================================================== */
+
+    .home-testing {
+        padding: 2.5rem 0.5rem 1.5rem;
+    }
+
+    .home-testing div a h2 {
+        font-size: 24px;
+        line-height: 1.4;
+        padding: 10px 5px 25px;
+    }
+
+    .home-testing div a h2 span {
+        font-size: 32px;
+    }
+
+    .home-testing div a .testing-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 5px;
+    }
+
+    .home-testing div a .testing-container .left img {
+        width: 100%;
+        height: auto;
+    }
+
+    .home-testing div a .testing-container .right h4 {
+        font-size: 18px;
+        line-height: 1.4;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .home-testing div a .testing-container .right ul {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 1rem;
+        padding-left: 0;
+    }
+
+    .home-testing div a .testing-container .right ul li {
+        display: flex;
+        align-items: center;
+    }
+
+    .home-testing div a .testing-container .right ul li span {
+        font-size: 16px;
+    }
+
+    .home-testing div a p {
+        font-size: 17px;
+        line-height: 1.5;
+        padding: 15px 5px;
+    }
+
+    .home-testing div a p span {
+        font-size: 30px;
+    }
+
+
+    /* =====================================================
+       DEVOPS
+       ===================================================== */
+
+    .home-devops {
+        padding: 2rem 0.5rem;
+    }
+
+    .home-devops div h2 {
+        font-size: 28px;
+        margin-bottom: 1.5rem;
+    }
+
+    .home-devops div .devops {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .home-devops div .devops .left {
+        order: -1;
+    }
+
+    .home-devops div .devops .left img {
+        width: 100%;
+        height: auto;
+    }
+
+    .home-devops div .devops .right {
+        padding-bottom: 15px;
+    }
+
+    .home-devops div .devops .right h4 {
+        font-size: 18px;
+        margin: 1.5rem 0 1rem;
+        padding: 10px 15px;
+    }
+
+    .home-devops div .devops .right ul {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .home-devops div .devops .right ul li {
+        display: flex;
+        align-items: center;
+    }
+
+    .home-devops div .devops .right ul li span {
+        font-size: 15px;
+        margin-left: 10px;
+    }
+
+
+    /* =====================================================
+       POWER BI
+       ===================================================== */
+
+    .home-power-bi {
+        padding: 2rem 0.5rem;
+    }
+
+    .home-power-bi div h2 {
+        font-size: 27px;
+        padding: 0 10px;
+        line-height: 1.4;
+    }
+
+    .home-power-bi div a .power-bi {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .home-power-bi div a .power-bi .left {
+        order: -1;
+    }
+
+    .home-power-bi div a .power-bi .left img {
+        width: 100%;
+        height: auto;
+    }
+
+    .home-power-bi div a .power-bi .right h4 {
+        font-size: 20px;
+        padding: 10px 15px;
+        margin: 20px auto;
+    }
+
+    .home-power-bi div a .power-bi .right ul {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding-left: 10px;
+    }
+
+    .home-power-bi div a .power-bi .right ul li {
+        font-size: 16px;
+    }
+
+    .home-power-bi div a .power-bi .right ul li span {
+        margin-left: 10px;
+    }
+
+
+    /* =====================================================
+       MISSION / VISION
+       ===================================================== */
+
+    .mission-vision {
+        padding: 10px 5px;
+    }
+
+    .mission-vision div h4 {
+        font-size: 28px;
+        margin: 20px 5px;
+    }
+
+    .mission-vision div .mision-box {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px 5px;
+    }
+
+    .mission-vision div .mision-box .mission,
+    .mission-vision div .mision-box .vision {
+        padding: 20px;
+        margin-bottom: 10px;
+        border-radius: 15px;
+    }
+
+    .mission-vision div .mision-box .mission h4,
+    .mission-vision div .mision-box .vision h4 {
+        font-size: 22px;
+        margin: 20px 0;
+    }
+
+    .mission-vision div .mision-box .mission p,
+    .mission-vision div .mision-box .vision p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .mission-vision div .mision-box .mission ul,
+    .mission-vision div .mision-box .vision ul {
+        padding: 0;
+    }
+
+    .mission-vision div .mision-box .mission ul li,
+    .mission-vision div .mision-box .vision ul li {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE - 480px and below
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    /* ---------- Intro ---------- */
+
+    .container-intro-heading h1 {
+        font-size: 22px;
+    }
+
+    .container-intro-content h2 {
+        font-size: 19px;
+    }
+
+    .container-intro-content h3 {
+        font-size: 13px;
+    }
+
+
+    /* ---------- Certification ---------- */
+
+    .certification-section h4 {
+        font-size: 15px;
+    }
+
+    .image-grid-home {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+    }
+
+    .company-logo img {
+        max-width: 70%;
+        max-height: 28px;
+    }
+
+
+    /* ---------- About ---------- */
+
+    .home-abouts div h2 {
+        font-size: 23px;
+    }
+
+    .main-courses p {
+        font-size: 15px;
+    }
+
+    .course-list-home div a {
+        font-size: 13px;
+    }
+
+
+    /* ---------- Features ---------- */
+
+    .main-features div div {
+        padding: 0.8rem 1rem;
+    }
+
+
+    /* ---------- Placement ---------- */
+
+    .home-placements div h2 {
+        font-size: 23px;
+    }
+
+    .highlights div {
+        padding: 12px 15px;
+    }
+
+    .highlights div span {
+        font-size: 26px;
+    }
+
+    .highlights div p {
+        font-size: 14px;
+    }
+
+
+    /* ---------- AI ---------- */
+
+    .home-ai div h2 {
+        font-size: 25px;
+    }
+
+    .home-ai div h3 {
+        font-size: 16px;
+    }
+
+    .home-ai div p {
+        font-size: 14px;
+    }
+
+
+    /* ---------- Full Stack ---------- */
+
+    .home-fullstack div h2 {
+        font-size: 23px;
+    }
+
+    .fullstack-container .right h4 {
+        font-size: 18px;
+    }
+
+    .fullstack-container .right ul li h5 {
+        font-size: 16px;
+    }
+
+    .fullstack-container .right ul li p {
+        font-size: 13px;
+    }
+
+
+    /* ---------- Testing ---------- */
+
+    .home-testing div a h2 {
+        font-size: 20px;
+    }
+
+    .home-testing div a h2 span {
+        font-size: 27px;
+    }
+
+    .home-testing div a .testing-container .right h4 {
+        font-size: 16px;
+    }
+
+    .home-testing div a .testing-container .right ul li span {
+        font-size: 14px;
+    }
+
+    .home-testing div a p {
+        font-size: 15px;
+    }
+
+    .home-testing div a p span {
+        font-size: 25px;
+    }
+
+
+    /* ---------- DevOps ---------- */
+
+    .home-devops div h2 {
+        font-size: 24px;
+    }
+
+    .home-devops div .devops .right h4 {
+        font-size: 16px;
+    }
+
+    .home-devops div .devops .right ul li span {
+        font-size: 14px;
+    }
+
+
+    /* ---------- Power BI ---------- */
+
+    .home-power-bi div h2 {
+        font-size: 23px;
+    }
+
+    .home-power-bi div a .power-bi .right h4 {
+        font-size: 17px;
+    }
+
+    .home-power-bi div a .power-bi .right ul li {
+        font-size: 14px;
+    }
+
+
+    /* ---------- Mission / Vision ---------- */
+
+    .mission-vision div h4 {
+        font-size: 24px;
+    }
+
+    .mission-vision div .mision-box .mission,
+    .mission-vision div .mision-box .vision {
+        padding: 17px;
+    }
+
+    .mission-vision div .mision-box .mission h4,
+    .mission-vision div .mision-box .vision h4 {
+        font-size: 20px;
+    }
+
+    .mission-vision div .mision-box .mission p,
+    .mission-vision div .mision-box .vision p {
+        font-size: 13px;
+    }
+
+}
+
 /* ? footer */
 #footer {
     border-top: 10px solid #e2c85e;
@@ -902,8 +2193,8 @@ body {
     padding: 5px;
     border-top: 5px solid #c7ac20;
     background-color: #FBD769;
-
 }
+
 
 .Course-cover {
     display: grid;
@@ -913,6 +2204,7 @@ body {
     padding: 10px 5px 35px 5px;
     grid-template-columns: repeat(3, 1fr);
 }
+
 
 .course-contain {
     color: #14267c;
@@ -925,18 +2217,112 @@ body {
     border: 2px solid #c7ac20;
     text-decoration: none;
     background-color: #fff;
+
+    /* Prevent long course names from breaking layout */
+    overflow-wrap: break-word;
+    word-break: normal;
 }
+
 
 .course-contain:hover {
     background-color: #fff2b4;
 }
 
 
+/* =========================================
+   Tablet
+========================================= */
+
+@media (max-width: 991px) {
+
+    .course-available-head {
+        font-size: 170%;
+        padding: 8px 5px;
+    }
+
+    .Course-cover {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+        padding: 10px 8px 30px;
+    }
+
+    .course-contain {
+        padding: 18px 20px;
+        margin: 8px 4px;
+        font-size: 115%;
+    }
+}
+
+
+/* =========================================
+   Mobile
+========================================= */
+
+@media (max-width: 767px) {
+
+    .course-available-head {
+        font-size: 145%;
+        padding: 8px 5px;
+        border-top-width: 4px;
+    }
+
+    .Course-cover {
+        grid-template-columns: 1fr;
+        gap: 2px;
+        padding: 8px 8px 25px;
+    }
+
+    .course-contain {
+        width: 100%;
+        margin: 6px 0;
+        padding: 15px 18px;
+        font-size: 105%;
+        border-width: 1.5px;
+        border-radius: 8px;
+        text-align: left;
+    }
+}
+
+
+/* =========================================
+   Small Mobile
+========================================= */
+
+@media (max-width: 480px) {
+
+    .course-available-head {
+        font-size: 125%;
+        padding: 7px 4px;
+    }
+
+    .Course-cover {
+        padding: 6px 6px 20px;
+    }
+
+    .course-contain {
+        padding: 13px 15px;
+        margin: 5px 0;
+        font-size: 100%;
+        line-height: 1.4;
+    }
+}
+
+
 /* ?course Detials page */
 
+/* =========================================================
+   COURSE DETAILS PAGE
+========================================================= */
+
 .course-detials-container {
+    width: 100%;
     font-family: 'Viga', sans-serif;
 }
+
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
 
 .course-detials-container h2 {
     font-size: 190%;
@@ -947,24 +2333,37 @@ body {
     background-color: #ffe174;
     border-top: 5px solid #c7ac20;
     text-align: center;
+    line-height: 1.3;
 }
 
+
+/* =========================================================
+   MAIN BLUE CONTAINER
+========================================================= */
+
 .course-container-all {
-    padding: 0px 24px 0px 16px;
+    width: 100%;
+    padding: 0 24px 0 16px;
     background-color: #04145f;
 }
 
+
+/* =========================================================
+   COURSE DURATION SECTION
+========================================================= */
+
 .course-container-all .course-duration-container {
+    width: 100%;
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1px;
     background-color: #04145f;
     padding: 15px 0;
-    font-family: 'Viga';
+    font-family: 'Viga', sans-serif;
 }
 
 .course-duration-container h3 {
-    background-color: rgb(4 13 55);
+    background-color: rgb(4, 13, 55);
     color: white;
     text-align: left;
     padding: 20px;
@@ -974,10 +2373,31 @@ body {
     font-weight: normal;
     border: 2px solid #c7ac20;
     text-decoration: none;
-    font-family: Poppins, Arial;
+    font-family: 'Poppins', Arial, sans-serif;
+    line-height: 1.5;
+    overflow-wrap: break-word;
 }
 
+
+/* =========================================================
+   COURSE DESCRIPTION CONTAINER
+========================================================= */
+
+.course-description-container {
+    width: 100%;
+    background-color: white;
+    border: 2px solid #c7ac20;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   COMPANY / CERTIFICATION LOGOS
+========================================================= */
+
 .course-description-container .company-logo {
+    width: 100%;
     background-color: white;
     color: #14267c;
     font-size: 15px;
@@ -986,16 +2406,11 @@ body {
     border-radius: 10px;
     font-weight: normal;
     text-decoration: none;
+
     display: flex;
+    align-items: center;
     gap: 25px;
-
-
-}
-
-.course-description-container {
-    background-color: white;
-    border: 2px solid #c7ac20;
-    border-radius: 10px;
+    flex-wrap: wrap;
 }
 
 .course-description-container .company-logo span {
@@ -1003,29 +2418,49 @@ body {
     text-align: left;
     font-weight: normal;
     font-size: 25px;
+    line-height: 1.3;
 }
 
 .course-description-container .company-logo img {
     max-height: 40px;
+    max-width: 100%;
     width: auto;
     height: auto;
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   COURSE DESCRIPTION
+========================================================= */
+
+.course-description {
+    width: 100%;
 }
 
 .course-description p {
     text-align: justify;
     font-size: 105%;
-    text-align: justify;
     color: #14267c;
     padding: 1rem;
-    font-family: 'Poppins', Arial;
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    line-height: 1.7;
+    overflow-wrap: break-word;
 }
 
+
+/* =========================================================
+   SYLLABUS SECTION
+========================================================= */
+
 .course-syllabus-container {
+    width: 100%;
     display: grid;
     gap: 1px;
     background-color: #04145f;
     padding: 10px 0;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .course-syllabus-container .course-syllabus {
@@ -1039,35 +2474,359 @@ body {
     font-weight: normal;
     border: 2px solid #c7ac20;
     text-decoration: none;
+    line-height: 1.4;
+    overflow-wrap: break-word;
 }
 
+
+/* =========================================================
+   NAVIGATION BUTTONS
+========================================================= */
+
 .course-detials-container .course-navigation-buttons {
+    width: 100%;
     display: grid;
     padding: 20px 0;
-    margin: 10px;
+    margin: 10px 0;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 }
 
 .course-detials-container .course-navigation-buttons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     font-weight: 600;
     margin: 10px 0;
     font-size: 200%;
+
     background: linear-gradient(100deg, #04145f, #acacac);
     color: white;
+
     box-shadow: white 2px 2px 10px;
+
     padding: .4rem 2rem;
+
     border: 2px solid gold;
+    border-radius: 10px;
+
     text-shadow: blue 2px 1px 5px;
+
     cursor: pointer;
     text-align: center;
-    border-radius: 10px;
     text-decoration: none;
 
+    min-height: 60px;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.course-detials-container .course-navigation-buttons a:hover {
+    transform: translateY(-2px);
+    box-shadow: white 2px 4px 12px;
 }
 
 .course-detials-container .course-navigation-buttons .reg {
     background: linear-gradient(135deg, #e0f7ff, #87CEFA) !important;
+    color: #04145f;
+    text-shadow: none;
+}
+
+
+/* =========================================================
+   TABLET
+   768px - 991px
+========================================================= */
+
+@media (max-width: 991px) {
+
+    /* Page heading */
+    .course-detials-container h2 {
+        font-size: 170%;
+        padding: 8px 5px;
+    }
+
+
+    /* Main container */
+    .course-container-all {
+        padding: 0 12px 20px;
+    }
+
+
+    /* Duration */
+    .course-container-all .course-duration-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+        padding: 12px 0;
+    }
+
+    .course-duration-container h3 {
+        padding: 16px;
+        margin: 6px 3px;
+        font-size: 100%;
+        line-height: 1.5;
+    }
+
+
+    /* Certification section */
+    .course-description-container .company-logo {
+        padding: 2.5rem 20px 2rem;
+        gap: 18px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .course-description-container .company-logo span {
+        font-size: 21px;
+    }
+
+    .course-description-container .company-logo img {
+        max-height: 35px;
+    }
+
+
+    /* Description */
+    .course-description p {
+        font-size: 100%;
+        line-height: 1.6;
+        padding: 1rem;
+    }
+
+
+    /* Syllabus */
+    .course-syllabus-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+        padding: 8px 0;
+    }
+
+    .course-syllabus-container .course-syllabus {
+        padding: 17px;
+        margin: 6px 3px;
+        font-size: 115%;
+    }
+
+
+    /* Navigation buttons */
+    .course-detials-container .course-navigation-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        margin: 5px 0;
+        padding: 15px 0;
+    }
+
+    .course-detials-container .course-navigation-buttons a {
+        font-size: 150%;
+        padding: .5rem 1rem;
+        margin: 5px 0;
+        min-height: 55px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   481px - 767px
+========================================================= */
+
+@media (max-width: 767px) {
+
+    /* Page heading */
+    .course-detials-container h2 {
+        font-size: 145%;
+        padding: 8px 5px;
+        border-top-width: 4px;
+    }
+
+
+    /* Main container */
+    .course-container-all {
+        padding: 0 8px 15px;
+    }
+
+
+    /* Duration - one column */
+    .course-container-all .course-duration-container {
+        grid-template-columns: 1fr;
+        gap: 3px;
+        padding: 8px 0;
+    }
+
+    .course-duration-container h3 {
+        padding: 14px 16px;
+        margin: 5px 0;
+        font-size: 100%;
+        line-height: 1.5;
+        border-width: 1.5px;
+        border-radius: 8px;
+    }
+
+
+    /* Certification section */
+    .course-description-container {
+        border-width: 1.5px;
+        border-radius: 8px;
+    }
+
+    .course-description-container .company-logo {
+        padding: 2rem 15px 1.5rem;
+        gap: 12px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .course-description-container .company-logo span {
+        width: 100%;
+        text-align: center;
+        font-size: 19px;
+    }
+
+    .course-description-container .company-logo img {
+        max-height: 30px;
+        max-width: 80px;
+    }
+
+
+    /* Description */
+    .course-description p {
+        font-size: 95%;
+        line-height: 1.6;
+        padding: 15px;
+        text-align: justify;
+    }
+
+
+    /* Syllabus - one column */
+    .course-syllabus-container {
+        grid-template-columns: 1fr;
+        gap: 2px;
+        padding: 8px 0;
+    }
+
+    .course-syllabus-container .course-syllabus {
+        padding: 14px 16px;
+        margin: 5px 0;
+        font-size: 105%;
+        border-width: 1.5px;
+        border-radius: 8px;
+        line-height: 1.5;
+    }
+
+
+    /* Navigation buttons - one column */
+    .course-detials-container .course-navigation-buttons {
+        grid-template-columns: 1fr;
+        gap: 5px;
+        margin: 5px 0;
+        padding: 12px 0;
+    }
+
+    .course-detials-container .course-navigation-buttons a {
+        font-size: 130%;
+        padding: .7rem 1rem;
+        margin: 4px 0;
+        min-height: 50px;
+        border-width: 1.5px;
+        border-radius: 8px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   480px AND BELOW
+========================================================= */
+
+@media (max-width: 480px) {
+
+    /* Page heading */
+    .course-detials-container h2 {
+        font-size: 125%;
+        padding: 7px 4px;
+        border-top-width: 3px;
+    }
+
+
+    /* Main container */
+    .course-container-all {
+        padding: 0 6px 12px;
+    }
+
+
+    /* Duration */
+    .course-container-all .course-duration-container {
+        padding: 6px 0;
+    }
+
+    .course-duration-container h3 {
+        padding: 12px 13px;
+        margin: 4px 0;
+        font-size: 90%;
+        line-height: 1.45;
+        border-width: 1px;
+        border-radius: 7px;
+    }
+
+
+    /* Certification / company logos */
+    .course-description-container .company-logo {
+        padding: 1.5rem 10px 1rem;
+        gap: 8px;
+    }
+
+    .course-description-container .company-logo span {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .course-description-container .company-logo img {
+        max-height: 25px;
+        max-width: 65px;
+    }
+
+
+    /* Description */
+    .course-description p {
+        font-size: 90%;
+        line-height: 1.55;
+        padding: 12px;
+    }
+
+
+    /* Syllabus */
+    .course-syllabus-container {
+        padding: 5px 0;
+    }
+
+    .course-syllabus-container .course-syllabus {
+        padding: 12px 13px;
+        margin: 4px 0;
+        font-size: 95%;
+        border-width: 1px;
+        border-radius: 7px;
+        line-height: 1.45;
+    }
+
+
+    /* Navigation buttons */
+    .course-detials-container .course-navigation-buttons {
+        padding: 8px 0;
+        gap: 4px;
+    }
+
+    .course-detials-container .course-navigation-buttons a {
+        font-size: 110%;
+        padding: .65rem .8rem;
+        margin: 3px 0;
+        min-height: 45px;
+        border-width: 1px;
+        border-radius: 7px;
+    }
 }
 
 /* ! Registration page */
@@ -1315,36 +3074,265 @@ body {
 
 
 /* !placement section */
+/* =========================================================
+   PLACEMENTS SECTION
+========================================================= */
 
 .Placement-details {
+    width: 100%;
     font-family: 'Viga', sans-serif;
     background-color: #04145f;
 }
 
-.Placement-details>div {
-    padding: 1rem;
+
+/* =========================================================
+   PLACEMENT GRID
+========================================================= */
+
+.Placement-details > div {
+    width: 100%;
+    padding: 25px 20px 40px;
+
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 1rem;
+    gap: 20px;
+
+    justify-items: center;
 }
 
-.Placement-details>div>div>img {
-    max-height: 300px;
+
+/* =========================================================
+   PLACEMENT CARD
+========================================================= */
+
+.Placement-details .card {
+    width: 100% !important;
+    max-width: 18rem;
+    height: 100%;
+
+    background-color: white;
+
+    border: 2px solid #c7ac20;
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Card hover */
+
+.Placement-details .card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================================================
+   PLACEMENT IMAGE
+========================================================= */
+
+.Placement-details .card-img-top {
+    width: 100%;
+    height: 260px;
+
     object-fit: cover;
+
+    display: block;
+
+    border-bottom: 1px solid #c7ac20;
 }
 
-.Placement-details>div>div>div {
+
+/* =========================================================
+   CARD BODY
+========================================================= */
+
+.Placement-details .card-body {
+    padding: 15px;
     text-align: center;
 }
 
-.Placement-details>div>div>div>h5 {
-    color: red;
+
+/* =========================================================
+   STUDENT NAME
+========================================================= */
+
+.Placement-details .card-title {
+    color: #04145f;
+
+    font-size: 125%;
     font-weight: bold;
+
+    margin-bottom: 10px;
 }
 
-.Placement-details>div>div>div>p {
-    font-weight: lighter;
+
+/* =========================================================
+   ROLE
+========================================================= */
+
+.Placement-details .card-text {
+    color: #14267c;
+
+    font-family: 'Poppins', Arial, sans-serif;
+
+    font-size: 95%;
+
+    margin-bottom: 5px;
+}
+
+
+/* Make company name slightly stronger */
+
+.Placement-details .card-text:last-child {
+    font-weight: 600;
     color: #04145f;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+   992px - 1199px
+========================================================= */
+
+@media (max-width: 1199px) {
+
+    .Placement-details > div {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+        padding: 22px 18px 35px;
+    }
+
+    .Placement-details .card {
+        max-width: 17rem;
+    }
+
+    .Placement-details .card-img-top {
+        height: 240px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   768px - 991px
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .Placement-details > div {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+
+        padding: 20px 15px 30px;
+    }
+
+    .Placement-details .card {
+        max-width: 17rem;
+    }
+
+    .Placement-details .card-img-top {
+        height: 230px;
+    }
+
+    .Placement-details .card-title {
+        font-size: 115%;
+    }
+
+    .Placement-details .card-text {
+        font-size: 90%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   481px - 767px
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .Placement-details > div {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+
+        padding: 15px 10px 25px;
+    }
+
+    .Placement-details .card {
+        max-width: none;
+        width: 100% !important;
+
+        border-width: 1.5px;
+        border-radius: 8px;
+    }
+
+    .Placement-details .card-img-top {
+        height: 200px;
+    }
+
+    .Placement-details .card-body {
+        padding: 12px 8px;
+    }
+
+    .Placement-details .card-title {
+        font-size: 105%;
+        margin-bottom: 7px;
+    }
+
+    .Placement-details .card-text {
+        font-size: 85%;
+        line-height: 1.4;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   480px AND BELOW
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .Placement-details > div {
+        grid-template-columns: 1fr;
+        gap: 12px;
+
+        padding: 12px 10px 20px;
+    }
+
+    .Placement-details .card {
+        width: 100% !important;
+        max-width: 300px;
+
+        margin: 0 auto;
+
+        border-radius: 8px;
+    }
+
+    .Placement-details .card-img-top {
+        height: 250px;
+    }
+
+    .Placement-details .card-body {
+        padding: 12px 10px;
+    }
+
+    .Placement-details .card-title {
+        font-size: 110%;
+    }
+
+    .Placement-details .card-text {
+        font-size: 90%;
+    }
 }
 
 /* !about page */
@@ -1400,6 +3388,143 @@ body {
 .about-text-container>div .rating-container h4 {
     color: #fff;
     font-size: medium;
+}
+/* =========================================
+   ABOUT SECTION - RESPONSIVE
+========================================= */
+
+/* Tablet */
+@media (max-width: 991px) {
+
+    .about-text-container {
+        padding: 25px 30px;
+    }
+
+    .about-text-container > div h2 {
+        font-size: 38px;
+        line-height: 1.3;
+        margin-bottom: 15px;
+    }
+
+    .about-text-container > div h3 {
+        font-size: 23px;
+        line-height: 1.5;
+        margin-bottom: 25px;
+    }
+
+    .about-text-container > div p {
+        font-size: 14px;
+        line-height: 1.7;
+        letter-spacing: 1px;
+        padding: 0 10px;
+    }
+
+    .about-text-container > div .rating-container {
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .about-text-container > div .rating-container img {
+        width: 220px;
+        margin-left: 0;
+        align-self: center;
+    }
+
+    .about-text-container > div .rating-container h4 {
+        font-size: 15px;
+    }
+}
+
+
+/* Mobile */
+@media (max-width: 767px) {
+
+    .about-text-container {
+        padding: 20px 15px;
+        border-bottom-width: 4px;
+    }
+
+    .about-text-container > div h2 {
+        font-size: 30px;
+        line-height: 1.3;
+        margin-bottom: 15px;
+    }
+
+    .about-text-container > div h3 {
+        font-size: 19px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    .about-text-container > div p {
+        font-size: 14px;
+        line-height: 1.8;
+        letter-spacing: 0.5px;
+        padding: 0;
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+
+    .about-text-container > div .rating-container {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .about-text-container > div .rating-container img {
+        width: 190px;
+        margin: 0 auto;
+    }
+
+    .about-text-container > div .rating-container h4 {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+}
+
+
+/* Small Mobile */
+@media (max-width: 480px) {
+
+    .about-text-container {
+        padding: 18px 10px;
+        border-bottom-width: 3px;
+    }
+
+    .about-text-container > div h2 {
+        font-size: 24px;
+        line-height: 1.35;
+        margin-bottom: 12px;
+    }
+
+    .about-text-container > div h3 {
+        font-size: 16px;
+        line-height: 1.65;
+        margin-bottom: 20px;
+    }
+
+    .about-text-container > div p {
+        font-size: 13px;
+        line-height: 1.8;
+        letter-spacing: 0.3px;
+        padding: 0;
+        margin-bottom: 18px;
+    }
+
+    .about-text-container > div .rating-container {
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .about-text-container > div .rating-container img {
+        width: 165px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .about-text-container > div .rating-container h4 {
+        font-size: 13px;
+        margin-top: 8px;
+    }
 }
 
 /* !faq */
@@ -1504,21 +3629,220 @@ body {
     font-weight: normal;
     color: #fff !important;
 }
+/* =========================================
+   CONTACT SECTION - RESPONSIVE
+========================================= */
+
+
+/* =========================================
+   TABLET
+   768px - 991px
+========================================= */
+
+@media (max-width: 991px) {
+
+    .contact-container {
+        padding: 1.5rem 0.8rem;
+    }
+
+    .contact-container > div {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .contact-container > div > div {
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .contact-container > div > div > h4 {
+        font-size: 18px;
+        line-height: 1.4;
+        padding: 8px 0;
+    }
+
+    .contact-container > div > div > address {
+        font-size: 88%;
+        line-height: 1.6;
+    }
+
+    .contact-container > div > div > a {
+        width: 100%;
+        padding: 12px 10px;
+        margin: 8px 0;
+        font-size: 80%;
+    }
+
+
+    /* First image box */
+    .contact-container > div > .contact-box1 {
+        min-height: 300px;
+        background-position: center;
+    }
+
+    .contact-container > div > .contact-box1 > div {
+        margin-top: 220px;
+        padding: 8px;
+    }
+
+    .contact-container > div > .contact-box1 > div > h3 {
+        font-size: 18px;
+    }
+
+    .contact-container > div > .contact-box1 > div > h5 {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   481px - 767px
+========================================= */
+
+@media (max-width: 767px) {
+
+    .contact-container {
+        padding: 1rem 0.6rem;
+    }
+
+    .contact-container > div {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .contact-container > div > div {
+        padding: 14px;
+        border-radius: 12px;
+        border-width: 1px;
+    }
+
+    .contact-container > div > div > h4 {
+        font-size: 18px;
+        line-height: 1.4;
+        padding: 6px 0;
+        margin-bottom: 5px;
+    }
+
+    .contact-container > div > div > address {
+        font-size: 88%;
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
+
+    .contact-container > div > div > a {
+        width: 100%;
+        padding: 12px 10px;
+        margin: 7px 0;
+        font-size: 80%;
+        border-radius: 5px;
+    }
+
+
+    /* First contact image */
+    .contact-container > div > .contact-box1 {
+        min-height: 280px;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .contact-container > div > .contact-box1 > div {
+        margin-top: 195px;
+        padding: 10px;
+    }
+
+    .contact-container > div > .contact-box1 > div > h3 {
+        font-size: 18px;
+        line-height: 1.4;
+        margin: 0 0 5px;
+    }
+
+    .contact-container > div > .contact-box1 > div > h5 {
+        font-size: 13px;
+        line-height: 1.5;
+        margin: 0;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   480px AND BELOW
+========================================= */
+
+@media (max-width: 480px) {
+
+    .contact-container {
+        padding: 0.8rem 0.5rem;
+    }
+
+    .contact-container > div {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .contact-container > div > div {
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .contact-container > div > div > h4 {
+        font-size: 16px;
+        line-height: 1.4;
+        padding: 5px 0;
+    }
+
+    .contact-container > div > div > address {
+        font-size: 82%;
+        line-height: 1.6;
+    }
+
+    .contact-container > div > div > a {
+        padding: 11px 8px;
+        margin: 6px 0;
+        font-size: 75%;
+        border-radius: 5px;
+    }
+
+
+    /* First image box */
+    .contact-container > div > .contact-box1 {
+        min-height: 250px;
+    }
+
+    .contact-container > div > .contact-box1 > div {
+        margin-top: 175px;
+        padding: 8px;
+    }
+
+    .contact-container > div > .contact-box1 > div > h3 {
+        font-size: 16px;
+        line-height: 1.35;
+    }
+
+    .contact-container > div > .contact-box1 > div > h5 {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}
 
 /* !reviews section */
 
-.review-container{
+.review-container {
     background-color: #04145f;
     padding: 20px 5px 35px 5px;
-    font-family: 'Viga',sans-serif;
+    font-family: 'Viga', sans-serif;
 }
-.review-container>div{
+
+.review-container>div {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
 }
-.review-heading{
-    font-family: 'Viga',sans-serif;
+
+.review-heading {
+    font-family: 'Viga', sans-serif;
     text-align: center;
     font-size: 190%;
     color: #04145f;
@@ -1528,22 +3852,179 @@ body {
     background-color: #d8c900;
     border-top: 5px solid #c7ac20;
 }
-.add-review{
+
+.add-review {
     width: 100px;
     height: auto;
     text-decoration: none;
     position: fixed;
-    
+
     animation: heartbeat 2s infinite ease-in;
 }
-@keyframes heartbeat{
-    0%{
+
+@keyframes heartbeat {
+    0% {
         transform: scale(1);
     }
-    50%{
+
+    50% {
         transform: scale(1.2);
     }
-    100%{
+
+    100% {
         transform: scale(1);
+    }
+}
+/* ================================
+   Review Section - Responsive
+================================ */
+
+@media (max-width: 991px) {
+
+    .review-container {
+        padding: 18px 12px 30px;
+    }
+
+    .review-container > div {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .review-heading {
+        font-size: 170%;
+        padding: 6px;
+        line-height: 1.4;
+    }
+
+    .review-card {
+        padding: 18px !important;
+    }
+
+    .review-card img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .review-name {
+        font-size: 20px;
+    }
+
+    .review-stars {
+        font-size: 1.2rem !important;
+    }
+
+    .review-text {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .add-review {
+        width: 85px;
+    }
+}
+
+
+/* ================================
+   Tablet / Mobile
+================================ */
+
+@media (max-width: 767px) {
+
+    .review-container {
+        padding: 15px 10px 25px;
+    }
+
+    .review-container > div {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .review-heading {
+        font-size: 145%;
+        padding: 7px 5px;
+        line-height: 1.4;
+    }
+
+    .review-card {
+        padding: 15px !important;
+        border-radius: 10px !important;
+    }
+
+    .review-card img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .review-name {
+        font-size: 18px;
+    }
+
+    .review-stars {
+        font-size: 1.1rem !important;
+    }
+
+    .review-text {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .add-review {
+        width: 75px;
+        bottom: 30px;
+    }
+}
+
+
+/* ================================
+   Small Mobile
+================================ */
+
+@media (max-width: 480px) {
+
+    .review-container {
+        padding: 12px 8px 20px;
+    }
+
+    .review-container > div {
+        gap: 10px;
+    }
+
+    .review-heading {
+        font-size: 120%;
+        padding: 6px 4px;
+        line-height: 1.45;
+        border-top-width: 4px;
+    }
+
+    .review-card {
+        padding: 12px !important;
+    }
+
+    .review-card img {
+        width: 52px;
+        height: 52px;
+    }
+
+    .review-card .d-flex {
+        gap: 10px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .review-name {
+        font-size: 16px;
+        margin-bottom: 3px !important;
+    }
+
+    .review-stars {
+        font-size: 1rem !important;
+    }
+
+    .review-text {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .add-review {
+        width: 65px;
     }
 }
