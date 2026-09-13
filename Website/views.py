@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
-from .models import Faq
-from .forms import FaqForm
+from .models import Faq,Reviews
+from .forms import FaqForm,ReviewsForm
 
 # Create your views here.
 
@@ -18,7 +18,10 @@ def faq(request):
     faqs = Faq.objects.all()
     return render(request,'pages/faq.html',{'faqs':faqs})
 def reviews(request):
-    return render(request,'pages/reviews.html')
+    review = Reviews.objects.all()
+    return render(request,'pages/reviews.html',{'review':review})
+
+
 
 
 
@@ -36,3 +39,17 @@ def addfaq(request):
 def listfaq(request):
     faqs = Faq.objects.all()
     return render(request,'admin/listfaq.html',{'faqs': faqs})
+
+
+
+def addreview(request):
+    if request.method == "POST":
+        form = ReviewsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('reviews')
+        else:
+            return render(request,'pages/addreview.html',{'error':'Invalid review Try again!'})
+    else:
+        form = ReviewsForm()
+    return render(request,'pages/addreview.html',{'form':form})

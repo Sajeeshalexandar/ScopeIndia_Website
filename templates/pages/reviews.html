@@ -46,9 +46,43 @@
 
     </div>
 </section>
+<h2 class="review-heading">Voice of Our Students 4.9/5 (1500 Reviews)</h2>
+<section class="review-container">
+    <a href="{% url 'addreview' %}"><img src="{% static 'images/review-icon.png' %}" alt="" class="add-review"></a>
+    <div class="container-fluid">
+        {% if review %}
+        {% for r in review %}
+        <div class="review-card bg-white p-4 rounded-3 border border-2">
+            <div class="d-flex align-items-center gap-3 mb-3">
+                <img src="{% static 'images/Profile-Transparent.png' %}" alt="Reviewer" class="rounded-circle"
+                    width="80" height="80">
+                <div>
+                    <h3 class="mb-2 fw-bold review-name" style="color: #091E5F;">
+                        {{ r.name }}
+                    </h3>
+                    <div class="review-stars fs-4" style="color: rgb(255, 204, 0);">
+                        ★★★★★
+                    </div>
+                </div>
 
+            </div>
 
+            <p class="review-text mb-0" style="color: #091E5F;">
+                <span class="quote">“</span>
+                {{ r.review }}
+                <span class="quote">“</span>
+            </p>
 
+        </div>
+        {% endfor%}
+        {% else %}
+        <div>
+            <h1>No Reviews</h1>
+        </div>
+        {% endif %}
+    </div>
+
+</section>
 
 
 

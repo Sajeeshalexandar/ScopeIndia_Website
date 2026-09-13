@@ -1504,3 +1504,46 @@ body {
     font-weight: normal;
     color: #fff !important;
 }
+
+/* !reviews section */
+
+.review-container{
+    background-color: #04145f;
+    padding: 20px 5px 35px 5px;
+    font-family: 'Viga',sans-serif;
+}
+.review-container>div{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+}
+.review-heading{
+    font-family: 'Viga',sans-serif;
+    text-align: center;
+    font-size: 190%;
+    color: #04145f;
+    margin: 0;
+    font-weight: normal;
+    padding: 5px;
+    background-color: #d8c900;
+    border-top: 5px solid #c7ac20;
+}
+.add-review{
+    width: 100px;
+    height: auto;
+    text-decoration: none;
+    position: fixed;
+    
+    animation: heartbeat 2s infinite ease-in;
+}
+@keyframes heartbeat{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
