@@ -262,275 +262,144 @@ body {
     .navigation-links li a:hover{
         transform: scale(1.01);
     }
-
-
-    /* Registration button */
-
     .navigation-links .regis-btn {
         display: block;
     }
-
-
-    /* -----------------------------------------------------
-       FLOATING LINKS
-    ----------------------------------------------------- */
-
-    /* =====================================================
-   MOBILE FLOATING MENU
-===================================================== */
-
     .menu-toggle {
         display: block;
     }
-
     .menu-toggle button {
         width: 38px;
         height: 38px;
-
         font-size: 21px;
     }
-
-
-    /* Floating links */
-
     .floating-links {
         position: fixed;
-
         right: 8px;
         top: 10px;
-
         bottom: auto;
-
         display: flex;
-
         flex-direction: column;
-
         gap: 5px;
-
         z-index: 10000;
     }
-
     .floating-links a img {
         width: 35px;
     }
-
-
-    /* -----------------------------------------------------
-       INTRO HEADING
-    ----------------------------------------------------- */
-
     .container-intro-heading {
         width: 100%;
     }
-
     .container-intro-heading h1 {
         font-size: 25px;
-
         line-height: 1.3;
-
         padding: 12px 15px;
     }
-
-
-    /* -----------------------------------------------------
-       INTRO CONTENT
-    ----------------------------------------------------- */
-
     .container-intro-content {
         width: 100%;
         padding: 5px 0;
     }
-
     .container-intro-content h2 {
         font-size: 19px;
-
         line-height: 1.4;
-
         padding: 10px 15px 5px;
-
         margin-bottom: 5px;
     }
-
     .container-intro-content h3 {
         font-size: 14px;
-
         line-height: 1.7;
-
         padding: 0 15px 15px;
-
         text-align: center;
     }
-
-
-    /* -----------------------------------------------------
-       FOOTER
-    ----------------------------------------------------- */
-
     #footer {
         width: 100%;
-
         padding: 15px 10px;
-
         font-size: 13px;
-
         line-height: 1.7;
     }
-
     #footer p {
         margin: 10px 0;
     }
-
     #footer p a {
         display: inline-block;
-
         padding: 3px 5px;
-
         margin: 2px;
     }
-
     #footer .footer_line {
         font-size: 12px;
     }
-
 }
-
-
-/* =========================================================
-   SMALL MOBILE
-   BELOW 480px
-   ========================================================= */
-
 @media (max-width: 480px) {
-
-    /* -----------------------------------------------------
-       NAVBAR
-    ----------------------------------------------------- */
 
     .navigation-container .navigation-background-design1 {
         height: 110px;
         background-size: auto 110px;
     }
-
     .navigation-content {
         min-height: 110px;
         text-align: center;
     }
-
-
-    /* Logo */
-
     .navigation-content .logo a img {
         width: 125px;
         left: 50%;
         bottom: 5px;
         transform: translateX(-50%);
     }
-
-    /* Google rating */
-
     .google-rating {
 
         display: none;
     }
-
-
-
-    /* Hamburger */
-
     .navbar-toggler {
         width: 45px;
         height: 36px;
-
         right: 12px;
         bottom: 0;
-
         font-size: 22px;
     }
-
-
-    /* Menu */
-
     .navigation-links {
         top: 0px;
-
         padding: 8px 10px;
     }
-
     .navigation-links li a {
         padding: 9px;
-
         font-size: 12px;
     }
-
-
-    /* -----------------------------------------------------
-       FLOATING BUTTONS
-    ----------------------------------------------------- */
-
     .floating-links {
         top: 10px;
         right: 3px;
-
         gap: 3px;
     }
-
     .floating-links a img {
         width: 30px;
     }
-
-
-    /* -----------------------------------------------------
-       INTRO
-    ----------------------------------------------------- */
-
     .container-intro-heading h1 {
         font-size: 21px;
-
         line-height: 1.35;
-
         padding: 10px;
     }
-
     .container-intro-content h2 {
         font-size: 17px;
-
         line-height: 1.45;
-
         padding: 10px;
     }
-
     .container-intro-content h3 {
         font-size: 13px;
-
         line-height: 1.65;
-
         padding: 0 12px 12px;
     }
-
-
-    /* -----------------------------------------------------
-       FOOTER
-    ----------------------------------------------------- */
-
     #footer {
         font-size: 12px;
-
         padding: 12px 8px;
     }
-
     #footer p {
         margin: 8px 0;
     }
-
     #footer p a {
         padding: 2px 4px;
         margin: 1px;
     }
-
     #footer .footer_line {
         font-size: 11px;
     }
-
 }
 
 /* ? floating social links */
@@ -545,7 +414,6 @@ body {
     flex-direction: column;
     gap: .2rem;
 }
-
 .floating-links a img {
     width: 45px;
 }
@@ -558,21 +426,17 @@ body {
     text-align: center;
     border-bottom: #E0CF90 1px solid;
 }
-
 .container-intro-heading h1 {
-
     color: #EEAF10;
     font-size: 35px;
     font-family: 'Viga', sans-serif;
     padding: 7px 15px;
     font-weight: 400;
 }
-
 .container-intro-content {
     background: linear-gradient(45deg, #e2e2e2, #fff);
     text-align: center;
 }
-
 .container-intro-content h2 {
     font-family: 'Viga', sans-serif;
     color: #162A7C;
@@ -580,9 +444,7 @@ body {
     font-size: 25.2px;
     padding: 10px 0px 0px;
     margin: 0px 0px 10px;
-
 }
-
 .container-intro-content h3 {
     color: #0b27a8;
     padding: 0 15px 15px 15px;
@@ -601,7 +463,6 @@ body {
     background: linear-gradient(45deg, #e2e2e2, #fff);
     padding: 15px 0 20px;
 }
-
 .certification-section h4 {
     text-align: center;
     padding: 8px 0;
@@ -610,14 +471,11 @@ body {
     font-size: 19px;
     color: #04145F;
 }
-
 .image-grid-home {
-
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     width: 100%;
 }
-
 .company-logo {
     height: 45px;
     display: flex;
@@ -625,7 +483,6 @@ body {
     align-items: center;
     overflow: hidden;
 }
-
 .company-logo img {
     max-width: 50%;
     max-height: 35px;
@@ -635,59 +492,46 @@ body {
 }
 
 /* ?Home section content starts here */
+
 .home-abouts {
     background: linear-gradient(90deg, rgb(11 23 81) 0%, rgb(10 29 121) 31%);
     font-family: 'Viga', sans-serif;
     padding: 2rem 0;
-
 }
-
 .home-abouts div h2 {
     color: #FECB00;
     display: block;
     font-size: 35px;
     padding: 20px 0;
     text-align: start;
-
 }
-
 .main-courses p {
     font-size: 18px;
     color: #FFFFFF;
     margin: 0 0 26px;
 }
-
 .course-list-home div {
     padding: .5rem;
 }
-
 .course-list-home div span {
     margin-right: 10px;
 }
-
 .course-list-home div span img {
     width: 20px;
 }
-
 .course-list-home div a {
     color: #FFFFFF;
     text-decoration: none;
     transition: 1s ease;
 }
-
 .course-list-home div a:hover {
     border-bottom: 2px solid #FFFFFF;
-
 }
-
 .home-features {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-
-
 }
-
 .main-features div div {
     border: 2px solid;
     border-radius: 30px 0 30px 0;
@@ -695,18 +539,14 @@ body {
     background: rgb(11, 30, 125);
     border-color: rgb(241, 173, 14);
     transition: .3s ease;
-
 }
-
 .main-features div div:hover {
     transform: scale(1.05);
 }
-
 .main-features div h3 {
     color: #FECB00;
     margin: 10px 0;
 }
-
 .main-features div p {
     color: #FFFFFF;
 }
@@ -715,15 +555,12 @@ body {
 
 .home-placements {
     font-family: 'Viga', sans-serif;
-
 }
-
 .home-placements div h2 {
     color: #0E2B7E;
     text-align: center;
     padding: 10px;
 }
-
 .highlights {
     padding: 20px 15px;
     display: flex;
@@ -731,9 +568,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     margin-bottom: 30px;
-
 }
-
 .highlights div {
     text-align: start;
     min-width: 350px;
@@ -742,41 +577,33 @@ body {
     transition: .3s ease;
     border-radius: 15px;
 }
-
 .highlights div:hover {
     transform: scale(1.05);
 }
-
 .highlights div span {
     color: #FECB00;
-
 }
-
 .highlights div p {
     color: #0B27A8;
     font-size: 18px;
 }
 
 /* ?home ai section */
+
 .home-ai {
     background: linear-gradient(180deg, #081A55, #08297B);
     font-family: 'Viga', sans-serif;
     text-align: center;
-
-
 }
-
 .home-ai div h2 {
     text-align: center;
     background: linear-gradient(0deg, rgb(187 151 39) 29%, rgb(249 245 146) 50%, rgb(215 167 41) 76%);
     background-clip: text;
-
     padding: 45px 10px 20px;
     font-size: 45px;
     font-weight: bold;
     -webkit-text-fill-color: transparent;
 }
-
 .home-ai div h3 {
     color: #0b1e7d;
     background: linear-gradient(0deg, rgb(187 151 39) 3%, rgb(249 245 146) 56%, rgb(215 167 41) 100%);
@@ -784,29 +611,24 @@ body {
     width: auto;
     font-size: 23px;
     margin-bottom: 22px;
-
     padding: 10px 20px;
     border-radius: 20px 2px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 .home-ai div a {
     text-decoration: none;
 }
-
 .home-ai div p {
     color: #FFFFFF;
     padding: 40px 10px;
     text-align: center;
     font-size: 20px;
 }
-
 .ai-containers {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     position: relative;
 }
-
 .ai-containers .left .robo {
     position: absolute;
     width: 25vw;
@@ -814,7 +636,6 @@ body {
     left: 0;
     animation: robo-motion 5s ease-in-out infinite;
 }
-
 @keyframes robo-motion {
     0% {
         transform: translateX(8px);
@@ -835,23 +656,17 @@ body {
     100% {
         transform: translateX(8px)
     }
-
 }
-
 .ai-containers .left .ai {
     width: 50vw;
 }
-
 .ai-containers .right {
     border: 2px solid #C0A24F;
     border-radius: 30px;
     padding: 60px 10px 0px 10px;
     width: fit-content;
-
     margin-left: 30px;
-
 }
-
 .ai-containers .right ul {
     display: grid;
     gap: 1.5rem;
@@ -859,17 +674,13 @@ body {
     padding-right: 40px;
     text-align: start;
 }
-
 .ai-containers .right ul li {
-
     list-style-type: none;
 }
-
 .ai-containers .right ul li span {
     color: #FFFFFF;
     font-family: 25px;
 }
-
 .ai-containers .right ul li img {
     margin-right: 10px;
     width: 25px;
@@ -880,33 +691,26 @@ body {
 .home-fullstack {
     padding: 1rem 2rem;
     font-family: 'Viga', sans-serif;
-
 }
-
 .home-fullstack div h2 {
     color: #0B1E7D;
     font-weight: bold;
     padding: 2rem;
 }
-
 .home-fullstack div a {
     text-decoration: none;
 }
-
 .fullstack-container {
     padding: 1.5rem 2rem;
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(2, 1fr);
 }
-
 .fullstack-container .right ul li {
     list-style-type: none;
     position: relative;
     width: 100%;
-
 }
-
 .fullstack-container .right ul li span {
     background-color: #E3C25E;
     border-radius: 50%;
@@ -918,30 +722,25 @@ body {
     top: 0;
     width: 35px;
 }
-
 .fullstack-container .right ul li h5 {
     display: inline-block;
     color: black;
     margin-left: 50px;
 }
-
 .fullstack-container .right h4 {
     color: black;
     padding: 5px 0 15px 10px;
 }
-
 .fullstack-container .right ul li p {
     display: block;
     color: rgb(84, 84, 84);
     margin-left: 50px;
 }
-
 .fullstack-container .right {
     box-shadow: 0 1px 10px rgba(128, 128, 128, 0.412);
     padding: 2rem 1rem;
     border-radius: 10px;
 }
-
 .fullstack-container .left img {
     width: 700px;
     border-radius: 10px;
@@ -953,18 +752,15 @@ body {
     font-family: 'Viga', sans-serif;
     background: linear-gradient(90deg, rgb(11 23 81) 0%, rgb(10 29 121) 31%);
 }
-
 .home-testing div a {
     text-decoration: none;
 }
-
 .home-testing div a .testing-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     padding: 10px 5px;
 }
-
 .home-testing div a h2 {
     color: #FFFFFF;
     display: block;
@@ -972,19 +768,14 @@ body {
     text-align: center;
     padding: 10px 0 30px;
 }
-
 .home-testing div a h2 span {
     font-size: 50px;
     color: #EEC705;
 }
-
 .home-testing div a .testing-container .left img {
     width: 700px;
-
 }
-
 .home-testing div a .testing-container .right h4 {
-
     color: #0b1e7d;
     background-color: #fecb00;
     display: inline-block;
@@ -994,36 +785,29 @@ body {
     border-radius: 15px 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 .home-testing div a .testing-container .right ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin-top: 2rem;
     gap: 2.5rem;
-
 }
-
 .home-testing div a .testing-container .right ul li {
     list-style-type: none;
     text-align: start;
 }
-
 .home-testing div a .testing-container .right ul li img {
     width: 20px;
     margin-right: 10px;
 }
-
 .home-testing div a .testing-container .right ul li span {
     font-size: 19px;
     color: #FFFFFF;
 }
-
 .home-testing div a p {
     font-size: 22px;
     color: #FFFFFF;
     text-align: center;
 }
-
 .home-testing div a p span {
     font-size: 50px;
     color: #EEC705;
@@ -1035,7 +819,6 @@ body {
     font-family: 'Viga', sans-serif;
     padding: 3rem 2rem;
 }
-
 .home-devops div h2 {
     text-align: center;
     color: #0B1E7D;
@@ -1043,31 +826,25 @@ body {
     font-size: 35px;
     font-weight: bold;
 }
-
 .home-devops div .devops {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-
 }
-
 .home-devops div .devops .right {
     border-radius: 10px;
     background-color: #dededec7;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 .home-devops div .devops .right h4 {
     padding: 1rem;
     color: #FFFFFF;
     margin: 3rem 0 1rem;
-
     display: inline-block;
     border-radius: 0 50px 50px 0;
     background: linear-gradient(90deg, rgb(217 18 111 / 45%) 0%, rgb(217 18 111) 10%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 .home-devops div .devops .right ul {
     display: grid;
     text-align: start;
@@ -1075,30 +852,23 @@ body {
     gap: 1.5rem;
     margin-top: .5rem;
 }
-
 .home-devops div .devops .right ul li {
     list-style: none;
-
 }
-
 .home-devops div .devops .right ul li span {
     color: #0B1E7D;
     margin-left: 1rem;
 }
-
 .home-devops div .devops .right ul li img {
     width: 20px;
     color: #DA3C70;
 }
-
 .home-devops div .devops .left {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 .home-devops div .devops .left img {
     width: 100%;
 }
-
 
 /* ? home power-bi  */
 
@@ -1107,9 +877,7 @@ body {
     padding: 3rem 2rem;
     background: linear-gradient(45deg, #EDEAE8, #F6F4F5, #F6F4F5);
 }
-
 .home-power-bi div h2 {
-
     font-family: 'Viga', sans-serif;
     color: #0b1e7d;
     text-align: center;
@@ -1119,17 +887,14 @@ body {
     letter-spacing: 1px;
     font-weight: bold;
 }
-
 .home-power-bi div a {
     text-decoration: none;
 }
-
 .home-power-bi div a .power-bi {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
 }
-
 .home-power-bi div a .power-bi .right h4 {
     font-size: 27px;
     padding: 10px 20px;
@@ -1140,7 +905,6 @@ body {
     color: #0824b2;
     font-weight: bold;
 }
-
 .home-power-bi div a .power-bi .right ul {
     display: grid;
     text-align: start;
@@ -1148,32 +912,28 @@ body {
     gap: 2rem;
     margin-top: 1rem;
 }
-
 .home-power-bi div a .power-bi .right ul li img {
     width: 20px;
 }
-
 .home-power-bi div a .power-bi .right ul li {
     list-style: none;
     color: #000000;
     font-size: 20px;
 }
-
 .home-power-bi div a .power-bi .right ul li span {
     margin-left: 1rem;
 }
-
 .home-power-bi div a .power-bi .left img {
     width: 100%;
 }
 
 /* ?Home mision */
+
 .mission-vision {
     font-family: 'Viga', sans-serif;
     padding: 10px;
     background: linear-gradient(90deg, rgb(11 23 81) 0%, rgb(10 29 121) 31%);
 }
-
 .mission-vision div h4 {
     color: #fecb00;
     text-align: center;
@@ -1181,14 +941,12 @@ body {
     margin: 20px;
     letter-spacing: 1px;
 }
-
 .mission-vision div .mision-box {
     display: grid;
     gap: 30px;
     padding: 20px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
-
 .mission-vision div .mision-box .mission {
     background: linear-gradient(90deg, rgb(13 29 105) 0%, rgb(10 29 121) 31%);
     padding: 30px;
@@ -1196,7 +954,6 @@ body {
     border: solid 2px #e5c000;
     margin-bottom: 20px;
 }
-
 .mission-vision div .mision-box .mission .svg_div {
     color: #fff;
     width: 50px;
@@ -1208,20 +965,17 @@ body {
     background-color: #e0aa0c;
     margin-bottom: 20px;
 }
-
 .mission-vision div .mision-box .mission h4 {
     color: #fff;
     text-align: start;
     font-size: 25px;
     margin: 25px 0 25px 0;
 }
-
 .mission-vision div .mision-box .mission {
     color: #f4f4f4;
     font-size: 14px;
     margin-bottom: 20px;
 }
-
 .mission-vision div .mision-box .mission ul {
     display: block;
     list-style-type: none;
@@ -1230,7 +984,6 @@ body {
     gap: 1rem;
     padding: 0;
 }
-
 .mission-vision div .mision-box .mission ul li img {
     width: 20px;
     margin-right: 10px;
@@ -1245,7 +998,6 @@ body {
     border: solid 2px #e5c000;
     margin-bottom: 20px;
 }
-
 .mission-vision div .mision-box .vision .svg_div {
     color: #fff;
     width: 50px;
@@ -1257,20 +1009,17 @@ body {
     background-color: #e0aa0c;
     margin-bottom: 20px;
 }
-
 .mission-vision div .mision-box .vision h4 {
     color: #fff;
     text-align: start;
     font-size: 25px;
     margin: 25px 0 25px 0;
 }
-
 .mission-vision div .mision-box .vision {
     color: #f4f4f4;
     font-size: 14px;
     margin-bottom: 20px;
 }
-
 .mission-vision div .mision-box .vision ul {
     display: block;
     list-style-type: none;
@@ -1279,875 +1028,588 @@ body {
     gap: 1rem;
     padding: 0;
 }
-
 .mission-vision div .mision-box .vision ul li img {
     width: 20px;
     margin-right: 10px;
 }
-
-
-/* =========================================================
-   RESPONSIVE DESIGN
-   ========================================================= */
-
-
-/* =========================
-   TABLET - 992px and below
-   ========================= */
-
 @media (max-width: 992px) {
-
-    /* ---------- Intro ---------- */
-
     .container-intro-heading h1 {
         font-size: 30px;
     }
-
     .container-intro-content h2 {
         font-size: 23px;
     }
-
     .container-intro-content h3 {
         font-size: 15.5px;
     }
-
-
-    /* ---------- Certification ---------- */
-
     .image-grid-home {
         grid-template-columns: repeat(4, 1fr);
     }
-
     .company-logo img {
         max-width: 65%;
     }
-
-
-    /* ---------- About / Courses ---------- */
-
     .home-abouts {
         padding: 2rem 1rem;
     }
-
     .home-abouts div h2 {
         font-size: 30px;
         text-align: center;
     }
-
     .main-box {
         display: block;
     }
-
     .main-courses,
     .main-features {
         width: 100%;
         margin-bottom: 2rem;
     }
-
-
-    /* ---------- Placement ---------- */
-
     .highlights {
         flex-wrap: wrap;
         gap: 20px;
     }
-
     .highlights div {
         min-width: 280px;
         flex: 1;
     }
-
-
-    /* ---------- AI ---------- */
-
     .home-ai div h2 {
         font-size: 38px;
     }
-
     .ai-containers {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-
     .ai-containers .left {
         position: relative;
     }
-
     .ai-containers .left .ai {
         width: 80%;
         max-width: 700px;
     }
-
     .ai-containers .left .robo {
         width: 25%;
         left: 5%;
     }
-
     .ai-containers .right {
         width: 90%;
         margin: 0 auto;
         padding: 40px 20px 20px;
     }
-
-
-    /* ---------- Full Stack ---------- */
-
     .fullstack-container {
         grid-template-columns: 1fr;
         padding: 1rem;
     }
-
     .fullstack-container .left {
         order: -1;
     }
-
     .fullstack-container .left img {
         width: 100%;
         max-width: 700px;
         display: block;
         margin: auto;
     }
-
-
-    /* ---------- Testing ---------- */
-
     .home-testing div a .testing-container {
         grid-template-columns: 1fr;
     }
-
     .home-testing div a .testing-container .left img {
         width: 100%;
         max-width: 700px;
         display: block;
         margin: auto;
     }
-
-
-    /* ---------- DevOps ---------- */
-
     .home-devops div .devops {
         grid-template-columns: 1fr;
     }
-
     .home-devops div .devops .left {
         order: -1;
     }
-
-
-    /* ---------- Power BI ---------- */
-
     .home-power-bi div a .power-bi {
         grid-template-columns: 1fr;
     }
-
     .home-power-bi div a .power-bi .left {
         order: -1;
     }
-
-
-    /* ---------- Mission / Vision ---------- */
-
     .mission-vision div .mision-box {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-
 }
-
-
-/* =========================================================
-   MOBILE - 768px and below
-   ========================================================= */
-
 @media (max-width: 768px) {
-
-    /* ---------- Global ---------- */
-
     .container,
     .container-fluid {
         padding-left: 15px;
         padding-right: 15px;
     }
-
-
-    /* ---------- Intro ---------- */
-
     .container-intro-heading h1 {
         font-size: 26px;
         padding: 8px 10px;
     }
-
     .container-intro-content h2 {
         font-size: 21px;
         padding: 10px 10px 0;
     }
-
     .container-intro-content h3 {
         font-size: 14px;
         text-align: center;
         line-height: 1.6;
     }
-
-
-    /* ---------- Certification ---------- */
-
     .certification-section {
         padding: 15px 10px 20px;
     }
-
     .certification-section h4 {
         font-size: 17px;
         padding: 8px 10px;
     }
-
     .image-grid-home {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
     }
-
     .company-logo {
         height: 50px;
     }
-
     .company-logo img {
         max-width: 65%;
         max-height: 32px;
     }
-
-
-    /* ---------- About ---------- */
-
     .home-abouts {
         padding: 1.5rem 0.5rem;
     }
-
     .home-abouts div h2 {
         font-size: 27px;
         padding: 15px 5px;
         text-align: center;
     }
-
     .main-courses p {
         font-size: 16px;
         line-height: 1.6;
     }
-
     .course-list-home {
         --bs-gutter-x: 0.5rem;
     }
-
     .course-list-home div {
         padding: 0.5rem 0.25rem;
     }
-
     .course-list-home div a {
         font-size: 14px;
     }
-
     .course-list-home div span {
         margin-right: 5px;
     }
-
     .course-list-home div span img {
         width: 16px;
     }
-
-
-    /* ---------- Features ---------- */
-
     .home-features {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-
     .main-features div div {
         padding: 1rem 1.2rem;
     }
-
     .main-features div div:hover {
         transform: none;
     }
-
     .main-features div h3 {
         font-size: 20px;
     }
-
     .main-features div p {
         font-size: 14px;
         line-height: 1.5;
     }
-
-
-    /* ---------- Placement ---------- */
-
     .home-placements {
         padding: 0 10px;
     }
-
     .home-placements div h2 {
         font-size: 27px;
     }
-
     .highlights {
         flex-direction: column;
         padding: 10px 5px;
         gap: 15px;
         margin-bottom: 20px;
-    }
-
+    } 
     .highlights div {
         width: 100%;
         min-width: 0;
         padding: 15px 20px;
     }
-
     .highlights div:hover {
         transform: none;
     }
-
     .highlights div span {
         font-size: 30px;
     }
-
     .highlights div p {
         font-size: 16px;
         margin-bottom: 5px;
     }
-
-
-    /* =====================================================
-       AI SECTION
-       ===================================================== */
-
     .home-ai {
         padding-bottom: 20px;
     }
-
     .home-ai div h2 {
         font-size: 30px;
         line-height: 1.3;
         padding: 30px 10px 15px;
     }
-
     .home-ai div h3 {
         font-size: 18px;
         padding: 8px 15px;
         margin-bottom: 15px;
     }
-
     .home-ai div p {
         font-size: 16px;
         line-height: 1.6;
         padding: 25px 10px;
     }
-
     .ai-containers {
         grid-template-columns: 1fr;
         gap: 25px;
     }
-
     .ai-containers .left .ai {
         width: 100%;
         max-width: 600px;
     }
-
     .ai-containers .left .robo {
         width: 28%;
         left: 0;
         top: 10px;
     }
-
     .ai-containers .right {
         width: 100%;
         margin: 0;
         padding: 25px 15px;
         border-radius: 20px;
     }
-
     .ai-containers .right ul {
         grid-template-columns: 1fr;
         gap: 15px;
         padding: 0;
         margin: 0;
     }
-
     .ai-containers .right ul li {
         display: flex;
         align-items: center;
     }
-
     .ai-containers .right ul li img {
         width: 20px;
         margin-right: 10px;
         flex-shrink: 0;
     }
-
     .ai-containers .right ul li span {
         font-size: 15px;
     }
-
-
-    /* =====================================================
-       FULL STACK
-       ===================================================== */
-
     .home-fullstack {
         padding: 1rem 0.5rem;
     }
-
     .home-fullstack div h2 {
         font-size: 27px;
         padding: 1.5rem 0.5rem;
         text-align: center;
     }
-
     .fullstack-container {
         grid-template-columns: 1fr;
         padding: 0.5rem;
         gap: 20px;
     }
-
     .fullstack-container .left {
         order: -1;
     }
-
     .fullstack-container .left img {
         width: 100%;
         height: auto;
     }
-
     .fullstack-container .right {
         padding: 1.5rem 1rem;
     }
-
     .fullstack-container .right h4 {
         font-size: 20px;
     }
-
     .fullstack-container .right ul {
         padding-left: 0;
     }
-
     .fullstack-container .right ul li h5 {
         font-size: 17px;
     }
-
     .fullstack-container .right ul li p {
         font-size: 14px;
         line-height: 1.5;
     }
-
-
-    /* =====================================================
-       TESTING
-       ===================================================== */
-
     .home-testing {
         padding: 2.5rem 0.5rem 1.5rem;
     }
-
     .home-testing div a h2 {
         font-size: 24px;
         line-height: 1.4;
         padding: 10px 5px 25px;
     }
-
     .home-testing div a h2 span {
         font-size: 32px;
     }
-
     .home-testing div a .testing-container {
         grid-template-columns: 1fr;
         gap: 20px;
         padding: 5px;
-    }
-
+    } 
     .home-testing div a .testing-container .left img {
         width: 100%;
         height: auto;
     }
-
     .home-testing div a .testing-container .right h4 {
         font-size: 18px;
         line-height: 1.4;
         padding: 10px;
         margin-bottom: 10px;
     }
-
     .home-testing div a .testing-container .right ul {
         grid-template-columns: 1fr;
         gap: 15px;
         margin-top: 1rem;
         padding-left: 0;
     }
-
     .home-testing div a .testing-container .right ul li {
         display: flex;
         align-items: center;
     }
-
     .home-testing div a .testing-container .right ul li span {
         font-size: 16px;
     }
-
     .home-testing div a p {
         font-size: 17px;
         line-height: 1.5;
         padding: 15px 5px;
     }
-
     .home-testing div a p span {
         font-size: 30px;
     }
-
-
-    /* =====================================================
-       DEVOPS
-       ===================================================== */
-
     .home-devops {
         padding: 2rem 0.5rem;
-    }
-
+    } 
     .home-devops div h2 {
         font-size: 28px;
         margin-bottom: 1.5rem;
     }
-
     .home-devops div .devops {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-
     .home-devops div .devops .left {
         order: -1;
     }
-
     .home-devops div .devops .left img {
         width: 100%;
         height: auto;
     }
-
     .home-devops div .devops .right {
         padding-bottom: 15px;
     }
-
     .home-devops div .devops .right h4 {
         font-size: 18px;
         margin: 1.5rem 0 1rem;
         padding: 10px 15px;
     }
-
     .home-devops div .devops .right ul {
         grid-template-columns: 1fr;
         gap: 15px;
         padding-left: 15px;
         padding-right: 15px;
     }
-
     .home-devops div .devops .right ul li {
         display: flex;
         align-items: center;
     }
-
     .home-devops div .devops .right ul li span {
         font-size: 15px;
         margin-left: 10px;
     }
-
-
-    /* =====================================================
-       POWER BI
-       ===================================================== */
-
     .home-power-bi {
         padding: 2rem 0.5rem;
     }
-
     .home-power-bi div h2 {
         font-size: 27px;
         padding: 0 10px;
         line-height: 1.4;
     }
-
     .home-power-bi div a .power-bi {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-
     .home-power-bi div a .power-bi .left {
         order: -1;
     }
-
     .home-power-bi div a .power-bi .left img {
         width: 100%;
         height: auto;
     }
-
     .home-power-bi div a .power-bi .right h4 {
         font-size: 20px;
         padding: 10px 15px;
         margin: 20px auto;
     }
-
     .home-power-bi div a .power-bi .right ul {
         grid-template-columns: 1fr;
         gap: 15px;
         padding-left: 10px;
     }
-
     .home-power-bi div a .power-bi .right ul li {
         font-size: 16px;
     }
-
     .home-power-bi div a .power-bi .right ul li span {
         margin-left: 10px;
     }
-
-
-    /* =====================================================
-       MISSION / VISION
-       ===================================================== */
-
     .mission-vision {
         padding: 10px 5px;
     }
-
     .mission-vision div h4 {
         font-size: 28px;
         margin: 20px 5px;
     }
-
     .mission-vision div .mision-box {
         grid-template-columns: 1fr;
         gap: 15px;
         padding: 10px 5px;
     }
-
     .mission-vision div .mision-box .mission,
     .mission-vision div .mision-box .vision {
         padding: 20px;
         margin-bottom: 10px;
         border-radius: 15px;
     }
-
     .mission-vision div .mision-box .mission h4,
     .mission-vision div .mision-box .vision h4 {
         font-size: 22px;
         margin: 20px 0;
     }
-
     .mission-vision div .mision-box .mission p,
     .mission-vision div .mision-box .vision p {
         font-size: 14px;
         line-height: 1.7;
     }
-
     .mission-vision div .mision-box .mission ul,
     .mission-vision div .mision-box .vision ul {
         padding: 0;
     }
-
     .mission-vision div .mision-box .mission ul li,
     .mission-vision div .mision-box .vision ul li {
         font-size: 14px;
         margin-bottom: 10px;
     }
-
 }
-
-
-/* =========================================================
-   SMALL MOBILE - 480px and below
-   ========================================================= */
-
 @media (max-width: 480px) {
-
-    /* ---------- Intro ---------- */
 
     .container-intro-heading h1 {
         font-size: 22px;
     }
-
     .container-intro-content h2 {
         font-size: 19px;
     }
-
     .container-intro-content h3 {
         font-size: 13px;
     }
-
-
-    /* ---------- Certification ---------- */
-
     .certification-section h4 {
         font-size: 15px;
     }
-
     .image-grid-home {
         grid-template-columns: repeat(2, 1fr);
         gap: 5px;
     }
-
     .company-logo img {
         max-width: 70%;
         max-height: 28px;
     }
-
-
-    /* ---------- About ---------- */
-
     .home-abouts div h2 {
         font-size: 23px;
     }
-
     .main-courses p {
         font-size: 15px;
     }
-
     .course-list-home div a {
         font-size: 13px;
     }
-
-
-    /* ---------- Features ---------- */
-
     .main-features div div {
         padding: 0.8rem 1rem;
     }
-
-
-    /* ---------- Placement ---------- */
-
     .home-placements div h2 {
         font-size: 23px;
     }
-
     .highlights div {
         padding: 12px 15px;
     }
-
     .highlights div span {
         font-size: 26px;
     }
-
     .highlights div p {
         font-size: 14px;
     }
-
-
-    /* ---------- AI ---------- */
-
     .home-ai div h2 {
         font-size: 25px;
     }
-
     .home-ai div h3 {
         font-size: 16px;
     }
-
     .home-ai div p {
         font-size: 14px;
     }
-
-
-    /* ---------- Full Stack ---------- */
-
     .home-fullstack div h2 {
         font-size: 23px;
     }
-
     .fullstack-container .right h4 {
         font-size: 18px;
     }
-
     .fullstack-container .right ul li h5 {
         font-size: 16px;
     }
-
     .fullstack-container .right ul li p {
         font-size: 13px;
     }
-
-
-    /* ---------- Testing ---------- */
-
     .home-testing div a h2 {
         font-size: 20px;
     }
-
     .home-testing div a h2 span {
         font-size: 27px;
     }
-
     .home-testing div a .testing-container .right h4 {
         font-size: 16px;
     }
-
     .home-testing div a .testing-container .right ul li span {
         font-size: 14px;
     }
-
     .home-testing div a p {
         font-size: 15px;
     }
-
     .home-testing div a p span {
         font-size: 25px;
     }
-
-
-    /* ---------- DevOps ---------- */
-
     .home-devops div h2 {
         font-size: 24px;
     }
-
     .home-devops div .devops .right h4 {
         font-size: 16px;
     }
-
     .home-devops div .devops .right ul li span {
         font-size: 14px;
     }
-
-
-    /* ---------- Power BI ---------- */
-
     .home-power-bi div h2 {
         font-size: 23px;
     }
-
     .home-power-bi div a .power-bi .right h4 {
         font-size: 17px;
     }
-
     .home-power-bi div a .power-bi .right ul li {
         font-size: 14px;
     }
-
-
-    /* ---------- Mission / Vision ---------- */
-
     .mission-vision div h4 {
         font-size: 24px;
     }
-
     .mission-vision div .mision-box .mission,
     .mission-vision div .mision-box .vision {
         padding: 17px;
     }
-
     .mission-vision div .mision-box .mission h4,
     .mission-vision div .mision-box .vision h4 {
         font-size: 20px;
     }
-
     .mission-vision div .mision-box .mission p,
     .mission-vision div .mision-box .vision p {
         font-size: 13px;
     }
-
 }
 
 /* ? footer */
