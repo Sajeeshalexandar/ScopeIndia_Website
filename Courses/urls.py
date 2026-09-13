@@ -2,9 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    # path('course',views.course,name='course'),
 
-    # COURSE
 
     path("", views.course_list, name="course_list"),
     path("add/", views.course_create, name="course_create"),
@@ -12,7 +10,6 @@ urlpatterns = [
     path("<int:course_id>/edit/", views.course_update, name="course_update"),
     path("<int:course_id>/delete/", views.course_delete, name="course_delete"),
 
-    # SYLLABUS
 
     path("syllabus/", views.syllabus_list, name="syllabus_list"),
     path("syllabus/add/", views.syllabus_create, name="syllabus_create"),

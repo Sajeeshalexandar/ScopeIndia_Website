@@ -14,4 +14,6 @@ urlpatterns = [
     path('addfaq/',views.addfaq,name='addfaq'),
     path('listfaq/',views.listfaq,name='listfaq'),
     path('addreview/',views.addreview,name='addreview'),
+
+    path('adminPanel/',views.adminPanel,name='adminPanel')
 ]

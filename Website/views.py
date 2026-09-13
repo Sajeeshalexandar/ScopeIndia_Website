@@ -53,3 +53,8 @@ def addreview(request):
     else:
         form = ReviewsForm()
     return render(request,'pages/addreview.html',{'form':form})
+
+
+
+def adminPanel(request):
+    return render(request,'adminLayout.html')
