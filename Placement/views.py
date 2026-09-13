@@ -2,17 +2,18 @@ from django.shortcuts import render,HttpResponse,redirect
 from Registration.models import StudentRegistration
 from .forms import PlacementForm
 from .models import Placements
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
 def placement(request):
    placements = Placements.objects.all()
    return render(request,'pages/placements.html',{'placements':placements})
-
+@login_required
 def listplacement(request):
    placements = Placements.objects.all()
    return render(request,'admin/listplacement.html',{'placements':placements})
-
+@login_required
 def addplacement(request):
    if request.method == "POST":
       form = PlacementForm(request.POST,request.FILES)

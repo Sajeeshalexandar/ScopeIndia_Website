@@ -1,12 +1,11 @@
 from django.shortcuts import render,redirect
 from .models import Faq,Reviews
 from .forms import FaqForm,ReviewsForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
 def home(request):
-    
-
     return render(request,'pages/home.html')
 def about(request):
     return render(request,'pages/about.html')
@@ -24,7 +23,7 @@ def reviews(request):
 
 
 
-
+@login_required
 def addfaq(request):
     if request.method == "POST":
         form = FaqForm(request.POST)
@@ -36,12 +35,11 @@ def addfaq(request):
     else:
         form = FaqForm()
     return render(request,'admin/addfaq.html',{'form': form})
+@login_required
 def listfaq(request):
     faqs = Faq.objects.all()
     return render(request,'admin/listfaq.html',{'faqs': faqs})
-
-
-
+@login_required
 def addreview(request):
     if request.method == "POST":
         form = ReviewsForm(request.POST)
@@ -55,6 +53,6 @@ def addreview(request):
     return render(request,'pages/addreview.html',{'form':form})
 
 
-
+@login_required
 def adminPanel(request):
     return render(request,'adminLayout.html')

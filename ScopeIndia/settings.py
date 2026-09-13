@@ -140,3 +140,9 @@ MAILERS = {
 
 MEDIA_URL ='media/'
 MEDIA_ROOT = BASE_DIR/'media'
+
+#login
+
+LOGIN_URL = '/authentication/'
+LOGIN_REDIRECT_URL = '/adminPanel/'
+LOGOUT_REDIRECT_URL = '/authentication/'

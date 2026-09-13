@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</head>
+
+<body>
+
+    <body>
+        <div class="card border-0 shadow-sm container-fluid">
+            <div class="card-header bg-white py-3">
+                <h5 class="fw-semibold mb-2 h2">
+
+                    Admin Register
+
+                </h5>
+                <form method="post">
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-success">Register</button>
+                    {% if error %}
+                    <p>{{ error }}</p>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+
+    </body>
+</body>
+
+</html>

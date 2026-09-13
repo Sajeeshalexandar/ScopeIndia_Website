@@ -2,18 +2,19 @@ from django.shortcuts import render,HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import CourseList, Syllabus
 from .forms import CourseForm, SyllabusForm
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
 
 
-
+@login_required
 def course_list(request):
 
     courses = CourseList.objects.all()
 
     return render(request, "admin/course_list.html", {"courses": courses})
-
+@login_required
 def course_detail(request, course_id):
 
     course = get_object_or_404(CourseList, id=course_id)
@@ -24,7 +25,7 @@ def course_detail(request, course_id):
         request, "admin/course_detail.html", {"course": course, "syllabus": syllabus}
     )
 
-
+@login_required
 def course_create(request):
 
     if request.method == "POST":
@@ -44,7 +45,7 @@ def course_create(request):
     return render(
         request, "admin/course_form.html", {"form": form, "title": "Add Course"}
     )
-
+@login_required
 def course_update(request, course_id):
 
     course = get_object_or_404(CourseList, id=course_id)
@@ -66,7 +67,7 @@ def course_update(request, course_id):
     return render(
         request, "admin/course_form.html", {"form": form, "title": "Edit Course"}
     )
-
+@login_required
 def course_delete(request, course_id):
 
     course = get_object_or_404(CourseList, id=course_id)
@@ -78,14 +79,14 @@ def course_delete(request, course_id):
         return redirect("course_list")
 
     return render(request, "admin/course_delete.html", {"course": course})
-
+@login_required
 def syllabus_list(request):
 
     syllabus = Syllabus.objects.all()
 
     return render(request, "admin/syllabus_list.html", {"syllabus": syllabus})
 
-
+@login_required
 def syllabus_create(request):
 
     if request.method == "POST":
@@ -105,7 +106,7 @@ def syllabus_create(request):
     return render(
         request, "admin/syllabus_form.html", {"form": form, "title": "Add Syllabus"}
     )
-
+@login_required
 def syllabus_update(request, syllabus_id):
 
     syllabus = get_object_or_404(Syllabus, id=syllabus_id)
@@ -127,7 +128,7 @@ def syllabus_update(request, syllabus_id):
     return render(
         request, "admin/syllabus_form.html", {"form": form, "title": "Edit Syllabus"}
     )
-
+@login_required
 def syllabus_delete(request, syllabus_id):
 
     syllabus = get_object_or_404(Syllabus, id=syllabus_id)
