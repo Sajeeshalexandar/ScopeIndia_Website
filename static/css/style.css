@@ -1620,6 +1620,7 @@ body {
 }
 
 /* ? footer */
+
 #footer {
     border-top: 10px solid #e2c85e;
     padding: 10px;
@@ -1629,26 +1630,19 @@ body {
     background: linear-gradient(360deg, #0a1d7b, #0a1d7b, #2c51bf);
     line-height: 21px;
 }
-
 #footer p {
     display: block;
     margin: 14px;
 }
-
 #footer .footer_line p {
     font-size: 14px;
 }
-
 #footer p a {
     text-decoration: none;
     color: whitesmoke;
-
     padding: 5px 10px;
     margin: 0px 10px 10px 0px;
 }
-
-/* ================================================================================== */
-/* ================================================================================== */
 
 /*! Course section */
 
@@ -1663,8 +1657,6 @@ body {
     border-top: 5px solid #c7ac20;
     background-color: #FBD769;
 }
-
-
 .Course-cover {
     display: grid;
     width: 100%;
@@ -1673,8 +1665,6 @@ body {
     padding: 10px 5px 35px 5px;
     grid-template-columns: repeat(3, 1fr);
 }
-
-
 .course-contain {
     color: #14267c;
     text-align: left;
@@ -1686,47 +1676,29 @@ body {
     border: 2px solid #c7ac20;
     text-decoration: none;
     background-color: #fff;
-
-    /* Prevent long course names from breaking layout */
     overflow-wrap: break-word;
     word-break: normal;
 }
-
-
 .course-contain:hover {
     background-color: #fff2b4;
 }
-
-
-/* =========================================
-   Tablet
-========================================= */
-
 @media (max-width: 991px) {
 
     .course-available-head {
         font-size: 170%;
         padding: 8px 5px;
     }
-
     .Course-cover {
         grid-template-columns: repeat(2, 1fr);
         gap: 5px;
         padding: 10px 8px 30px;
     }
-
     .course-contain {
         padding: 18px 20px;
         margin: 8px 4px;
         font-size: 115%;
     }
 }
-
-
-/* =========================================
-   Mobile
-========================================= */
-
 @media (max-width: 767px) {
 
     .course-available-head {
@@ -1734,13 +1706,11 @@ body {
         padding: 8px 5px;
         border-top-width: 4px;
     }
-
     .Course-cover {
         grid-template-columns: 1fr;
         gap: 2px;
         padding: 8px 8px 25px;
     }
-
     .course-contain {
         width: 100%;
         margin: 6px 0;
@@ -1751,23 +1721,15 @@ body {
         text-align: left;
     }
 }
-
-
-/* =========================================
-   Small Mobile
-========================================= */
-
 @media (max-width: 480px) {
 
     .course-available-head {
         font-size: 125%;
         padding: 7px 4px;
     }
-
     .Course-cover {
         padding: 6px 6px 20px;
     }
-
     .course-contain {
         padding: 13px 15px;
         margin: 5px 0;
@@ -1776,23 +1738,12 @@ body {
     }
 }
 
-
 /* ?course Detials page */
-
-/* =========================================================
-   COURSE DETAILS PAGE
-========================================================= */
 
 .course-detials-container {
     width: 100%;
     font-family: 'Viga', sans-serif;
 }
-
-
-/* =========================================================
-   PAGE HEADING
-========================================================= */
-
 .course-detials-container h2 {
     font-size: 190%;
     color: #04145f;
@@ -1804,23 +1755,11 @@ body {
     text-align: center;
     line-height: 1.3;
 }
-
-
-/* =========================================================
-   MAIN BLUE CONTAINER
-========================================================= */
-
 .course-container-all {
     width: 100%;
     padding: 0 24px 0 16px;
     background-color: #04145f;
 }
-
-
-/* =========================================================
-   COURSE DURATION SECTION
-========================================================= */
-
 .course-container-all .course-duration-container {
     width: 100%;
     display: grid;
@@ -1830,7 +1769,6 @@ body {
     padding: 15px 0;
     font-family: 'Viga', sans-serif;
 }
-
 .course-duration-container h3 {
     background-color: rgb(4, 13, 55);
     color: white;
@@ -1853,12 +1791,6 @@ body {
     border-radius: 10px;
     overflow: hidden;
 }
-
-
-/* =========================================================
-   COMPANY / CERTIFICATION LOGOS
-========================================================= */
-
 .course-description-container .company-logo {
     width: 100%;
     background-color: white;
@@ -1869,13 +1801,11 @@ body {
     border-radius: 10px;
     font-weight: normal;
     text-decoration: none;
-
     display: flex;
     align-items: center;
     gap: 25px;
     flex-wrap: wrap;
 }
-
 .course-description-container .company-logo span {
     color: #14267c;
     text-align: left;
@@ -1883,7 +1813,6 @@ body {
     font-size: 25px;
     line-height: 1.3;
 }
-
 .course-description-container .company-logo img {
     max-height: 40px;
     max-width: 100%;
@@ -1891,16 +1820,9 @@ body {
     height: auto;
     object-fit: contain;
 }
-
-
-/* =========================================================
-   COURSE DESCRIPTION
-========================================================= */
-
 .course-description {
     width: 100%;
 }
-
 .course-description p {
     text-align: justify;
     font-size: 105%;
@@ -1911,12 +1833,6 @@ body {
     line-height: 1.7;
     overflow-wrap: break-word;
 }
-
-
-/* =========================================================
-   SYLLABUS SECTION
-========================================================= */
-
 .course-syllabus-container {
     width: 100%;
     display: grid;
@@ -1925,7 +1841,6 @@ body {
     padding: 10px 0;
     grid-template-columns: repeat(3, 1fr);
 }
-
 .course-syllabus-container .course-syllabus {
     background-color: white;
     color: #14267c;
@@ -1940,12 +1855,6 @@ body {
     line-height: 1.4;
     overflow-wrap: break-word;
 }
-
-
-/* =========================================================
-   NAVIGATION BUTTONS
-========================================================= */
-
 .course-detials-container .course-navigation-buttons {
     width: 100%;
     display: grid;
@@ -1954,134 +1863,88 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 }
-
 .course-detials-container .course-navigation-buttons a {
     display: flex;
     justify-content: center;
     align-items: center;
-
     font-weight: 600;
     margin: 10px 0;
     font-size: 200%;
-
     background: linear-gradient(100deg, #04145f, #acacac);
     color: white;
-
     box-shadow: white 2px 2px 10px;
-
     padding: .4rem 2rem;
-
     border: 2px solid gold;
     border-radius: 10px;
-
     text-shadow: blue 2px 1px 5px;
-
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-
     min-height: 60px;
-
-    transition:
-        transform 0.2s ease,
-        background 0.2s ease,
-        box-shadow 0.2s ease;
+    transition:transform 0.2s ease,background 0.2s ease,box-shadow 0.2s ease;
 }
-
 .course-detials-container .course-navigation-buttons a:hover {
     transform: translateY(-2px);
     box-shadow: white 2px 4px 12px;
 }
-
 .course-detials-container .course-navigation-buttons .reg {
     background: linear-gradient(135deg, #e0f7ff, #87CEFA) !important;
     color: #04145f;
     text-shadow: none;
 }
-
-
-/* =========================================================
-   TABLET
-   768px - 991px
-========================================================= */
-
 @media (max-width: 991px) {
 
-    /* Page heading */
     .course-detials-container h2 {
         font-size: 170%;
         padding: 8px 5px;
     }
-
-
-    /* Main container */
     .course-container-all {
         padding: 0 12px 20px;
     }
-
-
-    /* Duration */
     .course-container-all .course-duration-container {
         grid-template-columns: repeat(2, 1fr);
         gap: 5px;
         padding: 12px 0;
     }
-
     .course-duration-container h3 {
         padding: 16px;
         margin: 6px 3px;
         font-size: 100%;
         line-height: 1.5;
     }
-
-
-    /* Certification section */
     .course-description-container .company-logo {
         padding: 2.5rem 20px 2rem;
         gap: 18px;
         align-items: center;
         flex-wrap: wrap;
     }
-
     .course-description-container .company-logo span {
         font-size: 21px;
     }
-
     .course-description-container .company-logo img {
         max-height: 35px;
     }
-
-
-    /* Description */
     .course-description p {
         font-size: 100%;
         line-height: 1.6;
         padding: 1rem;
     }
-
-
-    /* Syllabus */
     .course-syllabus-container {
         grid-template-columns: repeat(2, 1fr);
         gap: 5px;
         padding: 8px 0;
     }
-
     .course-syllabus-container .course-syllabus {
         padding: 17px;
         margin: 6px 3px;
         font-size: 115%;
     }
-
-
-    /* Navigation buttons */
     .course-detials-container .course-navigation-buttons {
         grid-template-columns: repeat(2, 1fr);
         gap: 8px;
         margin: 5px 0;
         padding: 15px 0;
     }
-
     .course-detials-container .course-navigation-buttons a {
         font-size: 150%;
         padding: .5rem 1rem;
@@ -2089,36 +1952,20 @@ body {
         min-height: 55px;
     }
 }
-
-
-/* =========================================================
-   MOBILE
-   481px - 767px
-========================================================= */
-
 @media (max-width: 767px) {
-
-    /* Page heading */
     .course-detials-container h2 {
         font-size: 145%;
         padding: 8px 5px;
         border-top-width: 4px;
     }
-
-
-    /* Main container */
     .course-container-all {
         padding: 0 8px 15px;
     }
-
-
-    /* Duration - one column */
     .course-container-all .course-duration-container {
         grid-template-columns: 1fr;
         gap: 3px;
         padding: 8px 0;
     }
-
     .course-duration-container h3 {
         padding: 14px 16px;
         margin: 5px 0;
@@ -2127,14 +1974,10 @@ body {
         border-width: 1.5px;
         border-radius: 8px;
     }
-
-
-    /* Certification section */
     .course-description-container {
         border-width: 1.5px;
         border-radius: 8px;
     }
-
     .course-description-container .company-logo {
         padding: 2rem 15px 1.5rem;
         gap: 12px;
@@ -2142,35 +1985,26 @@ body {
         align-items: center;
         flex-wrap: wrap;
     }
-
     .course-description-container .company-logo span {
         width: 100%;
         text-align: center;
         font-size: 19px;
     }
-
     .course-description-container .company-logo img {
         max-height: 30px;
         max-width: 80px;
     }
-
-
-    /* Description */
     .course-description p {
         font-size: 95%;
         line-height: 1.6;
         padding: 15px;
         text-align: justify;
     }
-
-
-    /* Syllabus - one column */
     .course-syllabus-container {
         grid-template-columns: 1fr;
         gap: 2px;
         padding: 8px 0;
     }
-
     .course-syllabus-container .course-syllabus {
         padding: 14px 16px;
         margin: 5px 0;
@@ -2179,16 +2013,12 @@ body {
         border-radius: 8px;
         line-height: 1.5;
     }
-
-
-    /* Navigation buttons - one column */
     .course-detials-container .course-navigation-buttons {
         grid-template-columns: 1fr;
         gap: 5px;
         margin: 5px 0;
         padding: 12px 0;
     }
-
     .course-detials-container .course-navigation-buttons a {
         font-size: 130%;
         padding: .7rem 1rem;
@@ -2198,34 +2028,18 @@ body {
         border-radius: 8px;
     }
 }
-
-
-/* =========================================================
-   SMALL MOBILE
-   480px AND BELOW
-========================================================= */
-
 @media (max-width: 480px) {
-
-    /* Page heading */
     .course-detials-container h2 {
         font-size: 125%;
         padding: 7px 4px;
         border-top-width: 3px;
     }
-
-
-    /* Main container */
     .course-container-all {
         padding: 0 6px 12px;
     }
-
-
-    /* Duration */
     .course-container-all .course-duration-container {
         padding: 6px 0;
     }
-
     .course-duration-container h3 {
         padding: 12px 13px;
         margin: 4px 0;
@@ -2234,38 +2048,26 @@ body {
         border-width: 1px;
         border-radius: 7px;
     }
-
-
-    /* Certification / company logos */
     .course-description-container .company-logo {
         padding: 1.5rem 10px 1rem;
         gap: 8px;
     }
-
     .course-description-container .company-logo span {
         font-size: 16px;
         line-height: 1.4;
     }
-
     .course-description-container .company-logo img {
         max-height: 25px;
         max-width: 65px;
     }
-
-
-    /* Description */
     .course-description p {
         font-size: 90%;
         line-height: 1.55;
         padding: 12px;
     }
-
-
-    /* Syllabus */
     .course-syllabus-container {
         padding: 5px 0;
     }
-
     .course-syllabus-container .course-syllabus {
         padding: 12px 13px;
         margin: 4px 0;
@@ -2274,14 +2076,10 @@ body {
         border-radius: 7px;
         line-height: 1.45;
     }
-
-
-    /* Navigation buttons */
     .course-detials-container .course-navigation-buttons {
         padding: 8px 0;
         gap: 4px;
     }
-
     .course-detials-container .course-navigation-buttons a {
         font-size: 110%;
         padding: .65rem .8rem;
@@ -2300,34 +2098,27 @@ body {
     margin: 0 auto;
     background-color: #280060;
 }
-
 .registration-page .page-header {
     text-align: center;
     margin-bottom: 35px;
     font-family: 'Viga', sans-serif;
-
 }
-
-
 .registration-page .page-header h1 {
     margin: 0 0 8px;
     font-size: 32px;
     color: #ECB15F;
 }
-
 .registration-page .page-header p {
     margin: 0;
     font-size: 15px;
     opacity: 0.9;
     color: #fff;
 }
-
 .registration-page .form-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
 }
-
 .registration-page .form-card {
     background: white;
     border: 2px solid #d8c900;
@@ -2335,7 +2126,6 @@ body {
     padding: 20px;
     min-height: 125px;
 }
-
 .registration-page .form-card>label {
     display: block;
     margin-bottom: 12px;
@@ -2343,11 +2133,9 @@ body {
     font-size: 16px;
     font-weight: 600;
 }
-
 .registration-page .required {
     color: red;
 }
-
 .registration-page .form-control {
     width: 100%;
     height: 46px;
@@ -2360,21 +2148,17 @@ body {
     outline: none;
     transition: 0.2s;
 }
-
 .registration-page .form-control:focus {
     border-color: #3c008c;
     background: white;
     box-shadow: 0 0 0 2px rgba(60, 0, 140, 0.12);
 }
-
 .registration-page select.form-control {
     cursor: pointer;
 }
-
 .registration-page input[type="date"] {
     cursor: pointer;
 }
-
 .registration-page .radio-group ul {
     display: flex;
     flex-wrap: wrap;
@@ -2383,7 +2167,6 @@ body {
     padding: 0;
     list-style: none;
 }
-
 .registration-page .radio-group li {
     display: flex;
     align-items: center;
@@ -2391,7 +2174,6 @@ body {
     color: #3c008c;
     font-size: 14px;
 }
-
 .registration-page .radio-group label {
     display: flex;
     align-items: center;
@@ -2402,7 +2184,6 @@ body {
     font-weight: normal;
     cursor: pointer;
 }
-
 .registration-page .radio-group input[type="radio"] {
     width: 18px;
     height: 18px;
@@ -2410,23 +2191,19 @@ body {
     accent-color: #3c008c;
     cursor: pointer;
 }
-
 .registration-page .location-group ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
 }
-
 .registration-page .checkbox-group ul {
     margin: 0;
     padding: 0;
     list-style: none;
 }
-
 .registration-page .checkbox-group li {
     margin-bottom: 9px;
 }
-
 .registration-page .checkbox-group label {
     display: flex;
     align-items: center;
@@ -2437,7 +2214,6 @@ body {
     font-weight: normal;
     cursor: pointer;
 }
-
 .registration-page .checkbox-group input[type="checkbox"] {
     width: 18px;
     height: 18px;
@@ -2445,19 +2221,16 @@ body {
     accent-color: #3c008c;
     cursor: pointer;
 }
-
 .registration-page textarea.form-control {
     height: 75px;
     resize: vertical;
 }
-
 .registration-page .error {
     display: block;
     margin-top: 6px;
     color: #dc2626;
     font-size: 12px;
 }
-
 .registration-page .error-box {
     margin-bottom: 20px;
     padding: 12px 16px;
@@ -2465,17 +2238,14 @@ body {
     background: #ffe5e5;
     color: #b00000;
 }
-
 .registration-page .error-box p {
     margin: 3px 0;
 }
-
 .registration-page .button-area {
     display: flex;
     justify-content: center;
     margin-top: 30px;
 }
-
 .registration-page .button-area button {
     min-width: 180px;
     padding: 13px 6rem;
@@ -2488,311 +2258,181 @@ body {
     cursor: pointer;
     transition: 0.2s;
 }
-
 .registration-page .button-area button:hover {
     background: #ffcf8c;
     transform: translateY(-1px);
 }
-
 .registration-page .button-area button:active {
     transform: translateY(0);
 }
-
 @media (max-width: 950px) {
     .registration-page .form-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
-
 @media (max-width: 600px) {
     .registration-page {
         width: 100%;
     }
-
     .registration-page .page-header {
         margin-bottom: 25px;
     }
-
     .registration-page .page-header h1 {
         font-size: 25px;
     }
-
     .registration-page .form-grid {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-
     .registration-page .form-card {
         padding: 18px;
     }
-
     .registration-page .location-group ul {
         grid-template-columns: 1fr;
     }
-
     .registration-page .button-area button {
         width: 100%;
     }
 }
 
-
 /* !placement section */
-/* =========================================================
-   PLACEMENTS SECTION
-========================================================= */
 
 .Placement-details {
     width: 100%;
     font-family: 'Viga', sans-serif;
     background-color: #04145f;
 }
-
-
-/* =========================================================
-   PLACEMENT GRID
-========================================================= */
-
 .Placement-details > div {
     width: 100%;
     padding: 25px 20px 40px;
-
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
-
     justify-items: center;
 }
-
-
-/* =========================================================
-   PLACEMENT CARD
-========================================================= */
-
 .Placement-details .card {
     width: 100% !important;
     max-width: 18rem;
     height: 100%;
-
     background-color: white;
-
     border: 2px solid #c7ac20;
     border-radius: 10px;
-
     overflow: hidden;
-
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+    transition:transform 0.25s ease,box-shadow 0.25s ease;
 }
-
-
-/* Card hover */
-
 .Placement-details .card:hover {
     transform: translateY(-5px);
-
     box-shadow:
         0 8px 20px rgba(0, 0, 0, 0.4);
 }
-
-
-/* =========================================================
-   PLACEMENT IMAGE
-========================================================= */
-
 .Placement-details .card-img-top {
     width: 100%;
     height: 260px;
-
     object-fit: cover;
-
     display: block;
-
     border-bottom: 1px solid #c7ac20;
 }
-
-
-/* =========================================================
-   CARD BODY
-========================================================= */
-
 .Placement-details .card-body {
     padding: 15px;
     text-align: center;
 }
-
-
-/* =========================================================
-   STUDENT NAME
-========================================================= */
-
 .Placement-details .card-title {
     color: #04145f;
-
     font-size: 125%;
     font-weight: bold;
-
     margin-bottom: 10px;
 }
-
-
-/* =========================================================
-   ROLE
-========================================================= */
-
 .Placement-details .card-text {
     color: #14267c;
-
     font-family: 'Poppins', Arial, sans-serif;
-
     font-size: 95%;
-
     margin-bottom: 5px;
 }
-
-
-/* Make company name slightly stronger */
-
 .Placement-details .card-text:last-child {
     font-weight: 600;
     color: #04145f;
 }
-
-
-/* =========================================================
-   LARGE TABLET
-   992px - 1199px
-========================================================= */
-
 @media (max-width: 1199px) {
-
     .Placement-details > div {
         grid-template-columns: repeat(4, 1fr);
         gap: 18px;
         padding: 22px 18px 35px;
     }
-
     .Placement-details .card {
         max-width: 17rem;
     }
-
     .Placement-details .card-img-top {
         height: 240px;
     }
 }
-
-
-/* =========================================================
-   TABLET
-   768px - 991px
-========================================================= */
-
 @media (max-width: 991px) {
-
     .Placement-details > div {
         grid-template-columns: repeat(3, 1fr);
         gap: 15px;
-
         padding: 20px 15px 30px;
     }
-
     .Placement-details .card {
         max-width: 17rem;
     }
-
     .Placement-details .card-img-top {
         height: 230px;
     }
-
     .Placement-details .card-title {
         font-size: 115%;
     }
-
     .Placement-details .card-text {
         font-size: 90%;
     }
 }
-
-
-/* =========================================================
-   MOBILE
-   481px - 767px
-========================================================= */
-
 @media (max-width: 767px) {
-
     .Placement-details > div {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
-
         padding: 15px 10px 25px;
     }
-
     .Placement-details .card {
         max-width: none;
         width: 100% !important;
-
         border-width: 1.5px;
         border-radius: 8px;
     }
-
     .Placement-details .card-img-top {
         height: 200px;
     }
-
     .Placement-details .card-body {
         padding: 12px 8px;
     }
-
     .Placement-details .card-title {
         font-size: 105%;
         margin-bottom: 7px;
     }
-
     .Placement-details .card-text {
         font-size: 85%;
         line-height: 1.4;
     }
 }
-
-
-/* =========================================================
-   SMALL MOBILE
-   480px AND BELOW
-========================================================= */
-
 @media (max-width: 480px) {
-
     .Placement-details > div {
         grid-template-columns: 1fr;
         gap: 12px;
-
         padding: 12px 10px 20px;
     }
-
     .Placement-details .card {
         width: 100% !important;
         max-width: 300px;
-
         margin: 0 auto;
-
         border-radius: 8px;
     }
-
     .Placement-details .card-img-top {
         height: 250px;
     }
-
     .Placement-details .card-body {
         padding: 12px 10px;
     }
-
     .Placement-details .card-title {
         font-size: 110%;
     }
-
     .Placement-details .card-text {
         font-size: 90%;
     }
@@ -2806,7 +2446,6 @@ body {
     font-family: 'Viga', sans-serif;
     border-bottom: 5px solid #d3ad3a;
 }
-
 .about-text-container>div h2 {
     text-align: center;
     color: #fecb00;
@@ -2814,7 +2453,6 @@ body {
     font-weight: bolder;
     margin-bottom: 10px;
 }
-
 .about-text-container>div h3 {
     color: #fff;
     font-size: 30px;
@@ -2823,7 +2461,6 @@ body {
     text-align: center;
     margin-bottom: 30px;
 }
-
 .about-text-container>div p {
     color: #fff;
     text-align: justify;
@@ -2833,7 +2470,6 @@ body {
     line-height: 25px;
     font-weight: 500;
 }
-
 .about-text-container>div .rating-container {
     display: flex;
     justify-content: center;
@@ -2842,83 +2478,62 @@ body {
     margin-top: 3rem;
     margin-bottom: 2rem;
 }
-
 .about-text-container>div .rating-container img {
     width: 250px;
     margin-left: 25px;
 }
-
 .about-text-container>div .rating-container h4 {
     color: #fff;
     font-size: medium;
 }
-/* =========================================
-   ABOUT SECTION - RESPONSIVE
-========================================= */
-
-/* Tablet */
 @media (max-width: 991px) {
-
     .about-text-container {
         padding: 25px 30px;
     }
-
     .about-text-container > div h2 {
         font-size: 38px;
         line-height: 1.3;
         margin-bottom: 15px;
     }
-
     .about-text-container > div h3 {
         font-size: 23px;
         line-height: 1.5;
         margin-bottom: 25px;
     }
-
     .about-text-container > div p {
         font-size: 14px;
         line-height: 1.7;
         letter-spacing: 1px;
         padding: 0 10px;
     }
-
     .about-text-container > div .rating-container {
         margin-top: 2.5rem;
         margin-bottom: 1.5rem;
     }
-
     .about-text-container > div .rating-container img {
         width: 220px;
         margin-left: 0;
         align-self: center;
     }
-
     .about-text-container > div .rating-container h4 {
         font-size: 15px;
     }
 }
-
-
-/* Mobile */
 @media (max-width: 767px) {
-
     .about-text-container {
         padding: 20px 15px;
         border-bottom-width: 4px;
     }
-
     .about-text-container > div h2 {
         font-size: 30px;
         line-height: 1.3;
         margin-bottom: 15px;
     }
-
     .about-text-container > div h3 {
         font-size: 19px;
         line-height: 1.6;
         margin-bottom: 25px;
     }
-
     .about-text-container > div p {
         font-size: 14px;
         line-height: 1.8;
@@ -2927,44 +2542,34 @@ body {
         margin-bottom: 20px;
         text-align: justify;
     }
-
     .about-text-container > div .rating-container {
         margin-top: 2rem;
         margin-bottom: 1rem;
     }
-
     .about-text-container > div .rating-container img {
         width: 190px;
         margin: 0 auto;
     }
-
     .about-text-container > div .rating-container h4 {
         font-size: 14px;
         margin-top: 10px;
     }
 }
-
-
-/* Small Mobile */
 @media (max-width: 480px) {
-
     .about-text-container {
         padding: 18px 10px;
         border-bottom-width: 3px;
     }
-
     .about-text-container > div h2 {
         font-size: 24px;
         line-height: 1.35;
         margin-bottom: 12px;
     }
-
     .about-text-container > div h3 {
         font-size: 16px;
         line-height: 1.65;
         margin-bottom: 20px;
     }
-
     .about-text-container > div p {
         font-size: 13px;
         line-height: 1.8;
@@ -2972,18 +2577,15 @@ body {
         padding: 0;
         margin-bottom: 18px;
     }
-
     .about-text-container > div .rating-container {
         margin-top: 1.5rem;
         margin-bottom: 1rem;
     }
-
     .about-text-container > div .rating-container img {
         width: 165px;
         max-width: 100%;
         margin: 0 auto;
     }
-
     .about-text-container > div .rating-container h4 {
         font-size: 13px;
         margin-top: 8px;
@@ -2995,21 +2597,14 @@ body {
 .faq-container {
     font-family: 'Viga', sans-serif;
 }
-
 .faq-container>div {
     display: grid;
     grid-template-rows: 1fr;
     padding: 1rem;
-
 }
-
 .faq-container>div>div {
     color: #0824b2;
-
-
-
 }
-
 .faq-container>div>div>details {
     border: 1px solid #e0aa0c;
     margin: 15px 0;
@@ -3023,33 +2618,27 @@ body {
     font-family: 'Viga', sans-serif;
     padding: 2rem 1rem;
 }
-
 .contact-container>div {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
 }
-
 .contact-container>div>div {
     padding: 1rem;
     background-color: #fff;
     border-radius: 20px;
     border: 1px solid #ffda76;
-
 }
-
 .contact-container>div>div>h4 {
     font-size: 20px;
     color: #e10c0c;
     padding: 10px 0;
 }
-
 .contact-container>div>div>address {
     font-family: 'Poppins', Arial;
     font-style: normal;
     font-size: 90%;
 }
-
 .contact-container>div>div>a {
     display: block;
     text-decoration: none;
@@ -3064,13 +2653,11 @@ body {
     font-weight: bolder;
     font-size: 80%;
 }
-
 .contact-container>div>.contact-box1 {
     background: transparent url(../images/contact-scope-india.webp) no-repeat;
     background-size: cover;
     padding: 0 !important;
 }
-
 .contact-container>div>.contact-box1>div {
     background-color: rgba(0, 0, 0, 0.7);
     color: #c7ac20;
@@ -3078,122 +2665,84 @@ body {
     margin-top: 182px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-
 }
-
 .contact-container>div>.contact-box1>div>h4 {
     margin: 0;
     font-weight: normal;
     color: white !important;
 }
-
 .contact-container>div>.contact-box1>div>h5 {
     margin: 0;
     font-weight: normal;
     color: #fff !important;
 }
-/* =========================================
-   CONTACT SECTION - RESPONSIVE
-========================================= */
-
-
-/* =========================================
-   TABLET
-   768px - 991px
-========================================= */
-
 @media (max-width: 991px) {
-
     .contact-container {
         padding: 1.5rem 0.8rem;
     }
-
     .contact-container > div {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
-
     .contact-container > div > div {
         padding: 15px;
         border-radius: 15px;
     }
-
     .contact-container > div > div > h4 {
         font-size: 18px;
         line-height: 1.4;
         padding: 8px 0;
     }
-
     .contact-container > div > div > address {
         font-size: 88%;
         line-height: 1.6;
     }
-
     .contact-container > div > div > a {
         width: 100%;
         padding: 12px 10px;
         margin: 8px 0;
         font-size: 80%;
     }
-
-
-    /* First image box */
     .contact-container > div > .contact-box1 {
         min-height: 300px;
         background-position: center;
     }
-
     .contact-container > div > .contact-box1 > div {
         margin-top: 220px;
         padding: 8px;
     }
-
     .contact-container > div > .contact-box1 > div > h3 {
         font-size: 18px;
     }
-
     .contact-container > div > .contact-box1 > div > h5 {
         font-size: 14px;
         line-height: 1.5;
     }
 }
-
-
-/* =========================================
-   MOBILE
-   481px - 767px
-========================================= */
-
 @media (max-width: 767px) {
-
     .contact-container {
         padding: 1rem 0.6rem;
     }
-
     .contact-container > div {
         grid-template-columns: 1fr;
         gap: 12px;
     }
-
     .contact-container > div > div {
         padding: 14px;
         border-radius: 12px;
         border-width: 1px;
     }
-
     .contact-container > div > div > h4 {
         font-size: 18px;
         line-height: 1.4;
         padding: 6px 0;
         margin-bottom: 5px;
     }
-
     .contact-container > div > div > address {
         font-size: 88%;
         line-height: 1.6;
         margin-bottom: 10px;
     }
-
     .contact-container > div > div > a {
         width: 100%;
         padding: 12px 10px;
@@ -3201,89 +2750,64 @@ body {
         font-size: 80%;
         border-radius: 5px;
     }
-
-
-    /* First contact image */
     .contact-container > div > .contact-box1 {
         min-height: 280px;
         background-position: center;
         background-size: cover;
     }
-
     .contact-container > div > .contact-box1 > div {
         margin-top: 195px;
         padding: 10px;
     }
-
     .contact-container > div > .contact-box1 > div > h3 {
         font-size: 18px;
         line-height: 1.4;
         margin: 0 0 5px;
     }
-
     .contact-container > div > .contact-box1 > div > h5 {
         font-size: 13px;
         line-height: 1.5;
         margin: 0;
     }
 }
-
-
-/* =========================================
-   SMALL MOBILE
-   480px AND BELOW
-========================================= */
-
 @media (max-width: 480px) {
-
     .contact-container {
         padding: 0.8rem 0.5rem;
     }
-
     .contact-container > div {
         grid-template-columns: 1fr;
         gap: 10px;
     }
-
     .contact-container > div > div {
         padding: 12px;
         border-radius: 10px;
     }
-
     .contact-container > div > div > h4 {
         font-size: 16px;
         line-height: 1.4;
         padding: 5px 0;
     }
-
     .contact-container > div > div > address {
         font-size: 82%;
         line-height: 1.6;
     }
-
     .contact-container > div > div > a {
         padding: 11px 8px;
         margin: 6px 0;
         font-size: 75%;
         border-radius: 5px;
     }
-
-
-    /* First image box */
     .contact-container > div > .contact-box1 {
         min-height: 250px;
     }
-
     .contact-container > div > .contact-box1 > div {
         margin-top: 175px;
         padding: 8px;
     }
-
     .contact-container > div > .contact-box1 > div > h3 {
         font-size: 16px;
         line-height: 1.35;
     }
-
     .contact-container > div > .contact-box1 > div > h5 {
         font-size: 12px;
         line-height: 1.5;
@@ -3297,13 +2821,11 @@ body {
     padding: 20px 5px 35px 5px;
     font-family: 'Viga', sans-serif;
 }
-
 .review-container>div {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
 }
-
 .review-heading {
     font-family: 'Viga', sans-serif;
     text-align: center;
@@ -3315,178 +2837,130 @@ body {
     background-color: #d8c900;
     border-top: 5px solid #c7ac20;
 }
-
 .add-review {
     width: 100px;
     height: auto;
     text-decoration: none;
     position: fixed;
-
     animation: heartbeat 2s infinite ease-in;
 }
-
 @keyframes heartbeat {
     0% {
         transform: scale(1);
     }
-
     50% {
         transform: scale(1.2);
     }
-
     100% {
         transform: scale(1);
     }
 }
-/* ================================
-   Review Section - Responsive
-================================ */
-
 @media (max-width: 991px) {
-
     .review-container {
         padding: 18px 12px 30px;
     }
-
     .review-container > div {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
-
     .review-heading {
         font-size: 170%;
         padding: 6px;
         line-height: 1.4;
     }
-
     .review-card {
         padding: 18px !important;
     }
-
     .review-card img {
         width: 65px;
         height: 65px;
     }
-
     .review-name {
         font-size: 20px;
     }
-
     .review-stars {
         font-size: 1.2rem !important;
     }
-
     .review-text {
         font-size: 15px;
         line-height: 1.6;
     }
-
     .add-review {
         width: 85px;
     }
 }
-
-
-/* ================================
-   Tablet / Mobile
-================================ */
-
 @media (max-width: 767px) {
-
     .review-container {
         padding: 15px 10px 25px;
     }
-
     .review-container > div {
         grid-template-columns: 1fr;
         gap: 12px;
     }
-
     .review-heading {
         font-size: 145%;
         padding: 7px 5px;
         line-height: 1.4;
     }
-
     .review-card {
         padding: 15px !important;
         border-radius: 10px !important;
     }
-
     .review-card img {
         width: 60px;
         height: 60px;
     }
-
     .review-name {
         font-size: 18px;
     }
-
     .review-stars {
         font-size: 1.1rem !important;
     }
-
     .review-text {
         font-size: 14px;
         line-height: 1.7;
     }
-
     .add-review {
         width: 75px;
         bottom: 30px;
     }
 }
 
-
-/* ================================
-   Small Mobile
-================================ */
-
 @media (max-width: 480px) {
-
     .review-container {
         padding: 12px 8px 20px;
     }
-
     .review-container > div {
         gap: 10px;
     }
-
     .review-heading {
         font-size: 120%;
         padding: 6px 4px;
         line-height: 1.45;
         border-top-width: 4px;
     }
-
     .review-card {
         padding: 12px !important;
     }
-
     .review-card img {
         width: 52px;
         height: 52px;
     }
-
     .review-card .d-flex {
         gap: 10px !important;
         margin-bottom: 10px !important;
     }
-
     .review-name {
         font-size: 16px;
         margin-bottom: 3px !important;
     }
-
     .review-stars {
         font-size: 1rem !important;
     }
-
     .review-text {
         font-size: 13px;
         line-height: 1.7;
     }
-
     .add-review {
         width: 65px;
     }
