@@ -67,6 +67,13 @@ body {
     border-radius: 5px;
     color: #ECB264;
 }
+.navigation-links li a.active{
+    list-style: none;
+    background-color: rgba(255, 255, 255, 0.136);
+    border: 1px solid white;
+    border-radius: 5px;
+    color: #ECB264;
+}
 .navigation-links li a {
     text-decoration: none;
     padding: 5px;
@@ -1839,12 +1846,6 @@ body {
     line-height: 1.5;
     overflow-wrap: break-word;
 }
-
-
-/* =========================================================
-   COURSE DESCRIPTION CONTAINER
-========================================================= */
-
 .course-description-container {
     width: 100%;
     background-color: white;
