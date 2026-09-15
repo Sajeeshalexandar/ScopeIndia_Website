@@ -1,425 +1,417 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>My Profile</title>
+    <title>My Profile — Scope India</title>
+    <meta name="description" content="View and edit your Scope India student profile.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --brand-dark: #07163d;
+            --brand-mid:  #0e2566;
+            --brand-blue: #1a3a8f;
+            --accent:     #ffd447;
+            --white:      #ffffff;
+            --bg:         #f0f4ff;
+            --text-main:  #1a1a2e;
+            --text-muted: #64748b;
+            --border:     #e2e8f0;
+            --nav-w:      260px;
+            --radius:     14px;
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: Arial, sans-serif;
-            background: #f4f6fb;
-            color: #222;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text-main);
             min-height: 100vh;
-        }
-
-        /* Navbar */
-
-        .navbar {
-            background: #07163d;
-            padding: 18px 6%;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
-        .navbar h2 {
-            color: white;
-            font-size: 22px;
+        /* Sidebar */
+        .sidebar {
+            width: var(--nav-w); min-height: 100vh;
+            background: linear-gradient(180deg, var(--brand-dark) 0%, var(--brand-mid) 60%, var(--brand-blue) 100%);
+            display: flex; flex-direction: column;
+            position: fixed; left: 0; top: 0; bottom: 0; z-index: 100;
+            transition: transform 0.3s ease;
         }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            align-items: center;
+        .sidebar-brand { padding: 28px 24px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .sidebar-brand h2 { color: var(--accent); font-size: 20px; font-weight: 800; }
+        .sidebar-brand p  { color: rgba(255,255,255,0.5); font-size: 12px; margin-top: 3px; }
+        .sidebar-user {
+            padding: 20px 24px; border-bottom: 1px solid rgba(255,255,255,0.08);
+            display: flex; align-items: center; gap: 12px;
         }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
+        .user-avatar {
+            width: 44px; height: 44px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), #ffb300);
+            color: var(--brand-dark); font-size: 18px; font-weight: 800;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
         }
-
-        .nav-links a:hover {
-            color: #ffd447;
+        .user-info h3 { color: var(--white); font-size: 13.5px; font-weight: 600; }
+        .user-info p  { color: rgba(255,255,255,0.5); font-size: 11px; margin-top: 2px; }
+        .sidebar-nav { flex: 1; padding: 20px 16px; display: flex; flex-direction: column; gap: 4px; }
+        .nav-label { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 1px; padding: 12px 8px 6px; }
+        .nav-link {
+            display: flex; align-items: center; gap: 12px; padding: 11px 14px;
+            border-radius: 10px; color: rgba(255,255,255,0.7); text-decoration: none;
+            font-size: 14px; font-weight: 500; transition: all 0.2s;
         }
-
-        .logout {
-            background: #dc3545;
-            padding: 9px 15px;
-            border-radius: 6px;
+        .nav-link:hover { background: rgba(255,255,255,0.1); color: var(--white); transform: translateX(3px); }
+        .nav-link.active { background: var(--accent); color: var(--brand-dark); font-weight: 700; }
+        .nav-link.active:hover { transform: none; }
+        .nav-icon { font-size: 18px; flex-shrink: 0; width: 22px; text-align: center; }
+        .sidebar-footer { padding: 16px; border-top: 1px solid rgba(255,255,255,0.08); }
+        .logout-btn {
+            display: flex; align-items: center; gap: 10px; width: 100%; padding: 11px 14px;
+            border-radius: 10px; background: rgba(239,68,68,0.15); color: #fca5a5;
+            text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.2s;
         }
-
-        .logout:hover {
-            color: white !important;
-            background: #bb2d3b;
+        .logout-btn:hover { background: rgba(239,68,68,0.28); color: #fecaca; }
+        .hamburger {
+            display: none; position: fixed; top: 16px; left: 16px; z-index: 200;
+            background: var(--brand-dark); border: none; border-radius: 8px;
+            width: 42px; height: 42px; cursor: pointer;
+            flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
+        .hamburger span { display: block; width: 20px; height: 2px; background: white; border-radius: 2px; }
+        .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 99; }
 
         /* Main */
+        .main { margin-left: var(--nav-w); flex: 1; min-height: 100vh; display: flex; flex-direction: column; }
 
-        .profile-container {
-            width: 90%;
-            max-width: 1000px;
-            margin: 40px auto;
-        }
-
-        .profile-header {
-            background: #07163d;
-            color: white;
-            padding: 30px;
-            border-radius: 12px 12px 0 0;
+        /* Profile header */
+        .profile-hero {
+            background: linear-gradient(135deg, var(--brand-dark), var(--brand-blue));
+            padding: 40px 40px 60px;
+            color: var(--white);
+            position: relative;
             text-align: center;
         }
+        .profile-avatar {
+            width: 90px; height: 90px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), #ffb300);
+            color: var(--brand-dark);
+            font-size: 38px; font-weight: 800;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px;
+            border: 4px solid rgba(255,255,255,0.2);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+        .profile-hero h1 { font-size: 26px; font-weight: 800; margin-bottom: 6px; }
+        .profile-hero p  { color: rgba(255,255,255,0.65); font-size: 14px; }
 
-        .profile-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 15px;
-            border-radius: 50%;
-            background: #ffd447;
-            color: #07163d;
+        /* Content */
+        .content {
+            padding: 36px 40px;
+            flex: 1;
+            margin-top: -24px;
+        }
 
+        /* Section card */
+        .section-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+        .section-head {
+            padding: 18px 24px;
+            border-bottom: 1px solid var(--border);
             display: flex;
-            justify-content: center;
             align-items: center;
-
-            font-size: 32px;
-            font-weight: bold;
+            gap: 10px;
+            background: #fafbff;
         }
+        .section-head h2 { font-size: 15px; font-weight: 700; color: var(--brand-dark); }
 
-        .profile-header h1 {
-            font-size: 25px;
-            margin-bottom: 5px;
-        }
-
-        .profile-header p {
-            color: #d7dcef;
-        }
-
-        /* Profile body */
-
-        .profile-body {
-            background: white;
-            padding: 30px;
-            border-radius: 0 0 12px 12px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .section-title {
-            font-size: 18px;
-            color: #07163d;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #eee;
-        }
-
-        .profile-grid {
+        /* Info grid */
+        .info-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            gap: 0;
         }
-
-        .profile-item {
-            background: #f8f9fc;
-            padding: 16px;
-            border-radius: 8px;
-            border: 1px solid #e8eaf0;
+        .info-item {
+            padding: 18px 24px;
+            border-bottom: 1px solid #f1f5f9;
+            border-right: 1px solid #f1f5f9;
         }
+        .info-item:nth-child(even) { border-right: none; }
+        .info-item:nth-last-child(-n+2) { border-bottom: none; }
+        .info-item:last-child:nth-child(odd) { border-bottom: none; border-right: none; grid-column: span 2; }
+        .info-key { font-size: 11.5px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+        .info-val { font-size: 15px; font-weight: 600; color: var(--text-main); word-break: break-word; }
+        .info-val.empty { color: var(--text-muted); font-weight: 400; font-style: italic; }
 
-        .profile-item label {
-            display: block;
-            color: #777;
-            font-size: 13px;
-            margin-bottom: 6px;
+        /* Badge */
+        .badge {
+            display: inline-flex; align-items: center; gap: 5px;
+            padding: 3px 10px; border-radius: 50px; font-size: 12px; font-weight: 600;
         }
+        .badge-blue   { background: #eff6ff; color: #1d4ed8; }
+        .badge-green  { background: #f0fdf4; color: #15803d; }
+        .badge-purple { background: #f5f3ff; color: #7c3aed; }
 
-        .profile-item p {
-            color: #222;
-            font-size: 15px;
-            font-weight: 500;
-            word-break: break-word;
-        }
-
-        /* Edit button */
-
+        /* Actions */
         .profile-actions {
-            margin-top: 30px;
-            display: flex;
-            justify-content: flex-end;
+            display: flex; gap: 12px; margin-top: 8px;
         }
-
-        .edit-btn {
-            text-decoration: none;
-            background: #07163d;
-            color: white;
-            padding: 12px 22px;
-            border-radius: 7px;
-            font-size: 14px;
-            transition: 0.2s;
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 22px; border-radius: 10px; font-size: 14px; font-weight: 600;
+            font-family: 'Inter', sans-serif; text-decoration: none; transition: all 0.2s;
         }
-
-        .edit-btn:hover {
-            background: #10275f;
-            color: white;
+        .btn-primary {
+            background: linear-gradient(135deg, var(--brand-dark), var(--brand-blue));
+            color: var(--white);
         }
+        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(7,22,61,0.3); }
+        .btn-secondary { background: #f1f5f9; color: var(--text-main); }
+        .btn-secondary:hover { background: #e2e8f0; }
 
-        /* Mobile */
-
-        @media (max-width: 768px) {
-
-            .navbar {
-                flex-direction: column;
-                gap: 15px;
-                padding: 18px 5%;
-            }
-
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 12px;
-            }
-
-            .profile-container {
-                width: 94%;
-                margin: 25px auto;
-            }
-
-            .profile-body {
-                padding: 20px;
-            }
-
-            .profile-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .profile-header {
-                padding: 25px 15px;
-            }
+        @media (max-width: 900px) {
+            .sidebar { transform: translateX(-100%); }
+            .sidebar.open { transform: translateX(0); }
+            .sidebar-overlay.open { display: block; }
+            .hamburger { display: flex; }
+            .main { margin-left: 0; }
+            .profile-hero { padding: 60px 24px 50px; }
+            .content { padding: 24px; }
         }
-
-        @media (max-width: 480px) {
-
-            .navbar h2 {
-                font-size: 19px;
-            }
-
-            .nav-links a {
-                font-size: 13px;
-            }
-
-            .profile-header h1 {
-                font-size: 21px;
-            }
-
-            .profile-body {
-                padding: 15px;
-            }
-
-            .profile-item {
-                padding: 14px;
-            }
-
-            .profile-actions {
-                justify-content: stretch;
-            }
-
-            .edit-btn {
-                width: 100%;
-                text-align: center;
-            }
+        @media (max-width: 600px) {
+            .info-grid { grid-template-columns: 1fr; }
+            .info-item { border-right: none; }
+            .info-item:nth-last-child(-n+2) { border-bottom: 1px solid #f1f5f9; }
+            .info-item:last-child { border-bottom: none; }
+            .info-item:last-child:nth-child(odd) { grid-column: auto; }
+            .profile-actions { flex-direction: column; }
+            .btn { justify-content: center; }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Navbar -->
+    <div class="sidebar-overlay" id="overlay" onclick="closeSidebar()"></div>
 
-    <nav class="navbar">
-
-        <h2>Student Portal</h2>
-
-        <div class="nav-links">
-
-            <a href="{% url 'student_dashboard' %}">
-                Dashboard
-            </a>
-
-            <a href="{% url 'course_search' %}">
-                Find Courses
-            </a>
-
-            <a href="{% url 'picked_courses' %}">
-                My Courses
-            </a>
-
-            <a href="{% url 'student_profile' %}">
-                Profile
-            </a>
-
-            <a href="{% url 'change_password' %}">
-                Change Password
-            </a>
-
-            <a href="{% url 'student_logout' %}" class="logout">
-                Logout
-            </a>
-
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <h2>🎓 Scope India</h2>
+            <p>Student Portal</p>
         </div>
-
-    </nav>
-
-
-    <!-- Profile -->
-
-    <main class="profile-container">
-
-        <div class="profile-header">
-
-            <div class="profile-icon">
-                {{ student.full_name|first|upper }}
+        <div class="sidebar-user">
+            <div class="user-avatar">{{ student.full_name|first|upper }}</div>
+            <div class="user-info">
+                <h3>{{ student.full_name }}</h3>
+                <p>{{ student.email }}</p>
             </div>
+        </div>
+        <nav class="sidebar-nav">
+            <span class="nav-label">Main Menu</span>
+            <a href="{% url 'student_dashboard' %}" class="nav-link"><span class="nav-icon">🏠</span> Dashboard</a>
+            <a href="{% url 'course_search' %}"     class="nav-link"><span class="nav-icon">🔍</span> Find Courses</a>
+            <a href="{% url 'picked_courses' %}"    class="nav-link"><span class="nav-icon">📚</span> My Courses</a>
+            <span class="nav-label">Account</span>
+            <a href="{% url 'student_profile' %}"  class="nav-link active"><span class="nav-icon">👤</span> Profile</a>
+            <a href="{% url 'change_password' %}"  class="nav-link"><span class="nav-icon">🔒</span> Change Password</a>
+            <a href="{% url 'home' %}"              class="nav-link"><span class="nav-icon">🌐</span> Website</a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="{% url 'student_logout' %}" class="logout-btn"><span>🚪</span> Logout</a>
+        </div>
+    </aside>
 
+    <button class="hamburger" id="hamburger" onclick="toggleSidebar()">
+        <span></span><span></span><span></span>
+    </button>
+
+    <main class="main">
+
+        <div class="profile-hero">
+            <div class="profile-avatar">{{ student.full_name|first|upper }}</div>
             <h1>{{ student.full_name }}</h1>
-
             <p>{{ student.email }}</p>
-
         </div>
 
+        <div class="content">
 
-        <div class="profile-body">
-
-            <h3 class="section-title">
-                Personal Information
-            </h3>
-
-            <div class="profile-grid">
-
-                <div class="profile-item">
-                    <label>Full Name</label>
-                    <p>{{ student.full_name }}</p>
+            <!-- Personal Info -->
+            <div class="section-card">
+                <div class="section-head">
+                    <span>👤</span>
+                    <h2>Personal Information</h2>
                 </div>
+                <div class="info-grid">
 
-                <div class="profile-item">
-                    <label>Email</label>
-                    <p>{{ student.email }}</p>
+                    <div class="info-item">
+                        <p class="info-key">Full Name</p>
+                        <p class="info-val">{{ student.full_name }}</p>
+                    </div>
+
+                    <div class="info-item">
+                        <p class="info-key">Email Address</p>
+                        <p class="info-val">{{ student.email }}</p>
+                    </div>
+
+                    <div class="info-item">
+                        <p class="info-key">Date of Birth</p>
+                        <p class="info-val {% if not student.date_of_birth %}empty{% endif %}">
+                            {{ student.date_of_birth|default:"Not provided" }}
+                        </p>
+                    </div>
+
+                    <div class="info-item">
+                        <p class="info-key">Gender</p>
+                        <p class="info-val">{{ student.get_gender_display }}</p>
+                    </div>
+
+                    <div class="info-item">
+                        <p class="info-key">Mobile Number</p>
+                        <p class="info-val {% if not student.mobile %}empty{% endif %}">
+                            {{ student.mobile|default:"Not provided" }}
+                        </p>
+                    </div>
+
+                    <div class="info-item">
+                        <p class="info-key">Educational Qualification</p>
+                        <p class="info-val {% if not student.educational_qualification %}empty{% endif %}">
+                            {{ student.educational_qualification|default:"Not provided" }}
+                        </p>
+                    </div>
+
+                    <div class="info-item">
+                        <p class="info-key">Country</p>
+                        <p class="info-val {% if not student.country %}empty{% endif %}">
+                            {{ student.country|default:"Not provided" }}
+                        </p>
+                    </div>
+
+                    <div class="info-item">
+                        <p class="info-key">Address</p>
+                        <p class="info-val {% if not student.address %}empty{% endif %}">
+                            {{ student.address|default:"Not provided" }}
+                        </p>
+                    </div>
+
                 </div>
-
-                <div class="profile-item">
-                    <label>Date of Birth</label>
-                    <p>{{ student.date_of_birth }}</p>
-                </div>
-
-                <div class="profile-item">
-                    <label>Gender</label>
-                    <p>{{ student.get_gender_display }}</p>
-                </div>
-
-                <div class="profile-item">
-                    <label>Educational Qualification</label>
-                    <p>{{ student.educational_qualification|default:"Not provided" }}</p>
-                </div>
-
-                <div class="profile-item">
-                    <label>Mobile</label>
-                    <p>{{ student.mobile }}</p>
-                </div>
-
             </div>
 
 
-            <h3 class="section-title" style="margin-top: 35px;">
-                Guardian Information
-            </h3>
-
-            <div class="profile-grid">
-
-                <div class="profile-item">
-                    <label>Guardian Name</label>
-                    <p>{{ student.guardian_name|default:"Not provided" }}</p>
+            <!-- Guardian Info -->
+            <div class="section-card">
+                <div class="section-head">
+                    <span>👨‍👩‍👧</span>
+                    <h2>Guardian Information</h2>
                 </div>
+                <div class="info-grid">
 
-                <div class="profile-item">
-                    <label>Guardian Occupation</label>
-                    <p>{{ student.guardian_occupation|default:"Not provided" }}</p>
+                    <div class="info-item">
+                        <p class="info-key">Guardian Name</p>
+                        <p class="info-val {% if not student.guardian_name %}empty{% endif %}">
+                            {{ student.guardian_name|default:"Not provided" }}
+                        </p>
+                    </div>
+
+                    <div class="info-item">
+                        <p class="info-key">Guardian Occupation</p>
+                        <p class="info-val {% if not student.guardian_occupation %}empty{% endif %}">
+                            {{ student.guardian_occupation|default:"Not provided" }}
+                        </p>
+                    </div>
+
+                    <div class="info-item">
+                        <p class="info-key">Guardian Mobile</p>
+                        <p class="info-val {% if not student.guardian_mobile %}empty{% endif %}">
+                            {{ student.guardian_mobile|default:"Not provided" }}
+                        </p>
+                    </div>
+
                 </div>
-
-                <div class="profile-item">
-                    <label>Guardian Mobile</label>
-                    <p>{{ student.guardian_mobile|default:"Not provided" }}</p>
-                </div>
-
             </div>
 
 
-            <h3 class="section-title" style="margin-top: 35px;">
-                Course Information
-            </h3>
-
-            <div class="profile-grid">
-
-                <div class="profile-item">
-                    <label>Registered Course</label>
-                    <p>{{ student.course.course_name }}</p>
+            <!-- Course Info -->
+            <div class="section-card">
+                <div class="section-head">
+                    <span>📖</span>
+                    <h2>Course Information</h2>
                 </div>
+                <div class="info-grid">
 
-                <div class="profile-item">
-                    <label>Training Mode</label>
-                    <p>{{ student.get_training_mode_display }}</p>
+                    <div class="info-item">
+                        <p class="info-key">Registered Course</p>
+                        <p class="info-val">{{ student.course.course_name }}</p>
+                    </div>
+
+                    <div class="info-item">
+                        <p class="info-key">Duration</p>
+                        <p class="info-val">{{ student.course.course_duration }}</p>
+                    </div>
+
+                    <div class="info-item">
+                        <p class="info-key">Training Mode</p>
+                        <p class="info-val">
+                            <span class="badge badge-blue">{{ student.get_training_mode_display }}</span>
+                        </p>
+                    </div>
+
+                    <div class="info-item">
+                        <p class="info-key">Location</p>
+                        <p class="info-val">
+                            <span class="badge badge-purple">{{ student.get_location_display }}</span>
+                        </p>
+                    </div>
+
+                    <div class="info-item">
+                        <p class="info-key">Preferred Timings</p>
+                        <p class="info-val {% if not student.preferred_timings %}empty{% endif %}">
+                            {% if student.preferred_timings %}
+                                {{ student.preferred_timings|join:", " }}
+                            {% else %}
+                                Not provided
+                            {% endif %}
+                        </p>
+                    </div>
+
                 </div>
-
-                <div class="profile-item">
-                    <label>Location</label>
-                    <p>{{ student.get_location_display }}</p>
-                </div>
-
-                <div class="profile-item">
-                    <label>Preferred Timings</label>
-                    <p>
-                        {{ student.preferred_timings|join:", " }}
-                    </p>
-                </div>
-
             </div>
 
 
-            <h3 class="section-title" style="margin-top: 35px;">
-                Address Information
-            </h3>
-
-            <div class="profile-grid">
-
-                <div class="profile-item">
-                    <label>Country</label>
-                    <p>{{ student.country|default:"Not provided" }}</p>
-                </div>
-
-                <div class="profile-item">
-                    <label>Address</label>
-                    <p>{{ student.address|default:"Not provided" }}</p>
-                </div>
-
-            </div>
-
-
+            <!-- Actions -->
             <div class="profile-actions">
-
-                <a href="{% url 'edit_profile' %}" class="edit-btn">
-                    Edit Profile
+                <a href="{% url 'edit_profile' %}" class="btn btn-primary">
+                    ✏️ Edit Profile
                 </a>
-
+                <a href="{% url 'student_dashboard' %}" class="btn btn-secondary">
+                    ← Back to Dashboard
+                </a>
             </div>
 
         </div>
 
     </main>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.getElementById('overlay').classList.toggle('open');
+        }
+        function closeSidebar() {
+            document.getElementById('sidebar').classList.remove('open');
+            document.getElementById('overlay').classList.remove('open');
+        }
+    </script>
 
 </body>
 </html>

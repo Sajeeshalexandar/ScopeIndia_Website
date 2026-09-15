@@ -2,434 +2,575 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Student Login</title>
+    <title>Student Login — Scope India</title>
+    <meta name="description" content="Login to access your Scope India student portal and manage your courses.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --brand-dark: #07163d;
+            --brand-mid:  #0e2566;
+            --brand-blue: #1a3a8f;
+            --accent:     #ffd447;
+            --accent-dark:#e6bc00;
+            --white:      #ffffff;
+            --text-main:  #1a1a2e;
+            --text-muted: #64748b;
+            --border:     #e2e8f0;
+            --red:        #ef4444;
+            --red-bg:     #fef2f2;
+            --green:      #16a34a;
+            --green-bg:   #f0fdf4;
+            --info:       #3b82f6;
+            --info-bg:    #eff6ff;
+            --radius:     14px;
+            --shadow:     0 20px 60px rgba(7,22,61,0.25);
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
+            font-family: 'Inter', sans-serif;
             min-height: 100vh;
-            font-family: Arial, sans-serif;
-
-            background: #07163d;
-
             display: flex;
-            justify-content: center;
             align-items: center;
-
-            padding: 20px;
+            justify-content: center;
+            padding: 24px 16px;
+            background: linear-gradient(135deg, #07163d 0%, #0e2566 40%, #1a3a8f 70%, #0a1f5c 100%);
+            position: relative;
+            overflow-x: hidden;
         }
 
-
-        /* Login Container */
-
-        .login-container {
-            width: 100%;
-            max-width: 430px;
+        /* Animated background orbs */
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.18;
+            pointer-events: none;
+            animation: orb-float 8s ease-in-out infinite;
         }
-
+        body::before {
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, #ffd447, transparent);
+            top: -150px; right: -150px;
+        }
+        body::after {
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, #60a5fa, transparent);
+            bottom: -100px; left: -100px;
+            animation-delay: -4s;
+        }
+        @keyframes orb-float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50%       { transform: translate(20px, -20px) scale(1.05); }
+        }
 
         /* Card */
-
         .login-card {
-            background: white;
-
-            border-radius: 15px;
-
+            width: 100%;
+            max-width: 460px;
+            background: rgba(255,255,255,0.97);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
             overflow: hidden;
-
-            box-shadow:
-                0 15px 40px rgba(0, 0, 0, 0.25);
+            position: relative;
+            animation: card-in 0.5s cubic-bezier(0.22,1,0.36,1);
         }
-
+        @keyframes card-in {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
 
         /* Header */
-
         .login-header {
-            background: #07163d;
-
-            color: white;
-
+            background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-blue) 100%);
+            padding: 36px 32px 30px;
             text-align: center;
-
-            padding: 35px 25px;
+            position: relative;
+            overflow: hidden;
+        }
+        .login-header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
 
-
-        .login-icon {
-            width: 70px;
-            height: 70px;
-
-            margin: 0 auto 15px;
-
+        .brand-logo {
+            width: 68px; height: 68px;
             border-radius: 50%;
+            background: var(--accent);
+            margin: 0 auto 16px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 8px 24px rgba(255,212,71,0.35);
+            position: relative;
+            transition: transform 0.3s;
+        }
+        .brand-logo:hover { transform: scale(1.05); }
 
-            background: #ffd447;
+        .login-header h1 {
+            color: var(--white);
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            position: relative;
+        }
+        .login-header p {
+            color: rgba(255,255,255,0.7);
+            font-size: 13.5px;
+            position: relative;
+        }
 
-            color: #07163d;
-
+        /* Step indicator */
+        .step-indicator {
             display: flex;
             align-items: center;
             justify-content: center;
-
-            font-size: 30px;
+            gap: 0;
+            margin-top: 20px;
+            position: relative;
         }
-
-
-        .login-header h1 {
-            font-size: 25px;
-
-            margin-bottom: 7px;
+        .step {
+            display: flex; flex-direction: column; align-items: center; gap: 6px;
         }
-
-
-        .login-header p {
-            color: #d7dcef;
-
-            font-size: 14px;
+        .step-dot {
+            width: 30px; height: 30px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            border: 2px solid rgba(255,255,255,0.3);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.6);
+            transition: all 0.3s;
         }
-
+        .step.active .step-dot {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--brand-dark);
+        }
+        .step.done .step-dot {
+            background: #22c55e;
+            border-color: #22c55e;
+            color: white;
+        }
+        .step-label {
+            font-size: 10px;
+            color: rgba(255,255,255,0.5);
+            white-space: nowrap;
+        }
+        .step.active .step-label { color: var(--accent); }
+        .step.done  .step-label  { color: #86efac; }
+        .step-line {
+            width: 50px; height: 2px;
+            background: rgba(255,255,255,0.15);
+            margin-bottom: 16px;
+        }
+        .step-line.done { background: #22c55e; }
 
         /* Body */
+        .login-body { padding: 30px 32px 32px; }
 
-        .login-body {
-            padding: 30px;
-        }
-
-
-        /* Error */
-
-        .error-message {
-            background: #ffe5e5;
-
-            color: #b02a37;
-
-            padding: 12px 15px;
-
-            border-radius: 7px;
-
+        /* Messages */
+        .alert {
+            padding: 13px 16px;
+            border-radius: 10px;
+            font-size: 13.5px;
+            line-height: 1.5;
             margin-bottom: 20px;
-
-            font-size: 14px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            animation: alert-in 0.3s ease;
         }
-
+        @keyframes alert-in {
+            from { opacity: 0; transform: translateY(-8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .alert-error { background: var(--red-bg); color: #b91c1c; border: 1px solid #fecaca; }
+        .alert-success { background: var(--green-bg); color: #15803d; border: 1px solid #bbf7d0; }
+        .alert-info  { background: var(--info-bg);  color: #1d4ed8; border: 1px solid #bfdbfe; }
+        .alert-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
 
         /* Form */
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-
-        .form-group label {
+        .form-group { margin-bottom: 20px; }
+        .form-label {
             display: block;
-
-            font-size: 14px;
-
+            font-size: 13px;
             font-weight: 600;
-
-            color: #333;
-
+            color: var(--text-main);
             margin-bottom: 8px;
         }
 
-
-        .form-group input {
+        .input-wrap { position: relative; }
+        .input-icon {
+            position: absolute;
+            left: 14px; top: 50%;
+            transform: translateY(-50%);
+            font-size: 16px;
+            pointer-events: none;
+        }
+        .input-wrap input {
             width: 100%;
-
-            padding: 12px 13px;
-
-            border: 1px solid #d8dce5;
-
-            border-radius: 7px;
-
+            padding: 12px 14px 12px 42px;
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
             font-size: 14px;
-
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #f8fafc;
             outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
         }
-
-
-        .form-group input:focus {
-            border-color: #07163d;
-
-            box-shadow:
-                0 0 0 2px rgba(7, 22, 61, 0.08);
+        .input-wrap input:focus {
+            border-color: var(--brand-blue);
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(26,58,143,0.10);
         }
+        .toggle-eye {
+            position: absolute;
+            right: 14px; top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 17px;
+            padding: 2px;
+            color: var(--text-muted);
+            transition: color 0.2s;
+        }
+        .toggle-eye:hover { color: var(--brand-blue); }
 
-
-        /* Remember + Forgot */
-
-        .login-options {
+        /* Checkbox */
+        .check-row {
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
-
-            gap: 10px;
-
             margin-bottom: 22px;
-
             font-size: 13px;
         }
-
-
-        .remember {
-            display: flex;
-
-            align-items: center;
-
-            gap: 6px;
-
-            color: #555;
+        .check-label {
+            display: flex; align-items: center; gap: 8px;
+            color: var(--text-muted); cursor: pointer;
         }
-
-
-        .remember input {
-            width: auto;
-        }
-
-
-        .forgot-link {
-            color: #07163d;
-
-            text-decoration: none;
-
-            font-weight: 600;
-        }
-
-
-        .forgot-link:hover {
-            color: #d49f00;
-        }
-
-
-        /* Login Button */
-
-        .login-btn {
-            width: 100%;
-
-            border: none;
-
-            background: #07163d;
-
-            color: white;
-
-            padding: 13px;
-
-            border-radius: 7px;
-
-            font-size: 15px;
-
-            font-weight: 600;
-
+        .check-label input[type=checkbox] {
+            width: 16px; height: 16px;
+            accent-color: var(--brand-blue);
             cursor: pointer;
-
-            transition: 0.2s;
         }
-
-
-        .login-btn:hover {
-            background: #10275f;
+        .forgot-link {
+            color: var(--brand-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            transition: color 0.2s;
         }
+        .forgot-link:hover { color: var(--accent-dark); }
 
+        /* Password hint */
+        .pw-hint { font-size: 11.5px; color: var(--text-muted); margin-top: 6px; }
 
-        /* Register */
+        /* Submit button */
+        .btn-primary {
+            width: 100%;
+            padding: 13.5px;
+            background: linear-gradient(135deg, var(--brand-dark), var(--brand-blue));
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.25s;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255,255,255,0);
+            transition: background 0.2s;
+        }
+        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(7,22,61,0.3); }
+        .btn-primary:hover::after { background: rgba(255,255,255,0.06); }
+        .btn-primary:active { transform: translateY(0); }
 
+        /* Register link */
         .register-text {
             text-align: center;
-
             margin-top: 22px;
-
-            color: #777;
-
             font-size: 13px;
+            color: var(--text-muted);
         }
-
-
         .register-text a {
-            color: #07163d;
-
+            color: var(--brand-blue);
             font-weight: 600;
-
             text-decoration: none;
         }
+        .register-text a:hover { color: var(--accent-dark); }
 
-
-        .register-text a:hover {
-            color: #d49f00;
+        /* Back link */
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 18px;
+            font-size: 13px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
         }
+        .back-link:hover { color: var(--brand-blue); }
 
-
-        /* Mobile */
+        /* Go to login button */
+        .btn-secondary {
+            display: block;
+            text-align: center;
+            width: 100%;
+            padding: 13px;
+            background: var(--green-bg);
+            color: var(--green);
+            border: 1.5px solid #bbf7d0;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            text-decoration: none;
+            margin-top: 12px;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .btn-secondary:hover { background: #dcfce7; }
 
         @media (max-width: 480px) {
-
-            body {
-                padding: 15px;
-            }
-
-            .login-header {
-                padding: 28px 20px;
-            }
-
-            .login-header h1 {
-                font-size: 22px;
-            }
-
-            .login-body {
-                padding: 22px 18px;
-            }
-
-            .login-options {
-                flex-direction: column;
-
-                align-items: flex-start;
-            }
-
+            .login-header { padding: 28px 22px 24px; }
+            .login-body   { padding: 24px 22px 28px; }
+            .login-header h1 { font-size: 20px; }
+            .step-line { width: 32px; }
         }
     </style>
-
 </head>
-
 
 <body>
 
+    <div class="login-card">
 
-    <main class="login-container">
+        <!-- Header -->
+        <div class="login-header">
 
-        <div class="login-card">
+            <div class="brand-logo">🎓</div>
 
+            <h1>Student Portal</h1>
+            <p>Scope India — Access your learning dashboard</p>
 
-            <!-- Header -->
+            <!-- Step indicator: only for first login -->
+            {% if first_login_step == 'temp_password_sent' or first_login_step == 'set_new_password' %}
+            <div class="step-indicator">
 
-            <div class="login-header">
-
-                <div class="login-icon">
-                    👤
+                <div class="step done">
+                    <div class="step-dot">✓</div>
+                    <span class="step-label">Email</span>
                 </div>
 
-                <h1>
-                    Student Login
-                </h1>
+                <div class="step-line done"></div>
 
-                <p>
-                    Login to access your student portal
-                </p>
-
-            </div>
-
-
-            <!-- Body -->
-
-            <div class="login-body">
-
-
-                {% if error %}
-
-                <div class="error-message">
-                    {{ error }}
+                <div class="step {% if first_login_step == 'set_new_password' %}done{% else %}active{% endif %}">
+                    <div class="step-dot">{% if first_login_step == 'set_new_password' %}✓{% else %}2{% endif %}</div>
+                    <span class="step-label">Verify</span>
                 </div>
 
-                {% endif %}
+                <div class="step-line {% if first_login_step == 'set_new_password' %}done{% endif %}"></div>
 
-
-                <form method="POST">
-
-                    {% csrf_token %}
-
-
-                    <!-- Email -->
-
-                    <div class="form-group">
-
-                        <label for="email">
-                            Email Address
-                        </label>
-
-                        <input type="email" id="email" name="email" placeholder="Enter your registered email"
-                            value="{{ email|default:'' }}" autocomplete="off" required>
-
-                    </div>
-
-
-                    {% if show_password %}
-
-                    <!-- Password -->
-
-                    <div class="form-group">
-
-                        <label for="password">
-                            Password
-                        </label>
-
-                        <input type="password" id="password" name="password" placeholder="Enter your password"
-                            autocomplete="new-password" required>
-
-                    </div>
-
-
-                    <!-- Options -->
-
-                    <div class="login-options">
-
-                        <label class="remember">
-
-                            <input type="checkbox" name="remember_me">
-
-                            Keep me logged in
-
-                        </label>
-
-
-                        <a href="{% url 'forgot_password' %}" class="forgot-link">
-                            Forgot Password?
-                        </a>
-
-                    </div>
-
-
-                    {% endif %}
-
-
-                    <button type="submit" class="login-btn">
-                        {% if show_password %}
-                        Login
-                        {% else %}
-                        Continue
-                        {% endif %}
-                    </button>
-
-
-                </form>
-
-
-                <p class="register-text">
-
-                    Don't have an account?
-
-                    <a href="{% url 'registration' %}">
-                        Register Now
-                    </a>
-
-                </p>
-
+                <div class="step {% if first_login_step == 'set_new_password' %}active{% endif %}">
+                    <div class="step-dot">3</div>
+                    <span class="step-label">Set Password</span>
+                </div>
 
             </div>
+            {% endif %}
 
         </div>
 
-    </main>
 
+        <!-- Body -->
+        <div class="login-body">
+
+
+            <!-- Alerts -->
+            {% if error %}
+            <div class="alert alert-error">
+                <span class="alert-icon">⚠️</span>
+                <span>{{ error }}</span>
+            </div>
+            {% endif %}
+
+            {% if info %}
+            <div class="alert alert-info">
+                <span class="alert-icon">📧</span>
+                <span>{{ info }}</span>
+            </div>
+            {% endif %}
+
+            {% if success %}
+            <div class="alert alert-success">
+                <span class="alert-icon">✅</span>
+                <span>{{ success }}</span>
+            </div>
+            <a href="{% url 'student_login' %}" class="btn-secondary">Go to Login →</a>
+            {% else %}
+
+
+            <!-- ====================================================
+                 FIRST LOGIN — STEP: set_new_password
+            ==================================================== -->
+            {% if first_login_step == 'set_new_password' %}
+
+                <form method="POST" id="loginForm">
+                    {% csrf_token %}
+                    <input type="hidden" name="email" value="{{ student.email }}">
+                    <input type="hidden" name="login_step" value="set_new_password">
+
+                    <div class="form-group">
+                        <label class="form-label" for="new_password">New Password</label>
+                        <div class="input-wrap">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="new_password" name="new_password"
+                                   placeholder="Create a strong password" autocomplete="new-password" required>
+                            <button type="button" class="toggle-eye" onclick="togglePw('new_password', this)">👁️</button>
+                        </div>
+                        <p class="pw-hint">Minimum 8 characters</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="confirm_password">Confirm Password</label>
+                        <div class="input-wrap">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="confirm_password" name="confirm_password"
+                                   placeholder="Re-enter your new password" autocomplete="new-password" required>
+                            <button type="button" class="toggle-eye" onclick="togglePw('confirm_password', this)">👁️</button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Set Password & Activate Account</button>
+                </form>
+
+
+            <!-- ====================================================
+                 FIRST LOGIN — STEP: temp_password_sent
+            ==================================================== -->
+            {% elif first_login_step == 'temp_password_sent' %}
+
+                <form method="POST" id="loginForm">
+                    {% csrf_token %}
+                    <input type="hidden" name="email" value="{{ student.email }}">
+                    <input type="hidden" name="login_step" value="temp_password_sent">
+
+                    <div class="form-group">
+                        <label class="form-label" for="password">Temporary Password</label>
+                        <div class="input-wrap">
+                            <span class="input-icon">🔑</span>
+                            <input type="password" id="password" name="password"
+                                   placeholder="Enter the temporary password from your email"
+                                   autocomplete="one-time-code" required autofocus>
+                            <button type="button" class="toggle-eye" onclick="togglePw('password', this)">👁️</button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Verify Temporary Password</button>
+                </form>
+
+
+            <!-- ====================================================
+                 NORMAL LOGIN — STEP: show_password
+            ==================================================== -->
+            {% elif show_password %}
+
+                <form method="POST" id="loginForm">
+                    {% csrf_token %}
+                    <input type="hidden" name="email" value="{{ email }}">
+                    <input type="hidden" name="login_step" value="password_submitted">
+
+                    <div class="alert alert-info" style="font-size:13px; margin-bottom:18px;">
+                        <span class="alert-icon">👤</span>
+                        <span>Logging in as <strong>{{ student.full_name }}</strong> ({{ email }})</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="password">Password</label>
+                        <div class="input-wrap">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="password" name="password"
+                                   placeholder="Enter your password"
+                                   autocomplete="current-password" required autofocus>
+                            <button type="button" class="toggle-eye" onclick="togglePw('password', this)">👁️</button>
+                        </div>
+                    </div>
+
+                    <div class="check-row">
+                        <label class="check-label">
+                            <input type="checkbox" name="remember_me" id="remember_me">
+                            Keep me logged in for 30 days
+                        </label>
+                        <a href="{% url 'forgot_password' %}" class="forgot-link">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Login to Portal</button>
+                </form>
+
+                <a href="{% url 'student_login' %}" class="back-link">← Use a different email</a>
+
+
+            <!-- ====================================================
+                 DEFAULT — STEP: enter email
+            ==================================================== -->
+            {% else %}
+
+                <form method="POST" id="loginForm">
+                    {% csrf_token %}
+                    <input type="hidden" name="login_step" value="email_submitted">
+
+                    <div class="form-group">
+                        <label class="form-label" for="email">Registered Email Address</label>
+                        <div class="input-wrap">
+                            <span class="input-icon">✉️</span>
+                            <input type="email" id="email" name="email"
+                                   placeholder="Enter your registered email"
+                                   value="{{ email|default:'' }}"
+                                   autocomplete="email" required autofocus>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Continue →</button>
+                </form>
+
+                <p class="register-text">
+                    Don't have an account?
+                    <a href="{% url 'registration' %}">Register Now</a>
+                </p>
+
+            {% endif %}
+
+            {% endif %} {# end if success #}
+
+        </div>
+    </div>
+
+    <script>
+        function togglePw(fieldId, btn) {
+            const field = document.getElementById(fieldId);
+            const isHidden = field.type === 'password';
+            field.type = isHidden ? 'text' : 'password';
+            btn.textContent = isHidden ? '🙈' : '👁️';
+        }
+    </script>
 
 </body>
-
 </html>
