@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Login</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+
+            background: #07163d;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 20px;
+        }
+
+
+        /* Login Container */
+
+        .login-container {
+            width: 100%;
+            max-width: 430px;
+        }
+
+
+        /* Card */
+
+        .login-card {
+            background: white;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+
+        /* Header */
+
+        .login-header {
+            background: #07163d;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 35px 25px;
+        }
+
+
+        .login-icon {
+            width: 70px;
+            height: 70px;
+
+            margin: 0 auto 15px;
+
+            border-radius: 50%;
+
+            background: #ffd447;
+
+            color: #07163d;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 30px;
+        }
+
+
+        .login-header h1 {
+            font-size: 25px;
+
+            margin-bottom: 7px;
+        }
+
+
+        .login-header p {
+            color: #d7dcef;
+
+            font-size: 14px;
+        }
+
+
+        /* Body */
+
+        .login-body {
+            padding: 30px;
+        }
+
+
+        /* Error */
+
+        .error-message {
+            background: #ffe5e5;
+
+            color: #b02a37;
+
+            padding: 12px 15px;
+
+            border-radius: 7px;
+
+            margin-bottom: 20px;
+
+            font-size: 14px;
+        }
+
+
+        /* Form */
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+
+        .form-group label {
+            display: block;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            color: #333;
+
+            margin-bottom: 8px;
+        }
+
+
+        .form-group input {
+            width: 100%;
+
+            padding: 12px 13px;
+
+            border: 1px solid #d8dce5;
+
+            border-radius: 7px;
+
+            font-size: 14px;
+
+            outline: none;
+        }
+
+
+        .form-group input:focus {
+            border-color: #07163d;
+
+            box-shadow:
+                0 0 0 2px rgba(7, 22, 61, 0.08);
+        }
+
+
+        /* Remember + Forgot */
+
+        .login-options {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 22px;
+
+            font-size: 13px;
+        }
+
+
+        .remember {
+            display: flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            color: #555;
+        }
+
+
+        .remember input {
+            width: auto;
+        }
+
+
+        .forgot-link {
+            color: #07163d;
+
+            text-decoration: none;
+
+            font-weight: 600;
+        }
+
+
+        .forgot-link:hover {
+            color: #d49f00;
+        }
+
+
+        /* Login Button */
+
+        .login-btn {
+            width: 100%;
+
+            border: none;
+
+            background: #07163d;
+
+            color: white;
+
+            padding: 13px;
+
+            border-radius: 7px;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+
+        .login-btn:hover {
+            background: #10275f;
+        }
+
+
+        /* Register */
+
+        .register-text {
+            text-align: center;
+
+            margin-top: 22px;
+
+            color: #777;
+
+            font-size: 13px;
+        }
+
+
+        .register-text a {
+            color: #07163d;
+
+            font-weight: 600;
+
+            text-decoration: none;
+        }
+
+
+        .register-text a:hover {
+            color: #d49f00;
+        }
+
+
+        /* Mobile */
+
+        @media (max-width: 480px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .login-header {
+                padding: 28px 20px;
+            }
+
+            .login-header h1 {
+                font-size: 22px;
+            }
+
+            .login-body {
+                padding: 22px 18px;
+            }
+
+            .login-options {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <main class="login-container">
+
+        <div class="login-card">
+
+
+            <!-- Header -->
+
+            <div class="login-header">
+
+                <div class="login-icon">
+                    👤
+                </div>
+
+                <h1>
+                    Student Login
+                </h1>
+
+                <p>
+                    Login to access your student portal
+                </p>
+
+            </div>
+
+
+            <!-- Body -->
+
+            <div class="login-body">
+
+
+                {% if error %}
+
+                <div class="error-message">
+                    {{ error }}
+                </div>
+
+                {% endif %}
+
+
+                <form method="POST">
+
+                    {% csrf_token %}
+
+
+                    <!-- Email -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input type="email" id="email" name="email" placeholder="Enter your registered email"
+                            value="{{ email|default:'' }}" autocomplete="off" required>
+
+                    </div>
+
+
+                    {% if show_password %}
+
+                    <!-- Password -->
+
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <input type="password" id="password" name="password" placeholder="Enter your password"
+                            autocomplete="new-password" required>
+
+                    </div>
+
+
+                    <!-- Options -->
+
+                    <div class="login-options">
+
+                        <label class="remember">
+
+                            <input type="checkbox" name="remember_me">
+
+                            Keep me logged in
+
+                        </label>
+
+
+                        <a href="{% url 'forgot_password' %}" class="forgot-link">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+                    {% endif %}
+
+
+                    <button type="submit" class="login-btn">
+                        {% if show_password %}
+                        Login
+                        {% else %}
+                        Continue
+                        {% endif %}
+                    </button>
+
+
+                </form>
+
+
+                <p class="register-text">
+
+                    Don't have an account?
+
+                    <a href="{% url 'registration' %}">
+                        Register Now
+                    </a>
+
+                </p>
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>

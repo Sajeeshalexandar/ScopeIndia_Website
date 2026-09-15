@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fb;
+            color: #222;
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+
+        .navbar {
+            background: #07163d;
+            padding: 18px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h2 {
+            color: white;
+            font-size: 22px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #ffd447;
+        }
+
+        .logout {
+            background: #dc3545;
+            padding: 9px 15px;
+            border-radius: 6px;
+        }
+
+        .logout:hover {
+            color: white !important;
+            background: #bb2d3b;
+        }
+
+        /* Main */
+
+        .profile-container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .profile-header {
+            background: #07163d;
+            color: white;
+            padding: 30px;
+            border-radius: 12px 12px 0 0;
+            text-align: center;
+        }
+
+        .profile-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background: #ffd447;
+            color: #07163d;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .profile-header h1 {
+            font-size: 25px;
+            margin-bottom: 5px;
+        }
+
+        .profile-header p {
+            color: #d7dcef;
+        }
+
+        /* Profile body */
+
+        .profile-body {
+            background: white;
+            padding: 30px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .section-title {
+            font-size: 18px;
+            color: #07163d;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .profile-item {
+            background: #f8f9fc;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #e8eaf0;
+        }
+
+        .profile-item label {
+            display: block;
+            color: #777;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+
+        .profile-item p {
+            color: #222;
+            font-size: 15px;
+            font-weight: 500;
+            word-break: break-word;
+        }
+
+        /* Edit button */
+
+        .profile-actions {
+            margin-top: 30px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .edit-btn {
+            text-decoration: none;
+            background: #07163d;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 7px;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .edit-btn:hover {
+            background: #10275f;
+            color: white;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 768px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+                padding: 18px 5%;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .profile-container {
+                width: 94%;
+                margin: 25px auto;
+            }
+
+            .profile-body {
+                padding: 20px;
+            }
+
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-header {
+                padding: 25px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .navbar h2 {
+                font-size: 19px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+
+            .profile-header h1 {
+                font-size: 21px;
+            }
+
+            .profile-body {
+                padding: 15px;
+            }
+
+            .profile-item {
+                padding: 14px;
+            }
+
+            .profile-actions {
+                justify-content: stretch;
+            }
+
+            .edit-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <h2>Student Portal</h2>
+
+        <div class="nav-links">
+
+            <a href="{% url 'student_dashboard' %}">
+                Dashboard
+            </a>
+
+            <a href="{% url 'course_search' %}">
+                Find Courses
+            </a>
+
+            <a href="{% url 'picked_courses' %}">
+                My Courses
+            </a>
+
+            <a href="{% url 'student_profile' %}">
+                Profile
+            </a>
+
+            <a href="{% url 'change_password' %}">
+                Change Password
+            </a>
+
+            <a href="{% url 'student_logout' %}" class="logout">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Profile -->
+
+    <main class="profile-container">
+
+        <div class="profile-header">
+
+            <div class="profile-icon">
+                {{ student.full_name|first|upper }}
+            </div>
+
+            <h1>{{ student.full_name }}</h1>
+
+            <p>{{ student.email }}</p>
+
+        </div>
+
+
+        <div class="profile-body">
+
+            <h3 class="section-title">
+                Personal Information
+            </h3>
+
+            <div class="profile-grid">
+
+                <div class="profile-item">
+                    <label>Full Name</label>
+                    <p>{{ student.full_name }}</p>
+                </div>
+
+                <div class="profile-item">
+                    <label>Email</label>
+                    <p>{{ student.email }}</p>
+                </div>
+
+                <div class="profile-item">
+                    <label>Date of Birth</label>
+                    <p>{{ student.date_of_birth }}</p>
+                </div>
+
+                <div class="profile-item">
+                    <label>Gender</label>
+                    <p>{{ student.get_gender_display }}</p>
+                </div>
+
+                <div class="profile-item">
+                    <label>Educational Qualification</label>
+                    <p>{{ student.educational_qualification|default:"Not provided" }}</p>
+                </div>
+
+                <div class="profile-item">
+                    <label>Mobile</label>
+                    <p>{{ student.mobile }}</p>
+                </div>
+
+            </div>
+
+
+            <h3 class="section-title" style="margin-top: 35px;">
+                Guardian Information
+            </h3>
+
+            <div class="profile-grid">
+
+                <div class="profile-item">
+                    <label>Guardian Name</label>
+                    <p>{{ student.guardian_name|default:"Not provided" }}</p>
+                </div>
+
+                <div class="profile-item">
+                    <label>Guardian Occupation</label>
+                    <p>{{ student.guardian_occupation|default:"Not provided" }}</p>
+                </div>
+
+                <div class="profile-item">
+                    <label>Guardian Mobile</label>
+                    <p>{{ student.guardian_mobile|default:"Not provided" }}</p>
+                </div>
+
+            </div>
+
+
+            <h3 class="section-title" style="margin-top: 35px;">
+                Course Information
+            </h3>
+
+            <div class="profile-grid">
+
+                <div class="profile-item">
+                    <label>Registered Course</label>
+                    <p>{{ student.course.course_name }}</p>
+                </div>
+
+                <div class="profile-item">
+                    <label>Training Mode</label>
+                    <p>{{ student.get_training_mode_display }}</p>
+                </div>
+
+                <div class="profile-item">
+                    <label>Location</label>
+                    <p>{{ student.get_location_display }}</p>
+                </div>
+
+                <div class="profile-item">
+                    <label>Preferred Timings</label>
+                    <p>
+                        {{ student.preferred_timings|join:", " }}
+                    </p>
+                </div>
+
+            </div>
+
+
+            <h3 class="section-title" style="margin-top: 35px;">
+                Address Information
+            </h3>
+
+            <div class="profile-grid">
+
+                <div class="profile-item">
+                    <label>Country</label>
+                    <p>{{ student.country|default:"Not provided" }}</p>
+                </div>
+
+                <div class="profile-item">
+                    <label>Address</label>
+                    <p>{{ student.address|default:"Not provided" }}</p>
+                </div>
+
+            </div>
+
+
+            <div class="profile-actions">
+
+                <a href="{% url 'edit_profile' %}" class="edit-btn">
+                    Edit Profile
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

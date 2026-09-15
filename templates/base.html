@@ -28,6 +28,35 @@
                     <li><a href="{% url 'faq' %}">FAQ</a></li>
                     <li><a href="{% url 'reviews' %}">Reviews</a></li>
                     <li><a href="{% url 'contact' %}">contact us</a></li>
+                    {% if user.is_authenticated and user.student_account %}
+
+                    <li>
+                        <a href="{% url 'student_dashboard' %}">
+                            Dashboard
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'student_profile' %}">
+                            Profile
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'student_logout' %}">
+                            Logout
+                        </a>
+                    </li>
+
+                    {% else %}
+
+                    <li>
+                        <a href="{% url 'student_login' %}">
+                            Student Login
+                        </a>
+                    </li>
+
+                    {% endif %}
 
                 </ul>
                 <div class="google-rating">
@@ -111,7 +140,7 @@
     </footer>
     <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
-<script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 
 </body>
 

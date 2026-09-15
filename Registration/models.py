@@ -40,9 +40,10 @@ class StudentRegistration(models.Model):
 
     mobile = models.CharField(max_length=15)
 
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
 
     guardian_name = models.CharField(max_length=100, blank=True)
+
 
     guardian_occupation = models.CharField(max_length=100, blank=True)
 

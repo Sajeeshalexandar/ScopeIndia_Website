@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fb;
+            color: #222;
+            min-height: 100vh;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            width: 100%;
+            min-height: 70px;
+
+            background: #040c2e;
+
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            padding: 15px 5%;
+
+            gap: 8px;
+
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+
+            flex-wrap: wrap;
+        }
+
+
+        nav a {
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: 500;
+
+            padding: 10px 14px;
+
+            border-radius: 6px;
+
+            transition: all 0.3s ease;
+
+            white-space: nowrap;
+        }
+
+
+        nav a:hover {
+            background: white;
+            color: #040c2e;
+        }
+
+
+        nav a:last-child {
+            background: #dc3545;
+        }
+
+
+        nav a:last-child:hover {
+            background: #b02a37;
+            color: white;
+        }
+
+
+        /* =========================
+           MAIN CONTENT
+        ========================= */
+
+        body > h1,
+        body > h2,
+        body > p,
+        body > hr {
+            width: 90%;
+            max-width: 1100px;
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        h1 {
+            margin-top: 45px;
+            margin-bottom: 25px;
+
+            color: #040c2e;
+
+            font-size: clamp(25px, 4vw, 36px);
+
+            line-height: 1.2;
+        }
+
+
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 18px;
+
+            color: #17005c;
+
+            font-size: clamp(19px, 3vw, 24px);
+        }
+
+
+        p {
+            margin-bottom: 12px;
+
+            color: #555;
+
+            font-size: 15px;
+
+            line-height: 1.6;
+        }
+
+
+        strong {
+            color: #222;
+        }
+
+
+        /* =========================
+           STUDENT INFORMATION
+        ========================= */
+
+        h2 + p,
+        h2 + p + p,
+        h2 + p + p + p {
+
+            background: white;
+
+            padding: 15px 20px;
+
+            border-radius: 8px;
+
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+        }
+
+
+        /* =========================
+           REGISTERED COURSE
+        ========================= */
+
+        h2 + p {
+            border-left: 4px solid #17005c;
+        }
+
+
+        /* =========================
+           HORIZONTAL LINE
+        ========================= */
+
+        hr {
+            border: none;
+
+            border-top: 1px solid #ddd;
+
+            margin-top: 35px;
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           QUICK ACTION BUTTONS
+        ========================= */
+
+        p a {
+
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-width: 200px;
+
+            min-height: 45px;
+
+            padding: 10px 20px;
+
+            background: #17005c;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 7px;
+
+            font-size: 14px;
+
+            transition: all 0.3s ease;
+        }
+
+
+        p a:hover {
+
+            background: #040c2e;
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            nav {
+                justify-content: center;
+
+                padding: 15px 4%;
+
+                gap: 5px;
+            }
+
+
+            nav a {
+                font-size: 13px;
+
+                padding: 9px 11px;
+            }
+
+
+            body > h1,
+            body > h2,
+            body > p,
+            body > hr {
+
+                width: 92%;
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            nav {
+
+                width: 100%;
+
+                padding: 12px 15px;
+
+                display: grid;
+
+                grid-template-columns: repeat(2, 1fr);
+
+                gap: 7px;
+            }
+
+
+            nav a {
+
+                width: 100%;
+
+                text-align: center;
+
+                padding: 10px 5px;
+
+                font-size: 13px;
+            }
+
+
+            nav a:last-child {
+
+                grid-column: span 2;
+            }
+
+
+            body > h1,
+            body > h2,
+            body > p,
+            body > hr {
+
+                width: 90%;
+            }
+
+
+            h1 {
+
+                margin-top: 30px;
+
+                margin-bottom: 20px;
+
+                font-size: 26px;
+            }
+
+
+            h2 {
+
+                margin-top: 25px;
+
+                font-size: 20px;
+            }
+
+
+            p {
+
+                font-size: 14px;
+
+                line-height: 1.5;
+            }
+
+
+            h2 + p,
+            h2 + p + p,
+            h2 + p + p + p {
+
+                padding: 13px 15px;
+            }
+
+
+            p a {
+
+                width: 100%;
+
+                min-width: unset;
+
+                min-height: 46px;
+            }
+
+        }
+
+
+        /* =========================
+           SMALL MOBILE
+        ========================= */
+
+        @media (max-width: 400px) {
+
+            nav {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            nav a:last-child {
+
+                grid-column: auto;
+            }
+
+
+            nav a {
+
+                font-size: 13px;
+
+                padding: 9px;
+            }
+
+
+            h1 {
+
+                font-size: 23px;
+            }
+
+
+            h2 {
+
+                font-size: 18px;
+            }
+
+
+            p {
+
+                font-size: 13px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <a href="{% url 'student_dashboard' %}">
+            Dashboard
+        </a>
+        <a href="{% url 'home' %}">
+            Home
+        </a>
+
+        <a href="{% url 'course_search' %}">
+            Find Courses
+        </a>
+
+        <a href="{% url 'picked_courses' %}">
+            My Courses
+        </a>
+
+        <a href="{% url 'student_profile' %}">
+            Profile
+        </a>
+
+        <a href="{% url 'change_password' %}">
+            Change Password
+        </a>
+
+        <a href="{% url 'student_logout' %}">
+            Logout
+        </a>
+
+    </nav>
+
+
+    <!-- =========================
+         WELCOME
+    ========================= -->
+
+    <h1>
+        Welcome, {{ student.full_name }}
+    </h1>
+
+
+    <!-- =========================
+         STUDENT INFORMATION
+    ========================= -->
+
+    <h2>
+        Student Information
+    </h2>
+
+
+    <p>
+        <strong>Name:</strong>
+        {{ student.full_name }}
+    </p>
+
+
+    <p>
+        <strong>Email:</strong>
+        {{ student.email }}
+    </p>
+
+
+    <p>
+        <strong>Mobile:</strong>
+        {{ student.mobile }}
+    </p>
+
+
+    <!-- =========================
+         REGISTERED COURSE
+    ========================= -->
+
+    <h2>
+        Registered Course
+    </h2>
+
+
+    <p>
+        <strong>Course:</strong>
+        {{ student.course.course_name }}
+    </p>
+
+
+    <p>
+        <strong>Duration:</strong>
+        {{ student.course.course_duration }}
+    </p>
+
+
+    <hr>
+
+
+    <!-- =========================
+         QUICK ACTIONS
+    ========================= -->
+
+    <h2>
+        Quick Actions
+    </h2>
+
+
+    <p>
+
+        <a href="{% url 'course_search' %}">
+            Find a Course
+        </a>
+
+    </p>
+
+
+    <p>
+
+        <a href="{% url 'picked_courses' %}">
+            View My Courses
+        </a>
+
+    </p>
+
+
+    <p>
+
+        <a href="{% url 'student_profile' %}">
+            View My Profile
+        </a>
+
+    </p>
+
+
+</body>
+
+</html>
+

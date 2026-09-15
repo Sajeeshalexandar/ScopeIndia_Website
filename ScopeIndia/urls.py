@@ -20,6 +20,7 @@ from django.urls import path, include
 from ScopeIndia import settings
 from django.conf.urls.static import static
 
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("Website.urls")),
@@ -27,4 +28,5 @@ urlpatterns = [
     path("Registration/", include("Registration.urls")),
     path("Placement/", include("Placement.urls")),
     path("authentication/", include("authentication.urls")),
+    path("student/", include("StudentLogin.urls")),
 ]+static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)

@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Profile</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fb;
+            color: #222;
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+
+        .navbar {
+            background: #07163d;
+            padding: 18px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h2 {
+            color: white;
+            font-size: 22px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #ffd447;
+        }
+
+        .logout {
+            background: #dc3545;
+            padding: 9px 15px;
+            border-radius: 6px;
+        }
+
+        /* Main */
+
+        .edit-container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .edit-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .edit-header {
+            background: #07163d;
+            color: white;
+            padding: 25px 30px;
+        }
+
+        .edit-header h1 {
+            font-size: 25px;
+            margin-bottom: 6px;
+        }
+
+        .edit-header p {
+            color: #d7dcef;
+            font-size: 14px;
+        }
+
+        .edit-body {
+            padding: 30px;
+        }
+
+        /* Sections */
+
+        .form-section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            color: #07163d;
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eeeeee;
+        }
+
+        /* Form grid */
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 11px 12px;
+            border: 1px solid #d8dce5;
+            border-radius: 7px;
+            font-size: 14px;
+            outline: none;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #07163d;
+            box-shadow: 0 0 0 2px rgba(7, 22, 61, 0.08);
+        }
+
+        /* Radio */
+
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .radio-group input {
+            width: auto;
+        }
+
+        /* Checkbox */
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .checkbox-item {
+            background: #f5f6fa;
+            border: 1px solid #ddd;
+            padding: 10px 14px;
+            border-radius: 7px;
+
+            display: flex;
+            align-items: center;
+            gap: 7px;
+
+            font-size: 14px;
+        }
+
+        .checkbox-item input {
+            width: auto;
+        }
+
+        /* Error */
+
+        .field-error {
+            color: #dc3545;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .error-message {
+            background: #ffe5e5;
+            color: #b02a37;
+            padding: 12px 15px;
+            border-radius: 7px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        /* Buttons */
+
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            margin-top: 10px;
+            padding-top: 25px;
+            border-top: 1px solid #eeeeee;
+        }
+
+        .btn {
+            text-decoration: none;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 7px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .cancel-btn {
+            background: #e9ecef;
+            color: #333;
+        }
+
+        .cancel-btn:hover {
+            background: #d9dde1;
+        }
+
+        .save-btn {
+            background: #07163d;
+            color: white;
+        }
+
+        .save-btn:hover {
+            background: #10275f;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 768px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+                padding: 18px 5%;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .edit-container {
+                width: 94%;
+                margin: 25px auto;
+            }
+
+            .edit-body {
+                padding: 20px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full-width {
+                grid-column: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .navbar h2 {
+                font-size: 19px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+
+            .edit-header {
+                padding: 22px 18px;
+            }
+
+            .edit-header h1 {
+                font-size: 21px;
+            }
+
+            .edit-body {
+                padding: 15px;
+            }
+
+            .form-actions {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .radio-group,
+            .checkbox-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <h2>Student Portal</h2>
+
+        <div class="nav-links">
+
+            <a href="{% url 'student_dashboard' %}">
+                Dashboard
+            </a>
+
+            <a href="{% url 'course_search' %}">
+                Find Courses
+            </a>
+
+            <a href="{% url 'picked_courses' %}">
+                My Courses
+            </a>
+
+            <a href="{% url 'student_profile' %}">
+                Profile
+            </a>
+
+            <a href="{% url 'change_password' %}">
+                Change Password
+            </a>
+
+            <a href="{% url 'student_logout' %}" class="logout">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Edit Profile -->
+
+    <main class="edit-container">
+
+        <div class="edit-card">
+
+            <div class="edit-header">
+
+                <h1>Edit Profile</h1>
+
+                <p>
+                    Update your personal information
+                </p>
+
+            </div>
+
+
+            <div class="edit-body">
+
+                {% if form.non_field_errors %}
+
+                    <div class="error-message">
+                        {{ form.non_field_errors }}
+                    </div>
+
+                {% endif %}
+
+
+                <form method="POST">
+
+                    {% csrf_token %}
+
+
+                    <!-- Personal Information -->
+
+                    <section class="form-section">
+
+                        <h3 class="section-title">
+                            Personal Information
+                        </h3>
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label>
+                                    Full Name
+                                </label>
+
+                                {{ form.full_name }}
+
+                                {% for error in form.full_name.errors %}
+                                    <span class="field-error">
+                                        {{ error }}
+                                    </span>
+                                {% endfor %}
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Date of Birth
+                                </label>
+
+                                {{ form.date_of_birth }}
+
+                                {% for error in form.date_of_birth.errors %}
+                                    <span class="field-error">
+                                        {{ error }}
+                                    </span>
+                                {% endfor %}
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Gender
+                                </label>
+
+                                <div class="radio-group">
+                                    {{ form.gender }}
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Educational Qualification
+                                </label>
+
+                                {{ form.educational_qualification }}
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Mobile
+                                </label>
+
+                                {{ form.mobile }}
+
+                                {% for error in form.mobile.errors %}
+                                    <span class="field-error">
+                                        {{ error }}
+                                    </span>
+                                {% endfor %}
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- Guardian Information -->
+
+                    <section class="form-section">
+
+                        <h3 class="section-title">
+                            Guardian Information
+                        </h3>
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label>
+                                    Guardian Name
+                                </label>
+
+                                {{ form.guardian_name }}
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Guardian Occupation
+                                </label>
+
+                                {{ form.guardian_occupation }}
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Guardian Mobile
+                                </label>
+
+                                {{ form.guardian_mobile }}
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- Training Information -->
+
+                    <section class="form-section">
+
+                        <h3 class="section-title">
+                            Training Information
+                        </h3>
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label>
+                                    Training Mode
+                                </label>
+
+                                <div class="radio-group">
+                                    {{ form.training_mode }}
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Location
+                                </label>
+
+                                <div class="radio-group">
+                                    {{ form.location }}
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group full-width">
+
+                                <label>
+                                    Preferred Timings
+                                </label>
+
+                                <div class="checkbox-group">
+
+                                    {% for checkbox in form.preferred_timings %}
+
+                                        <label class="checkbox-item">
+                                            {{ checkbox.tag }}
+                                            {{ checkbox.choice_label }}
+                                        </label>
+
+                                    {% endfor %}
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- Address -->
+
+                    <section class="form-section">
+
+                        <h3 class="section-title">
+                            Address Information
+                        </h3>
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label>
+                                    Country
+                                </label>
+
+                                {{ form.country }}
+
+                            </div>
+
+
+                            <div class="form-group full-width">
+
+                                <label>
+                                    Address
+                                </label>
+
+                                {{ form.address }}
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- Buttons -->
+
+                    <div class="form-actions">
+
+                        <a
+                            href="{% url 'student_profile' %}"
+                            class="btn cancel-btn"
+                        >
+                            Cancel
+                        </a>
+
+                        <button
+                            type="submit"
+                            class="btn save-btn"
+                        >
+                            Save Changes
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

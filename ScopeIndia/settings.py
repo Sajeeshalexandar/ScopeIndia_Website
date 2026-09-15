@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'Courses',
     'Registration',
     'Website',
-    'Placement'
+    'Placement',
+    'StudentLogin'
 
 ]
 
@@ -130,10 +131,11 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
 
 MAILERS = {
-    'default': {
-        'BACKEND': 'django.core.mail.backends.console.EmailBackend',
-    },
-}
+     'default': {
+         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
+     },
+ }
+
 
 
 #media

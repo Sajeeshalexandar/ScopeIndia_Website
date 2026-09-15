@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course Signup</title>
+</head>
+<body>
+
+    <h1>Course Signup</h1>
+
+    <h2>{{ course.course_name }}</h2>
+
+    <p>{{ course.course_description }}</p>
+
+    <p>
+        Duration: {{ course.course_duration }}
+    </p>
+
+    <h3>{{ message }}</h3>
+
+    <a href="{% url 'course_search' %}">
+        Back to Courses
+    </a>
+
+</body>
+</html>

@@ -1,0 +1,568 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Find Courses</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fb;
+            color: #222;
+            min-height: 100vh;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            width: 100%;
+            min-height: 70px;
+
+            background: #040c2e;
+
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            padding: 15px 5%;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+
+            padding: 10px 14px;
+
+            border-radius: 6px;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: white;
+            color: #040c2e;
+        }
+
+        nav a:last-child {
+            background: #dc3545;
+        }
+
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+
+            margin: 40px auto;
+        }
+
+
+        .page-title {
+            color: #040c2e;
+
+            font-size: clamp(26px, 4vw, 36px);
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================
+           SEARCH
+        ========================= */
+
+        .search-box {
+            background: white;
+
+            padding: 20px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+
+            margin-bottom: 30px;
+        }
+
+
+        .search-form {
+            display: flex;
+
+            gap: 10px;
+        }
+
+
+        .search-input {
+            flex: 1;
+
+            min-height: 48px;
+
+            padding: 12px 15px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 7px;
+
+            outline: none;
+
+            font-size: 15px;
+        }
+
+
+        .search-input:focus {
+            border-color: #17005c;
+
+            box-shadow: 0 0 0 3px rgba(23, 0, 92, 0.08);
+        }
+
+
+        .search-button {
+            min-width: 120px;
+
+            border: none;
+
+            border-radius: 7px;
+
+            background: #17005c;
+
+            color: white;
+
+            font-size: 14px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .search-button:hover {
+            background: #040c2e;
+        }
+
+
+        /* =========================
+           RESULT
+        ========================= */
+
+        .result-text {
+            margin-bottom: 20px;
+
+            color: #666;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           COURSE GRID
+        ========================= */
+
+        .course-grid {
+            display: grid;
+
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(280px, 1fr)
+            );
+
+            gap: 22px;
+        }
+
+
+        /* =========================
+           COURSE CARD
+        ========================= */
+
+        .course-card {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            border: 1px solid #eee;
+
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+
+            display: flex;
+
+            flex-direction: column;
+
+            min-height: 250px;
+
+            transition: 0.3s;
+        }
+
+
+        .course-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .course-name {
+            color: #17005c;
+
+            font-size: 21px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .course-description {
+            color: #666;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            margin-bottom: 18px;
+
+            flex: 1;
+        }
+
+
+        .course-duration {
+            color: #333;
+
+            font-size: 14px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .course-duration strong {
+            color: #17005c;
+        }
+
+
+        /* =========================
+           SIGN UP BUTTON
+        ========================= */
+
+        .signup-button {
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            min-height: 43px;
+
+            background: #17005c;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 7px;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+
+        .signup-button:hover {
+            background: #040c2e;
+        }
+
+
+        /* =========================
+           EMPTY RESULT
+        ========================= */
+
+        .no-courses {
+            background: white;
+
+            padding: 40px 20px;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            color: #666;
+
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            nav {
+                justify-content: center;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            nav {
+                display: grid;
+
+                grid-template-columns: repeat(2, 1fr);
+
+                gap: 7px;
+
+                padding: 12px 15px;
+            }
+
+
+            nav a {
+                text-align: center;
+
+                font-size: 13px;
+
+                padding: 10px 5px;
+            }
+
+
+            nav a:last-child {
+                grid-column: span 2;
+            }
+
+
+            .container {
+                width: 90%;
+
+                margin: 30px auto;
+            }
+
+
+            .search-form {
+                flex-direction: column;
+            }
+
+
+            .search-button {
+                min-height: 46px;
+
+                width: 100%;
+            }
+
+
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .course-card {
+                padding: 20px;
+            }
+
+        }
+
+
+        /* =========================
+           SMALL MOBILE
+        ========================= */
+
+        @media (max-width: 400px) {
+
+            nav {
+                grid-template-columns: 1fr;
+            }
+
+
+            nav a:last-child {
+                grid-column: auto;
+            }
+
+
+            .container {
+                width: 92%;
+            }
+
+
+            .page-title {
+                font-size: 24px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="{% url 'student_dashboard' %}">
+            Dashboard
+        </a>
+
+        <a href="{% url 'course_search' %}">
+            Find Courses
+        </a>
+
+        <a href="{% url 'picked_courses' %}">
+            My Courses
+        </a>
+
+        <a href="{% url 'student_profile' %}">
+            Profile
+        </a>
+
+        <a href="{% url 'change_password' %}">
+            Change Password
+        </a>
+
+        <a href="{% url 'student_logout' %}">
+            Logout
+        </a>
+
+    </nav>
+
+
+    <!-- MAIN -->
+
+    <main class="container">
+
+        <h1 class="page-title">
+            Find Courses
+        </h1>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+            <form
+                method="GET"
+                class="search-form"
+            >
+
+                <input
+                    type="text"
+                    name="q"
+                    class="search-input"
+                    placeholder="Search for a course..."
+                    value="{{ query }}"
+                >
+
+                <button
+                    type="submit"
+                    class="search-button"
+                >
+                    Search
+                </button>
+
+            </form>
+
+        </div>
+
+
+        {% if query %}
+
+            <p class="result-text">
+                Search results for:
+                <strong>{{ query }}</strong>
+            </p>
+
+        {% endif %}
+
+
+        <!-- COURSES -->
+
+        {% if courses %}
+
+            <div class="course-grid">
+
+                {% for course in courses %}
+
+                    <div class="course-card">
+
+                        <h2 class="course-name">
+                            {{ course.course_name }}
+                        </h2>
+
+
+                        <p class="course-description">
+                            {{ course.course_description }}
+                        </p>
+
+
+                        <p class="course-duration">
+
+                            <strong>
+                                Duration:
+                            </strong>
+
+                            {{ course.course_duration }}
+
+                        </p>
+
+
+                        <a
+                            href="{% url 'signup_course' course.id %}"
+                            class="signup-button"
+                        >
+                            Sign Up
+                        </a>
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <div class="no-courses">
+
+                <p>
+                    No courses found.
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    </main>
+
+
+</body>
+
+</html>
+
