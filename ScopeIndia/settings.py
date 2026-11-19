@@ -112,9 +112,13 @@ if DATABASE_URL:
         'default': dj_database_url.parse(
             DATABASE_URL,
             conn_max_age=600,
-            ssl_require=not DEBUG,
         )
     }
+    if (
+        not DEBUG
+        and DATABASES['default']['ENGINE'] == 'django.db.backends.postgresql'
+    ):
+        DATABASES['default'].setdefault('OPTIONS', {})['sslmode'] = 'require'
 else:
     DATABASES = {
         'default': {
