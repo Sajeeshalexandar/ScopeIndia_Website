@@ -12,7 +12,6 @@ from django.contrib.auth.decorators import login_required
 def course_list(request):
 
     courses = CourseList.objects.all()
-
     return render(request, "admin/course_list.html", {"courses": courses})
 @login_required
 def course_detail(request, course_id):
@@ -144,8 +143,8 @@ def syllabus_delete(request, syllabus_id):
 
 def Course_Section(request):
     courses = CourseList.objects.all()
-    print(courses)
     return render(request,"pages/courses.html",{'courses':courses})
+
 def Course_Details(request,c_id):
     course = get_object_or_404(CourseList,id = c_id)
     syllabus = course.course_syllabus.all()

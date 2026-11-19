@@ -1,25 +1,279 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Course Signup</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #040c2e, #17005c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 15px;
+        }
+
+        .signup-container {
+            width: 100%;
+            max-width: 650px;
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Header */
+        .signup-header {
+            background: #17005c;
+            padding: 35px 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .signup-header .icon {
+            width: 65px;
+            height: 65px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background: #ffffff;
+            color: #17005c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .signup-header h1 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .signup-header p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Course information */
+        .course-info {
+            padding: 30px;
+        }
+
+        .course-label {
+            display: inline-block;
+            padding: 6px 14px;
+            background: #f1edff;
+            color: #17005c;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .course-info h2 {
+            color: #17005c;
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        .course-description {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 22px;
+        }
+
+        /* Duration */
+        .duration-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: #f8f7fc;
+            border: 1px solid #e8e4f2;
+            border-radius: 12px;
+            padding: 15px 18px;
+            margin-bottom: 25px;
+        }
+
+        .duration-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            background: #17005c;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .duration-text span {
+            display: block;
+            color: #888;
+            font-size: 12px;
+            margin-bottom: 3px;
+        }
+
+        .duration-text strong {
+            color: #222;
+            font-size: 15px;
+        }
+
+        /* Message */
+        .message-box {
+            padding: 15px 18px;
+            border-radius: 10px;
+            background: #fff8e1;
+            border-left: 4px solid #d4a72c;
+            color: #6b5500;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        /* Button */
+        .back-button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            background: #17005c;
+            color: white;
+            padding: 14px 20px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #25008a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(23, 0, 92, 0.25);
+        }
+
+        /* Footer */
+        .signup-footer {
+            border-top: 1px solid #eeeeee;
+            padding: 18px 30px;
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .signup-header {
+                padding: 28px 20px;
+            }
+
+            .signup-header h1 {
+                font-size: 24px;
+            }
+
+            .course-info {
+                padding: 25px 20px;
+            }
+
+            .course-info h2 {
+                font-size: 22px;
+            }
+
+            .course-description {
+                font-size: 14px;
+            }
+
+            .signup-footer {
+                padding: 15px 20px;
+            }
+        }
+
+        @media (max-width: 400px) {
+
+            .signup-header .icon {
+                width: 55px;
+                height: 55px;
+                font-size: 23px;
+            }
+
+            .signup-header h1 {
+                font-size: 21px;
+            }
+
+            .course-info h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-    <h1>Course Signup</h1>
+    <div class="signup-container">
 
-    <h2>{{ course.course_name }}</h2>
+        <div class="signup-header">
+            <div class="icon">✓</div>
 
-    <p>{{ course.course_description }}</p>
+            <h1>Course Signup</h1>
 
-    <p>
-        Duration: {{ course.course_duration }}
-    </p>
+            <p>You're almost ready to start your learning journey</p>
+        </div>
 
-    <h3>{{ message }}</h3>
+        <div class="course-info">
 
-    <a href="{% url 'course_search' %}">
-        Back to Courses
-    </a>
+            <span class="course-label">Selected Course</span>
+
+            <h2>{{ course.course_name }}</h2>
+
+            <p class="course-description">
+                {{ course.course_description }}
+            </p>
+
+            <div class="duration-box">
+
+                <div class="duration-icon">
+                    ⏱
+                </div>
+
+                <div class="duration-text">
+                    <span>Course Duration</span>
+                    <strong>{{ course.course_duration }}</strong>
+                </div>
+
+            </div>
+
+            {% if message %}
+                <div class="message-box">
+                    {{ message }}
+                </div>
+            {% endif %}
+
+            <a href="{% url 'course_search' %}" class="back-button">
+                ← Back to Courses
+            </a>
+
+        </div>
+
+        <div class="signup-footer">
+            Choose the right course and take the next step toward your career.
+        </div>
+
+    </div>
 
 </body>
 </html>

@@ -7,9 +7,7 @@ from django.core.mail import send_mail
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 from Registration.models import StudentRegistration
-
 from django.db.models import Q
-
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import StudentAccount, PickedCourse
 from Courses.models import CourseList
@@ -91,7 +89,7 @@ def student_login(request):
             temp_password = generate_temp_password()
             user.set_password(temp_password)
             user.save()
-
+ 
             success, err = _send_temp_password_email(student, temp_password, "Login")
 
             if not success:
